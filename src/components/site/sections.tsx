@@ -3,15 +3,14 @@
 import { useState } from "react";
 import {
   ArrowRight,
-  ArrowRight as ArrowIcon,
-  Quote,
   Rocket,
   Search,
   Target,
   TrendingUp,
   Check,
+  X,
 } from "lucide-react";
-import { caseStudies, process, services, testimonials } from "@/lib/site-config";
+import { fitCheck, playbooks, process, services } from "@/lib/site-config";
 import { CtaButton, SectionHeading, revealDelay } from "./primitives";
 import { cn } from "@/lib/utils";
 
@@ -133,26 +132,32 @@ export function Process() {
 }
 
 /* ================================================================
-   RESULTS — tabbed case studies
+   PLAYBOOKS — tabbed, by account situation.
+   Describes method, not client outcomes.
    ================================================================ */
 export function Results() {
   const [active, setActive] = useState(0);
-  const study = caseStudies[active];
+  const play = playbooks[active];
 
   return (
     <section id="results" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Client results"
-          title="What changed, and by how much"
-          sub="Pick a category to see the before and after."
+          eyebrow="Our playbooks"
+          title={
+            <>
+              Tell us what&apos;s broken. Here&apos;s{" "}
+              <span className="text-brand-600">exactly what we do.</span>
+            </>
+          }
+          sub="Pick the problem that sounds like your account."
         />
 
         {/* Tabs */}
         <div className="mt-10 flex flex-wrap gap-2" data-reveal role="tablist">
-          {caseStudies.map((c, i) => (
+          {playbooks.map((p, i) => (
             <button
-              key={c.category}
+              key={p.category}
               role="tab"
               aria-selected={active === i}
               onClick={() => setActive(i)}
@@ -163,42 +168,39 @@ export function Results() {
                   : "bg-navy-50 text-navy-500 hover:bg-navy-100 hover:text-navy-700",
               )}
             >
-              {c.category}
+              {p.category}
             </button>
           ))}
         </div>
 
         <div
-          className="mt-6 grid gap-6 rounded-3xl border border-navy-100 bg-navy-50/60 p-7 lg:grid-cols-5 lg:p-10"
+          className="mt-6 grid gap-8 rounded-3xl border border-navy-100 bg-navy-50/60 p-7 lg:grid-cols-5 lg:p-10"
           data-reveal
         >
           <div className="lg:col-span-3">
             <h3 className="text-balance text-2xl font-extrabold leading-tight text-navy-800 lg:text-3xl">
-              {study.headline}
+              {play.headline}
             </h3>
-            <p className="mt-4 leading-relaxed text-navy-500">{study.body}</p>
-            <p className="mt-6 inline-flex items-center gap-2 rounded-lg bg-amber-50 px-3 py-2 text-xs font-semibold text-amber-700 ring-1 ring-amber-200">
-              ⚠ Placeholder case study — replace with a real client result
-            </p>
+            <p className="mt-4 leading-relaxed text-navy-500">{play.body}</p>
+            <CtaButton href="#book" variant="dark" className="mt-7">
+              Get this run on my account
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </CtaButton>
           </div>
 
-          <div className="space-y-3 lg:col-span-2">
-            {study.metrics.map((m) => (
-              <div
-                key={m.label}
-                className="flex items-center justify-between gap-4 rounded-xl border border-navy-100 bg-white p-4"
+          <ol className="space-y-3 lg:col-span-2">
+            {play.steps.map((s, i) => (
+              <li
+                key={s}
+                className="flex gap-3.5 rounded-xl border border-navy-100 bg-white p-4"
               >
-                <span className="text-sm font-medium text-navy-500">{m.label}</span>
-                <span className="flex items-center gap-2.5 font-heading font-extrabold tabular-nums">
-                  <span className="text-navy-300 line-through decoration-navy-200">
-                    {m.from}
-                  </span>
-                  <ArrowIcon className="h-4 w-4 text-brand-500" />
-                  <span className="text-brand-600">{m.to}</span>
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/12 font-heading text-xs font-extrabold text-brand-700">
+                  {i + 1}
                 </span>
-              </div>
+                <span className="text-sm leading-relaxed text-navy-600">{s}</span>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>
@@ -206,35 +208,56 @@ export function Results() {
 }
 
 /* ================================================================
-   TESTIMONIALS
+   FIT CHECK — replaces testimonials.
+   Self-qualification, not third-party praise.
    ================================================================ */
 export function Testimonials() {
   return (
     <section className="bg-navy-50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="In their words" title="What sellers say" />
+        <SectionHeading
+          eyebrow="Straight talk"
+          title="We are not right for everyone"
+          sub="Read the right-hand column first. If any of it describes you, save yourself the call."
+        />
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <figure
-              key={i}
-              data-reveal
-              style={revealDelay(i)}
-              className="flex flex-col rounded-2xl border border-navy-100 bg-white p-7 transition-shadow hover:shadow-lg hover:shadow-navy-900/5"
-            >
-              <Quote className="h-7 w-7 shrink-0 text-brand-500/30" />
-              <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-navy-600">
-                &ldquo;{t.quote}&rdquo;
-              </blockquote>
-              <figcaption className="mt-6 border-t border-navy-100 pt-5">
-                <div className="font-bold text-navy-800">{t.name}</div>
-                <div className="text-sm text-navy-400">{t.role}</div>
-                <div className="mt-2 inline-block rounded bg-amber-50 px-2 py-0.5 text-[10px] font-semibold text-amber-700 ring-1 ring-amber-200">
-                  ⚠ Placeholder
-                </div>
-              </figcaption>
-            </figure>
-          ))}
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          <div
+            className="rounded-2xl border border-brand-500/30 bg-white p-7"
+            data-reveal
+          >
+            <h3 className="flex items-center gap-2.5 text-lg font-extrabold text-navy-800">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/15">
+                <Check className="h-4 w-4 text-brand-600" />
+              </span>
+              A good fit if
+            </h3>
+            <ul className="mt-5 space-y-3.5">
+              {fitCheck.good.map((line) => (
+                <li key={line} className="flex gap-3 text-[15px] leading-relaxed text-navy-600">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-brand-500" />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-navy-200 bg-white p-7" data-reveal>
+            <h3 className="flex items-center gap-2.5 text-lg font-extrabold text-navy-800">
+              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-navy-100">
+                <X className="h-4 w-4 text-navy-500" />
+              </span>
+              Not a fit if
+            </h3>
+            <ul className="mt-5 space-y-3.5">
+              {fitCheck.bad.map((line) => (
+                <li key={line} className="flex gap-3 text-[15px] leading-relaxed text-navy-500">
+                  <X className="mt-1 h-4 w-4 shrink-0 text-navy-300" />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

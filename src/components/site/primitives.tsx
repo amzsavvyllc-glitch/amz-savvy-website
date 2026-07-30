@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 /* ------------------------------------------------------------------
@@ -109,6 +109,11 @@ export function PartnerBadge({
 /* ------------------------------------------------------------------
    Counter — counts up once, when scrolled into view.
    ------------------------------------------------------------------ */
+/**
+ * Renders the FINAL value on the server, then animates by writing textContent
+ * through a ref. No state, so no re-render per frame and no setState-in-effect.
+ * Crawlers and no-JS visitors see the real number, never a zero.
+ */
 export function Counter({
   value,
   prefix = "",
@@ -123,16 +128,15 @@ export function Counter({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState(0);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setDisplay(value);
-      return;
-    }
+    const write = (n: number) => {
+      el.textContent = `${prefix}${n.toFixed(decimals)}${suffix}`;
+    };
 
     let raf = 0;
     const io = new IntersectionObserver(
@@ -146,9 +150,10 @@ export function Counter({
           const p = Math.min((now - start) / duration, 1);
           // expo.out — matches the site's --ease-out-expo
           const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
-          setDisplay(value * eased);
+          write(value * eased);
           if (p < 1) raf = requestAnimationFrame(tick);
         };
+        write(0);
         raf = requestAnimationFrame(tick);
       },
       { threshold: 0.4 },
@@ -159,12 +164,12 @@ export function Counter({
       io.disconnect();
       cancelAnimationFrame(raf);
     };
-  }, [value]);
+  }, [value, prefix, suffix, decimals]);
 
   return (
     <span ref={ref} className={className}>
       {prefix}
-      {display.toFixed(decimals)}
+      {value.toFixed(decimals)}
       {suffix}
     </span>
   );

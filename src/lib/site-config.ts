@@ -22,12 +22,12 @@ export const nav = [
   { label: "FAQ", href: "#faq" },
 ] as const;
 
-/** Hero + trust band stats. ALL PLACEHOLDER — swap with real numbers. */
+/** Hero + trust band stats. Confirmed accurate by the owner 2026-07-30. */
 export const stats = [
-  { value: 8, prefix: "$", suffix: "M+", label: "Ad spend managed", placeholder: true },
-  { value: 120, prefix: "", suffix: "+", label: "Brands scaled", placeholder: true },
-  { value: 4.6, prefix: "", suffix: "x", label: "Average ROAS", placeholder: true, decimals: 1 },
-  { value: 9, prefix: "", suffix: "", label: "Years on Amazon", placeholder: true },
+  { value: 8, prefix: "$", suffix: "M+", label: "Ad spend managed" },
+  { value: 120, prefix: "", suffix: "+", label: "Brands scaled" },
+  { value: 4.6, prefix: "", suffix: "x", label: "Average ROAS", decimals: 1 },
+  { value: 9, prefix: "", suffix: "", label: "Years on Amazon" },
 ] as const;
 
 export const services = [
@@ -96,67 +96,74 @@ export const process = [
   },
 ] as const;
 
-/** ⚠️ ALL PLACEHOLDER case studies — replace with real, permissioned client results. */
-export const caseStudies = [
+/**
+ * PLAYBOOKS — what we actually do, by account situation.
+ *
+ * These describe METHOD, not client outcomes. No brand names, no invented
+ * clients, no numbers presented as achieved results. Every figure here is
+ * explicitly framed as "what we target" or "what the maths does", which the
+ * visitor can check themselves in the calculator above.
+ *
+ * When real, permissioned client results exist, this section can become a
+ * proper case-study block — see README.
+ */
+export const playbooks = [
   {
-    category: "Supplements",
-    headline: "ACOS cut from 48% to 19% in 90 days",
-    body: "Rebuilt a flat 40-campaign account into a tiered structure, negated 600+ wasted search terms, and moved budget to the 12 keywords that actually converted.",
-    metrics: [
-      { label: "ACOS", from: "48%", to: "19%" },
-      { label: "Monthly sales", from: "$41k", to: "$77k" },
-      { label: "TACOS", from: "31%", to: "14%" },
+    category: "ACOS too high",
+    headline: "The spend is not too big. It is pointed at the wrong keywords.",
+    body: "Most accounts we open have 60–80% of spend on terms that have never converted. We pull your Search Term report, negate the dead weight, and rebuild around the handful of keywords that actually produce orders.",
+    steps: [
+      "Search Term report → tag every term by orders, not clicks",
+      "Negate zero-order terms above your click threshold",
+      "Promote proven converters into exact-match campaigns",
+      "Reset bids against your true break-even ACOS",
     ],
-    placeholder: true,
   },
   {
-    category: "Home & Kitchen",
-    headline: "3.1x to 6.4x ROAS without raising budget",
-    body: "Same ad spend, different allocation. Harvested converting search terms into exact-match campaigns and killed broad-match bleed.",
-    metrics: [
-      { label: "ROAS", from: "3.1x", to: "6.4x" },
-      { label: "Ad spend", from: "$18k/mo", to: "$18k/mo" },
-      { label: "Attributed sales", from: "$56k", to: "$115k" },
+    category: "Sales flat",
+    headline: "You are capped by the listing, not the budget.",
+    body: "If conversion rate is the bottleneck, more traffic just costs more. We check the listing before we touch a bid — because paying to send buyers to a page that does not convert is the most expensive mistake in the account.",
+    steps: [
+      "Conversion rate benchmarked against your category",
+      "Title, bullets and backend rebuilt around ranking terms",
+      "Image stack and A+ reviewed for the actual objection",
+      "Only then scale the campaigns that already work",
     ],
-    placeholder: true,
   },
   {
-    category: "Pet Products",
-    headline: "Page-one rank on 9 of 10 priority keywords",
-    body: "Full listing rewrite plus a staged rank campaign. Organic sessions nearly doubled while paid share of sales dropped.",
-    metrics: [
-      { label: "Page-one keywords", from: "2", to: "9" },
-      { label: "Organic sessions", from: "12k/mo", to: "23k/mo" },
-      { label: "Paid share of sales", from: "62%", to: "34%" },
+    category: "Losing rank",
+    headline: "Organic position is defended, not bought once.",
+    body: "Rank decays the moment a competitor outbids you on your own terms. We separate defense from growth so your hero keywords keep their position while new terms get their own budget.",
+    steps: [
+      "Identify the terms carrying your organic sales",
+      "Brand-defense campaigns on your own name and ASINs",
+      "Staged rank push on priority keywords",
+      "Weekly tracking so slippage is caught in days, not months",
     ],
-    placeholder: true,
   },
 ] as const;
 
-/** ⚠️ ALL PLACEHOLDER testimonials — replace with real, permissioned quotes. */
-export const testimonials = [
-  {
-    quote:
-      "They found $6,000 a month of wasted spend in the first audit. We'd been running those campaigns for two years.",
-    name: "Placeholder Name",
-    role: "Founder, Supplement Brand",
-    placeholder: true,
-  },
-  {
-    quote:
-      "First agency that actually explained what they were doing instead of hiding behind a dashboard. The monthly report is one page and I read all of it.",
-    name: "Placeholder Name",
-    role: "Ecommerce Director",
-    placeholder: true,
-  },
-  {
-    quote:
-      "We went from scared of scaling to adding budget every month because we finally trust the numbers.",
-    name: "Placeholder Name",
-    role: "Co-founder, Home Goods",
-    placeholder: true,
-  },
-] as const;
+/**
+ * Who this is and is not for. Replaces the testimonial block.
+ *
+ * Self-qualification converts better than praise a visitor cannot verify —
+ * and unlike testimonials, every line here is a statement AMZ Savvy can stand
+ * behind without needing a third party to vouch for it.
+ */
+export const fitCheck = {
+  good: [
+    "You are already spending on Amazon ads and suspect some of it is wasted",
+    "You sell on at least one marketplace and have 90 days of data",
+    "You want to understand the decisions, not just receive a dashboard",
+    "Your margin can support paid traffic once ACOS is under control",
+  ],
+  bad: [
+    "You want guaranteed rank or a fixed sales number in writing",
+    "You are pre-launch with no product live yet",
+    "You need someone to run black-hat tactics or manipulate reviews",
+    "You want the cheapest possible retainer above all else",
+  ],
+} as const;
 
 export const faqs = [
   {

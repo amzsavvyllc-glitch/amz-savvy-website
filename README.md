@@ -74,22 +74,31 @@ then remove `.github/workflows/` from `.gitignore` and commit the file.
 Copy, services, process steps, case studies, testimonials, FAQ, contact details
 — all of it. You should rarely need to touch a component.
 
-### ⚠️ Placeholders to replace
+### Proof and claims — read before editing
 
-Search `site-config.ts` for `placeholder: true`:
+There are **no placeholders left**. Every claim on the page is one AMZ Savvy can
+stand behind:
 
-| What | Where | Currently |
+| Block | Where | Status |
 | --- | --- | --- |
-| Stats band | `stats` | $8M+ / 120+ / 4.6x / 9 — invented |
-| Case studies | `caseStudies` | 3 invented results |
-| Testimonials | `testimonials` | 3 invented quotes, "Placeholder Name" |
+| Stats band | `stats` | Confirmed accurate by the owner, 2026-07-30 |
+| Playbooks | `playbooks` | Describes **method**, not client outcomes |
+| Fit check | `fitCheck` | First-person statements, nothing third-party |
 
-Placeholder case studies and testimonials render a visible amber **"⚠ Placeholder"**
-chip on the page so they cannot be shipped by accident. Delete the chip markup in
-`src/components/site/sections.tsx` once real content is in.
+The site deliberately contains **no testimonials and no case studies**. Earlier
+drafts had invented ones; they were removed rather than published. The FTC's
+Consumer Reviews and Testimonials Rule prohibits testimonials from people who do
+not exist, and in the Amazon niche specifically, a prospect who cannot verify a
+named client reads it as a faked review.
 
-Real, verifiable trust signals already in place and safe to keep: the Amazon Ads
-Verified Partner badge, the marketplace list, and the process transparency.
+**To add real proof later:** get written permission from the client, then either
+add a `testimonials` array back (real name, real role) or convert `playbooks`
+into case studies with real before/after numbers. Ask and this can be rebuilt in
+minutes — the layout already supports it.
+
+Real, verifiable trust signals already carrying the page: the Amazon Ads Verified
+Partner badge, the marketplace list, the process transparency, and the calculator
+(which lets a visitor prove the core claim with their own numbers).
 
 ## Structure
 
@@ -103,7 +112,7 @@ src/components/site/
   header.tsx              sticky nav, mobile menu, scroll progress
   hero.tsx                hero + glass stats card + marketplace marquee
   calculator.tsx          wasted-spend calculator
-  sections.tsx            services, process, results tabs, testimonials
+  sections.tsx            services, process, playbook tabs, fit check
   convert.tsx             FAQ, Calendly, contact form, footer, WhatsApp FAB
 ```
 
