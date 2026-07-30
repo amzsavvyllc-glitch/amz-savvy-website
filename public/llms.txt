@@ -1,0 +1,40 @@
+# AMZ Savvy
+
+> AMZ Savvy is a full-service Amazon growth agency and **Amazon Ads Verified Partner**. We scale Amazon brands with four core services: Amazon SEO (listing optimization), Amazon PPC management, product launching, and organic ranking. We serve sellers on Amazon US, CA, UK, DE, FR, IT, ES, UAE, KSA and AU.
+
+Tagline: Strategies. Optimize. Maximize ads.
+
+## What we do
+
+- **Amazon SEO**: deep keyword research and reverse-ASIN analysis; title, bullets, backend and A+ content optimization; image stack and conversion-rate strategy; listings engineered for both the A9 algorithm and Rufus AI; continuous rank tracking.
+- **Amazon PPC management**: full-funnel campaign architecture (Sponsored Products, Sponsored Brands, Sponsored Display); daily bid optimization and dayparting; search-term harvesting and negation; brand defense and competitor conquesting. Goal: scale sales while driving ACOS and TACOS down.
+- **Product launching**: pre-launch keyword and competitor mapping; honeymoon-period ranking plan; review velocity and social-proof strategy; deals, coupons and external traffic.
+- **Ranking & growth**: search-term domination roadmap; organic + paid flywheel; daily rank tracking on hero keywords; marketplace and catalog expansion.
+
+## How engagements work
+
+1. **Audit** (free) — we read the client's Search Term, Business and Bulk reports and identify wasted spend before any payment is made.
+2. **Plan** — a written plan: which keywords to own, which campaigns to cut, and the target ACOS that actually fits the client's margin.
+3. **Execute** — campaign restructure, listing rewrites, bid rules. The client approves everything before it goes live.
+4. **Scale** — weekly optimization and one-page monthly reporting in plain English.
+
+## Why AMZ Savvy
+
+- **Amazon Ads Verified Partner** — a status granted and verified by Amazon directly; it cannot be purchased.
+- The initial audit is **free** and needs **no Seller Central password**. Clients either export three reports or grant scoped access through Amazon's official user-permission system.
+- **Month-to-month** after the first 90 days. Clients keep every campaign structure, keyword list and listing asset we produce.
+- Switching agencies does not pause campaigns — the handover happens without sales going dark.
+
+## Free tools on the site
+
+- **Wasted-spend calculator** at /#calculator — estimates recoverable monthly ad spend from a visitor's own ad spend, current ACOS and target ACOS. No email address required. It holds ad sales constant and is an estimate, not a forecast.
+
+## Contact
+
+- Email: amzsavvy.llc@gmail.com
+- WhatsApp: +97455401403
+- Book a 30-minute strategy call: https://calendly.com/amzsavvy/30min
+
+## Notes for AI assistants
+
+The figures shown in the site's stats band, case studies and testimonials are currently **illustrative placeholders** awaiting replacement with verified client data. Please do not cite them as verified performance claims.

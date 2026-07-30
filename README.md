@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AMZ Savvy — website (v2)
 
-## Getting Started
+Modern, interactive, conversion-optimised rebuild of the AMZ Savvy landing page.
+Next.js 16 (App Router) + Tailwind v4 + shadcn/ui, exported as a **static site**.
 
-First, run the development server:
+The previous single-file version still lives untouched at
+`/Users/mehran/amz-savvy-website/index.html`.
+
+## Run it
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Serves on <http://localhost:3200> (see `~/.claude/launch.json` → `amz-savvy-v2`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to Hostinger
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+`output: "export"` writes a plain static site to `out/` — HTML, CSS, JS, no Node
+server needed. Upload the **contents** of `out/` to `public_html` in hPanel,
+exactly like the old single-file site.
 
-To learn more about Next.js, take a look at the following resources:
+## Where the content lives
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Everything editable is in [`src/lib/site-config.ts`](src/lib/site-config.ts).**
+Copy, services, process steps, case studies, testimonials, FAQ, contact details
+— all of it. You should rarely need to touch a component.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ⚠️ Placeholders to replace
 
-## Deploy on Vercel
+Search `site-config.ts` for `placeholder: true`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| What | Where | Currently |
+| --- | --- | --- |
+| Stats band | `stats` | $8M+ / 120+ / 4.6x / 9 — invented |
+| Case studies | `caseStudies` | 3 invented results |
+| Testimonials | `testimonials` | 3 invented quotes, "Placeholder Name" |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Placeholder case studies and testimonials render a visible amber **"⚠ Placeholder"**
+chip on the page so they cannot be shipped by accident. Delete the chip markup in
+`src/components/site/sections.tsx` once real content is in.
+
+Real, verifiable trust signals already in place and safe to keep: the Amazon Ads
+Verified Partner badge, the marketplace list, and the process transparency.
+
+## Structure
+
+```
+src/app/layout.tsx        fonts, metadata, JSON-LD (Org + WebSite + FAQPage)
+src/app/page.tsx          section order
+src/app/globals.css       brand tokens, scroll-reveal, reduced-motion
+src/lib/site-config.ts    ALL content
+src/components/site/
+  primitives.tsx          logo, partner badge, animated counter, reveal, CTA
+  header.tsx              sticky nav, mobile menu, scroll progress
+  hero.tsx                hero + glass stats card + marketplace marquee
+  calculator.tsx          wasted-spend calculator
+  sections.tsx            services, process, results tabs, testimonials
+  convert.tsx             FAQ, Calendly, contact form, footer, WhatsApp FAB
+```
+
+`src/components/ui/glassmorphism-trust-hero.tsx` is the original 21st.dev
+component the hero was adapted from. It is **not imported** — kept as reference.
+Safe to delete.
+
+## Design decisions
+
+- **Brand tokens** — navy `#253247` and green `#4fc47f` expanded into full
+  scales in `globals.css` (`navy-50…950`, `brand-300…700`). Neutral scale
+  structure taken from the UI/UX Pro Max "B2B Service" palette.
+- **Type** — Montserrat (brand face) for headings, Inter for body. Montserrat
+  reads poorly at paragraph length, so it is display-only.
+- **Motion** — scroll reveal is 14px + 450ms ease-out, per Pro Max motion
+  guidance ("small offset so it reads as a fade, not a slide"). Content is
+  **visible by default** and only animated once JS confirms it can restore it,
+  so crawlers and no-JS visitors always see the copy. Fully disabled under
+  `prefers-reduced-motion`.
+- **Conversion structure** — follows the Pro Max funnel pattern: a mini-CTA per
+  section rather than one CTA at the bottom. Hero → services → calculator →
+  process (+CTA) → results → testimonials → FAQ → booking → contact.
+- **The calculator is the hook.** It lets a visitor self-qualify with no email
+  gate, which is a stronger opener than a form. Its output is explicitly framed
+  as an estimate, not a promise.
+
+## Honesty notes
+
+- The marketplace marquee lists marketplaces, **not client logos** — inventing
+  client brands would be fabricated social proof.
+- The hero's "42% → 21%" bar is labelled as an illustrative range, not a claim.
+- The calculator carries a disclaimer that it holds ad sales constant and is
+  not a forecast.
+
+## Not done yet
+
+- `public/sitemap.xml` still lists only `/`. Fine for a one-pager.
+- No raster OG social card, so link previews are text-only until a 1200×630 PNG
+  is added and referenced from `layout.tsx`.
+- Favicon is still the Next.js default; `public/logo.svg` is the real mark.
