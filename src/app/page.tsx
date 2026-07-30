@@ -7,7 +7,6 @@ import {
   Results,
   Deliverables,
   Testimonials,
-  FitCheck,
 } from "@/components/site/sections";
 import { Faq, Booking, Contact, Footer, FloatingActions } from "@/components/site/convert";
 import { RevealProvider } from "@/components/site/primitives";
@@ -25,7 +24,6 @@ export default function Home() {
         <Results />
         <Deliverables />
         <Testimonials />
-        <FitCheck />
         <Faq />
         <Booking />
         <Contact />

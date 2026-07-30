@@ -9,11 +9,9 @@ import {
   Target,
   TrendingUp,
   Check,
-  X,
 } from "lucide-react";
 import {
   deliverables,
-  fitCheck,
   playbooks,
   process,
   services,
@@ -368,62 +366,6 @@ export function Testimonials() {
               </figcaption>
             </figure>
           ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ================================================================
-   FIT CHECK — self-qualification, not third-party praise.
-   ================================================================ */
-export function FitCheck() {
-  return (
-    <section className="bg-navy-50 py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Straight talk"
-          title="We are not right for everyone"
-          sub="Read the right-hand column first. If any of it describes you, save yourself the call."
-        />
-
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          <div
-            className="rounded-2xl border border-brand-500/30 bg-white p-7"
-            data-reveal
-          >
-            <h3 className="flex items-center gap-2.5 text-lg font-extrabold text-navy-800">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-500/15">
-                <Check className="h-4 w-4 text-brand-600" />
-              </span>
-              A good fit if
-            </h3>
-            <ul className="mt-5 space-y-3.5">
-              {fitCheck.good.map((line) => (
-                <li key={line} className="flex gap-3 text-[15px] leading-relaxed text-navy-600">
-                  <Check className="mt-1 h-4 w-4 shrink-0 text-brand-500" />
-                  {line}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border border-navy-200 bg-white p-7" data-reveal>
-            <h3 className="flex items-center gap-2.5 text-lg font-extrabold text-navy-800">
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-navy-100">
-                <X className="h-4 w-4 text-navy-500" />
-              </span>
-              Not a fit if
-            </h3>
-            <ul className="mt-5 space-y-3.5">
-              {fitCheck.bad.map((line) => (
-                <li key={line} className="flex gap-3 text-[15px] leading-relaxed text-navy-500">
-                  <X className="mt-1 h-4 w-4 shrink-0 text-navy-300" />
-                  {line}
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       </div>
     </section>

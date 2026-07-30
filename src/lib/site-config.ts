@@ -1,8 +1,10 @@
 /**
  * SINGLE SOURCE OF TRUTH for all site content.
  *
- * ⚠️  PLACEHOLDER = invented number/name. Every one is tagged with `placeholder: true`
- *     so you can find and swap them. Search this file for "placeholder: true".
+ * There are no placeholders left — every claim here is one AMZ Savvy can stand
+ * behind. `playbooks` describes method, not client outcomes. `testimonials` is
+ * empty by design and its section stays hidden until real, permissioned quotes
+ * are added. See README before adding proof of any kind.
  */
 
 export const site = {
@@ -144,16 +146,9 @@ export const playbooks = [
 ] as const;
 
 /**
- * Who this is and is not for. Replaces the testimonial block.
- *
- * Self-qualification converts better than praise a visitor cannot verify —
- * and unlike testimonials, every line here is a statement AMZ Savvy can stand
- * behind without needing a third party to vouch for it.
- */
-/**
  * TESTIMONIALS — intentionally empty.
  *
- * The section below renders ONLY when this array has entries, so the page is
+ * The section renders ONLY when this array has entries, so the page is
  * complete without it and gains a testimonial block the moment one exists.
  *
  * To add a real one:
@@ -162,9 +157,10 @@ export const playbooks = [
  *
  *   { quote: "…their actual words…", name: "Real Name", role: "Founder, Their Brand" }
  *
- * Do not add entries for people who did not say these things. Beyond being
- * false, the FTC's Consumer Reviews and Testimonials Rule (16 CFR 465) treats
- * testimonials from non-existent endorsers as a deceptive practice.
+ * Anonymised is fine and still real — "Founder, supplements brand" works when a
+ * client won't name their brand publicly. Do not add entries for people who did
+ * not say these things: the FTC's Consumer Reviews and Testimonials Rule
+ * (16 CFR 465) treats testimonials from non-existent endorsers as deceptive.
  */
 export const testimonials: {
   quote: string;
@@ -195,21 +191,6 @@ export const deliverables = [
     ],
   },
 ] as const;
-
-export const fitCheck = {
-  good: [
-    "You are already spending on Amazon ads and suspect some of it is wasted",
-    "You sell on at least one marketplace and have 90 days of data",
-    "You want to understand the decisions, not just receive a dashboard",
-    "Your margin can support paid traffic once ACOS is under control",
-  ],
-  bad: [
-    "You want guaranteed rank or a fixed sales number in writing",
-    "You are pre-launch with no product live yet",
-    "You need someone to run black-hat tactics or manipulate reviews",
-    "You want the cheapest possible retainer above all else",
-  ],
-} as const;
 
 export const faqs = [
   {
