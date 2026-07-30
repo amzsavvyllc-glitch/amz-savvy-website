@@ -150,6 +150,52 @@ export const playbooks = [
  * and unlike testimonials, every line here is a statement AMZ Savvy can stand
  * behind without needing a third party to vouch for it.
  */
+/**
+ * TESTIMONIALS — intentionally empty.
+ *
+ * The section below renders ONLY when this array has entries, so the page is
+ * complete without it and gains a testimonial block the moment one exists.
+ *
+ * To add a real one:
+ *   1. Get the client's written OK to publish their name, role and words.
+ *   2. Push an object here. That is the whole job — no component edits.
+ *
+ *   { quote: "…their actual words…", name: "Real Name", role: "Founder, Their Brand" }
+ *
+ * Do not add entries for people who did not say these things. Beyond being
+ * false, the FTC's Consumer Reviews and Testimonials Rule (16 CFR 465) treats
+ * testimonials from non-existent endorsers as a deceptive practice.
+ */
+export const testimonials: {
+  quote: string;
+  name: string;
+  role: string;
+}[] = [];
+
+/** What the client actually receives. Their own deliverables — not client claims. */
+export const deliverables = [
+  {
+    title: "The audit",
+    when: "Within 48 hours of the call",
+    lines: [
+      "Wasted-spend figure for your real account",
+      "Every zero-order search term, listed",
+      "Your true break-even ACOS at your margin",
+      "Ranked fix list — biggest money first",
+    ],
+  },
+  {
+    title: "The monthly report",
+    when: "First week, every month",
+    lines: [
+      "One page. Plain English. No dashboard maze.",
+      "What we changed and why",
+      "Spend, sales, ACOS, TACOS vs last month",
+      "What we are doing next month",
+    ],
+  },
+] as const;
+
 export const fitCheck = {
   good: [
     "You are already spending on Amazon ads and suspect some of it is wasted",

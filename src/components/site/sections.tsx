@@ -3,6 +3,7 @@
 import { useState } from "react";
 import {
   ArrowRight,
+  Quote,
   Rocket,
   Search,
   Target,
@@ -10,7 +11,14 @@ import {
   Check,
   X,
 } from "lucide-react";
-import { fitCheck, playbooks, process, services } from "@/lib/site-config";
+import {
+  deliverables,
+  fitCheck,
+  playbooks,
+  process,
+  services,
+  testimonials,
+} from "@/lib/site-config";
 import { CtaButton, SectionHeading, revealDelay } from "./primitives";
 import { cn } from "@/lib/utils";
 
@@ -208,10 +216,168 @@ export function Results() {
 }
 
 /* ================================================================
-   FIT CHECK — replaces testimonials.
-   Self-qualification, not third-party praise.
+   DELIVERABLES — shows the actual artefacts a client receives.
+   The mock report is drawn in CSS and labelled SAMPLE: it depicts
+   AMZ Savvy's own deliverable, so it makes no claim about any client.
+   ================================================================ */
+export function Deliverables() {
+  return (
+    <section className="relative overflow-hidden bg-navy-900 py-20 text-white lg:py-28">
+      <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
+      <div className="pointer-events-none absolute -left-32 bottom-0 h-[30rem] w-[30rem] rounded-full bg-brand-500/12 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <SectionHeading
+              tone="dark"
+              eyebrow="What you actually get"
+              title={
+                <>
+                  No dashboard maze.{" "}
+                  <span className="text-brand-400">One page you&apos;ll read.</span>
+                </>
+              }
+              sub="Most agencies hand you a login and call it reporting. You get a document that says what changed, what it cost, and what happens next."
+            />
+
+            <div className="mt-9 space-y-5">
+              {deliverables.map((d, i) => (
+                <div
+                  key={d.title}
+                  data-reveal
+                  style={revealDelay(i)}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm"
+                >
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <h3 className="text-lg font-extrabold text-white">{d.title}</h3>
+                    <span className="rounded-full bg-brand-500/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-400">
+                      {d.when}
+                    </span>
+                  </div>
+                  <ul className="mt-4 space-y-2">
+                    {d.lines.map((l) => (
+                      <li key={l} className="flex gap-2.5 text-sm text-navy-300">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-brand-500" />
+                        {l}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CSS mock of the one-page report */}
+          <div className="relative" data-reveal>
+            <div className="relative rounded-2xl bg-white p-7 text-navy-800 shadow-2xl lg:rotate-[1.5deg] lg:p-8">
+              <span className="absolute right-5 top-5 rounded-md bg-navy-100 px-2 py-1 text-[10px] font-extrabold uppercase tracking-widest text-navy-400">
+                Sample
+              </span>
+
+              <div className="flex items-center gap-2.5 text-navy-800">
+                <svg viewBox="0 0 48 48" className="h-6 w-6" aria-hidden="true">
+                  <circle cx="21" cy="27" r="17" fill="none" stroke="#4fc47f" strokeWidth="3" />
+                  <circle cx="21" cy="27" r="10.5" fill="none" stroke="#4fc47f" strokeWidth="3" opacity=".7" />
+                  <circle cx="21" cy="27" r="4" fill="#4fc47f" />
+                  <path d="M44 6 L28.5 20.5 L34 23.5 Z" fill="#253247" />
+                </svg>
+                <span className="font-heading text-sm font-extrabold">
+                  Monthly Performance Report
+                </span>
+              </div>
+
+              <div className="mt-6 space-y-4">
+                {[
+                  { label: "Ad spend", val: "$14,208", w: "62%", down: false },
+                  { label: "Ad sales", val: "$68,140", w: "88%", down: false },
+                  { label: "ACOS", val: "20.8%", w: "31%", down: true },
+                  { label: "TACOS", val: "11.4%", w: "22%", down: true },
+                ].map((r) => (
+                  <div key={r.label}>
+                    <div className="mb-1.5 flex items-baseline justify-between">
+                      <span className="text-xs font-semibold text-navy-500">{r.label}</span>
+                      <span className="font-heading text-sm font-extrabold tabular-nums">
+                        {r.val}
+                      </span>
+                    </div>
+                    <div className="h-2 w-full overflow-hidden rounded-full bg-navy-100">
+                      <div
+                        className={cn(
+                          "h-full rounded-full",
+                          r.down
+                            ? "bg-gradient-to-r from-brand-600 to-brand-400"
+                            : "bg-navy-700",
+                        )}
+                        style={{ width: r.w }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-6 border-t border-navy-100 pt-5">
+                <div className="text-[11px] font-bold uppercase tracking-wider text-navy-400">
+                  What we changed
+                </div>
+                <ul className="mt-2.5 space-y-1.5 text-xs leading-relaxed text-navy-500">
+                  <li>• Negated 214 zero-order search terms</li>
+                  <li>• Moved 9 converters to exact match</li>
+                  <li>• Cut bids on 3 campaigns above break-even</li>
+                </ul>
+              </div>
+
+              <p className="mt-5 text-[10px] leading-relaxed text-navy-300">
+                Illustration of the report format. Figures are examples, not a
+                client account.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================================================
+   TESTIMONIALS — renders ONLY when real, permissioned quotes exist.
+   Empty by default; see site-config.ts.
    ================================================================ */
 export function Testimonials() {
+  if (testimonials.length === 0) return null;
+
+  return (
+    <section className="bg-white py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <SectionHeading eyebrow="In their words" title="What sellers say" />
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {testimonials.map((t, i) => (
+            <figure
+              key={i}
+              data-reveal
+              style={revealDelay(i)}
+              className="flex flex-col rounded-2xl border border-navy-100 bg-white p-7 transition-shadow hover:shadow-lg hover:shadow-navy-900/5"
+            >
+              <Quote className="h-7 w-7 shrink-0 text-brand-500/30" />
+              <blockquote className="mt-4 flex-1 text-[15px] leading-relaxed text-navy-600">
+                &ldquo;{t.quote}&rdquo;
+              </blockquote>
+              <figcaption className="mt-6 border-t border-navy-100 pt-5">
+                <div className="font-bold text-navy-800">{t.name}</div>
+                <div className="text-sm text-navy-400">{t.role}</div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ================================================================
+   FIT CHECK — self-qualification, not third-party praise.
+   ================================================================ */
+export function FitCheck() {
   return (
     <section className="bg-navy-50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
