@@ -14,15 +14,59 @@ npm run dev
 
 Serves on <http://localhost:3200> (see `~/.claude/launch.json` → `amz-savvy-v2`).
 
-## Deploy to Hostinger
+## Deploy
+
+Hosting is **GitHub Pages** (free). The domain stays registered at Hostinger —
+only its DNS records point at GitHub.
+
+- Repo: <https://github.com/amzsavvyllc-glitch/amz-savvy-website>
+- `main` = source, `gh-pages` = the built site GitHub serves
+- Live at <https://amzsavvy.com>
+
+To ship a change:
 
 ```bash
-npm run build
+npm run deploy
 ```
 
-`output: "export"` writes a plain static site to `out/` — HTML, CSS, JS, no Node
-server needed. Upload the **contents** of `out/` to `public_html` in hPanel,
-exactly like the old single-file site.
+That builds and force-pushes `out/` to `gh-pages`. Live in about a minute.
+
+### DNS (set once, at Hostinger hPanel → Domains → DNS Zone)
+
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `amzsavvyllc-glitch.github.io` |
+
+Remove the old `A @ → 195.35.38.156` record. **Do not touch MX or TXT records** —
+those carry email and domain verification, and they are unaffected by hosting.
+
+Once DNS resolves, tick **Enforce HTTPS** in repo Settings → Pages (GitHub
+issues the certificate free, but only after the domain points at it).
+
+### Two things that will break Pages if lost
+
+- `public/.nojekyll` — without it GitHub runs Jekyll, which skips any folder
+  starting with `_`, including Next's `_next/`. The site loads with no CSS/JS.
+- `public/CNAME` — holds the custom domain. If it disappears from a deploy,
+  Pages reverts to the `github.io` address.
+
+`npm run deploy` checks both are present before pushing.
+
+### Automatic deploys (optional)
+
+`.github/workflows/deploy.yml` is written and ready but **not committed** — the
+current `gh` token lacks the `workflow` scope, so GitHub rejects the push. To
+turn on build-on-push:
+
+```bash
+gh auth refresh -s workflow
+```
+
+then remove `.github/workflows/` from `.gitignore` and commit the file.
 
 ## Where the content lives
 
