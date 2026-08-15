@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# Build the static site and publish it to the gh-pages branch.
+# Build the static site and publish it to Cloudflare Pages (the LIVE host).
 #
 #   npm run deploy
 #
-# Source code lives on `main`; the built site lives on `gh-pages`.
-# GitHub Pages serves gh-pages at https://amzsavvy.com
+# amzsavvy.com is served by the Cloudflare Pages project `amz-savvy-website`.
+# For the old GitHub Pages host (kept only as a rollback) see deploy-github.sh.
 set -euo pipefail
 
-REPO="https://github.com/amzsavvyllc-glitch/amz-savvy-website.git"
+PROJECT="amz-savvy-website"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 cd "$ROOT"
@@ -15,22 +15,21 @@ cd "$ROOT"
 echo "▸ Building…"
 npm run build
 
-# CNAME + .nojekyll live in public/ so they are copied into out/ automatically.
-# .nojekyll is REQUIRED: without it GitHub runs Jekyll, which ignores any
-# directory starting with an underscore — including Next's _next/ — and the
-# site loads with no CSS or JS.
-for f in CNAME .nojekyll; do
-  [ -f "out/$f" ] || { echo "✗ out/$f missing — check public/$f"; exit 1; }
-done
+# The GitHub rollback script inits a git repo inside out/ so it can push a
+# gh-pages branch. If that directory survives, wrangler uploads the whole
+# .git folder as public static files. Always clear it first.
+rm -rf out/.git
 
-echo "▸ Publishing to gh-pages…"
-cd out
-rm -rf .git
-git init -q
-git checkout -q -b gh-pages
-git add -A
-git -c user.email="amzsavvy.llc@gmail.com" -c user.name="AMZ Savvy" \
-    commit -q -m "Deploy $(date -u '+%Y-%m-%d %H:%M UTC')"
-git push -q -f "$REPO" gh-pages
+if [ ! -f out/index.html ]; then
+  echo "✗ out/index.html missing — build did not produce a site"; exit 1
+fi
 
-echo "✓ Deployed. Live in ~1 minute at https://amzsavvy.com"
+echo "▸ Deploying to Cloudflare Pages…"
+npx wrangler pages deploy out \
+  --project-name="$PROJECT" \
+  --branch=main \
+  --commit-dirty=true
+
+echo
+echo "✓ Deployed. Live at https://amzsavvy.com (and https://www.amzsavvy.com)"
+echo "  If it 401s, re-auth with: npx wrangler login"

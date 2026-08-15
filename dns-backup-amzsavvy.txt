@@ -1,0 +1,49 @@
+# amzsavvy.com authoritative DNS snapshot
+# taken 2026-08-15 13:32 UTC from ns1.dns-parking.com
+# SOURCE OF TRUTH for any nameserver migration - every line must exist on the new provider
+
+## A
+amzsavvy.com.		14400	IN	A	185.199.109.153
+amzsavvy.com.		14400	IN	A	185.199.111.153
+amzsavvy.com.		14400	IN	A	185.199.110.153
+amzsavvy.com.		14400	IN	A	185.199.108.153
+
+## AAAA
+amzsavvy.com.		14400	IN	AAAA	2606:50c0:8001::153
+amzsavvy.com.		14400	IN	AAAA	2606:50c0:8003::153
+amzsavvy.com.		14400	IN	AAAA	2606:50c0:8000::153
+amzsavvy.com.		14400	IN	AAAA	2606:50c0:8002::153
+
+## MX
+amzsavvy.com.		3600	IN	MX	10 mx1.titan.email.
+amzsavvy.com.		3600	IN	MX	20 mx2.titan.email.
+
+## TXT
+amzsavvy.com.		3600	IN	TXT	"v=spf1 include:spf.titan.email ~all"
+
+## NS
+amzsavvy.com.		86400	IN	NS	ns1.dns-parking.com.
+amzsavvy.com.		86400	IN	NS	ns2.dns-parking.com.
+
+## SOA
+amzsavvy.com.		3600	IN	SOA	ns1.dns-parking.com. dns.hostinger.com. 2026081301 10000 2400 604800 600
+
+## subdomain checks
+# www
+www.amzsavvy.com.	300	IN	CNAME	amzsavvyllc-glitch.github.io.
+www.amzsavvy.com.	3789	IN	HINFO	"RFC8482" ""
+# mail
+mail.amzsavvy.com.	3789	IN	HINFO	"RFC8482" ""
+# ftp
+ftp.amzsavvy.com.	3789	IN	HINFO	"RFC8482" ""
+# autodiscover
+autodiscover.amzsavvy.com. 3789	IN	HINFO	"RFC8482" ""
+# _dmarc
+_dmarc.amzsavvy.com.	3789	IN	HINFO	"RFC8482" ""
+# titan1._domainkey
+titan1._domainkey.amzsavvy.com.	3789 IN	HINFO	"RFC8482" ""
+# titan2._domainkey
+titan2._domainkey.amzsavvy.com.	300 IN	TXT	"v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCwO/uI2kvfXTxTGFqxNiTSligWXh1f3MDgFKz+SirgjCRTR2asEBomLW18u/lGpjN+5Ix1TK0S4K5tJtU2dK966fM29+pY3lpGBsdg1IoSj3eJTUG/8dyohdI3p5cqbEKxzB/0Bs+oKC0PMOFHFpZBA2mIgXziTvUC/TqbWUe/pQIDAQAB"
+titan2._domainkey.amzsavvy.com.	3789 IN	HINFO	"RFC8482" ""
+# selector1._domainkey
+selector1._domainkey.amzsavvy.com. 3789	IN HINFO "RFC8482" ""

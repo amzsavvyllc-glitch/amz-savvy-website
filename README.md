@@ -16,12 +16,10 @@ Serves on <http://localhost:3200> (see `~/.claude/launch.json` → `amz-savvy-v2
 
 ## Deploy
 
-Hosting is **GitHub Pages** (free). The domain stays registered at Hostinger —
-only its DNS records point at GitHub.
+Hosting is **Cloudflare Pages** (project `amz-savvy-website`). The domain is
+still *registered* at Hostinger; only its DNS is on Cloudflare.
 
-- Repo: <https://github.com/amzsavvyllc-glitch/amz-savvy-website>
-- `main` = source, `gh-pages` = the built site GitHub serves
-- Live at <https://amzsavvy.com>
+Live at <https://amzsavvy.com> and <https://www.amzsavvy.com>.
 
 To ship a change:
 
@@ -29,44 +27,65 @@ To ship a change:
 npm run deploy
 ```
 
-That builds and force-pushes `out/` to `gh-pages`. Live in about a minute.
+Builds and uploads `out/` to Cloudflare Pages. Live in well under a minute.
 
-### DNS (set once, at Hostinger hPanel → Domains → DNS Zone)
+If it returns 401, re-authenticate with `npx wrangler login`.
 
-| Type | Name | Value |
+### Infrastructure
+
+| Thing | Value |
+| --- | --- |
+| Cloudflare account | `amzsavvy.llc@gmail.com` |
+| Zone | `amzsavvy.com` (active, Free plan) |
+| Nameservers | `bonnie.ns.cloudflare.com`, `quincy.ns.cloudflare.com` |
+| Pages project | `amz-savvy-website` → `amz-savvy-website.pages.dev` |
+| Registrar | Hostinger (unchanged) |
+
+DNS zone (6 records + DMARC): apex and `www` are CNAMEs to
+`amz-savvy-website.pages.dev` (proxied; Cloudflare flattens the apex). The rest
+is email — see below.
+
+### ⚠️ Email records — do not delete
+
+| Type | Name | Purpose |
 | --- | --- | --- |
-| A | `@` | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| CNAME | `www` | `amzsavvyllc-glitch.github.io` |
+| MX | `@` | `mx1.titan.email` (10) |
+| MX | `@` | `mx2.titan.email` (20) |
+| TXT | `@` | SPF — `v=spf1 include:spf.titan.email ~all` |
+| TXT | `titan2._domainkey` | DKIM signing key |
+| TXT | `_dmarc` | `v=DMARC1; p=none; …` (monitoring) |
 
-Remove the old `A @ → 195.35.38.156` record. **Do not touch MX or TXT records** —
-those carry email and domain verification, and they are unaffected by hosting.
+Mail runs on **Titan**. Cloudflare's automatic DNS scan during migration
+**missed the DKIM record** — it only probes common names and never finds DKIM
+selectors. A pre-migration snapshot is kept at `dns-backup-amzsavvy.txt`. If DNS
+is ever moved again, diff the new zone against that file before switching
+nameservers.
 
-Once DNS resolves, tick **Enforce HTTPS** in repo Settings → Pages (GitHub
-issues the certificate free, but only after the domain points at it).
+DMARC is deliberately at `p=none` (monitor only, nothing gets rejected). It has
+no `rua=` reporting address yet — that needs a real mailbox **on amzsavvy.com**;
+a Gmail address will not work without an authorisation record on Google's side.
+Once reports look clean, tighten to `p=quarantine`.
 
-### Two things that will break Pages if lost
+### Rollback to GitHub Pages
 
-- `public/.nojekyll` — without it GitHub runs Jekyll, which skips any folder
-  starting with `_`, including Next's `_next/`. The site loads with no CSS/JS.
-- `public/CNAME` — holds the custom domain. If it disappears from a deploy,
-  Pages reverts to the `github.io` address.
-
-`npm run deploy` checks both are present before pushing.
-
-### Automatic deploys (optional)
-
-`.github/workflows/deploy.yml` is written and ready but **not committed** — the
-current `gh` token lacks the `workflow` scope, so GitHub rejects the push. To
-turn on build-on-push:
+The GitHub Pages copy still exists at
+<https://github.com/amzsavvyllc-glitch/amz-savvy-website> (`gh-pages` branch).
 
 ```bash
-gh auth refresh -s workflow
+npm run deploy:github
 ```
 
-then remove `.github/workflows/` from `.gitignore` and commit the file.
+That refreshes the fallback but does **not** make it live. To actually roll
+back, point the Hostinger nameservers back to `ns1.dns-parking.com` /
+`ns2.dns-parking.com`.
+
+Two files exist only for that fallback and must survive in `public/`:
+
+- `.nojekyll` — without it GitHub runs Jekyll, which skips any folder starting
+  with `_`, including Next's `_next/`, and the site loads with no CSS or JS.
+- `CNAME` — holds the custom domain for GitHub Pages.
+
+Both are harmless on Cloudflare. `deploy:github` checks for them before pushing.
 
 ## Where the content lives
 
