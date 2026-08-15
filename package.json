@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "bash scripts/deploy.sh",
-    "deploy:github": "bash scripts/deploy-github.sh"
+    "deploy:github": "bash scripts/deploy-github.sh",
+    "deploy:manual": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

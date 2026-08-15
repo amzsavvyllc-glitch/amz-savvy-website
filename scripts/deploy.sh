@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build the static site and publish it to Cloudflare Pages (the LIVE host).
+# MANUAL/EMERGENCY deploy. The normal path is `git push` — Cloudflare builds.
 #
 #   npm run deploy
 #
@@ -7,7 +7,7 @@
 # For the old GitHub Pages host (kept only as a rollback) see deploy-github.sh.
 set -euo pipefail
 
-PROJECT="amz-savvy-website"
+PROJECT="amz-savvy-site"
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 cd "$ROOT"

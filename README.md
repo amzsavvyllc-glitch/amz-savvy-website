@@ -21,15 +21,37 @@ still *registered* at Hostinger; only its DNS is on Cloudflare.
 
 Live at <https://amzsavvy.com> and <https://www.amzsavvy.com>.
 
-To ship a change:
+### To ship a change: just push
 
 ```bash
-npm run deploy
+git push
 ```
 
-Builds and uploads `out/` to Cloudflare Pages. Live in well under a minute.
+That's it. Cloudflare is connected to this GitHub repo, pulls the commit, runs
+`npm run build` on its own builders and publishes the result. **Nothing runs on
+your computer** — you can edit a file in GitHub's web UI from a phone and the
+site rebuilds itself.
 
-If it returns 401, re-authenticate with `npx wrangler login`.
+GitHub holds the code, content and history. Cloudflare builds and hosts.
+
+Build settings on Cloudflare (already configured):
+
+| Setting | Value |
+| --- | --- |
+| Build command | `npm run build` |
+| Output directory | `out` |
+| Production branch | `main` |
+| Node | `22` (pinned by `.node-version`) |
+
+### Manual deploy (rarely needed)
+
+```bash
+npm run deploy:manual
+```
+
+Builds locally and uploads straight to Pages, bypassing Git. Only useful if
+GitHub is down or you need to publish something uncommitted. Requires
+`npx wrangler login`.
 
 ### Infrastructure
 
@@ -38,8 +60,13 @@ If it returns 401, re-authenticate with `npx wrangler login`.
 | Cloudflare account | `amzsavvy.llc@gmail.com` |
 | Zone | `amzsavvy.com` (active, Free plan) |
 | Nameservers | `bonnie.ns.cloudflare.com`, `quincy.ns.cloudflare.com` |
-| Pages project | `amz-savvy-website` → `amz-savvy-website.pages.dev` |
+| Pages project | **`amz-savvy-site`** (Git-connected) → `amz-savvy-site.pages.dev` |
+| GitHub repo | `amzsavvyllc-glitch/amz-savvy-website` |
 | Registrar | Hostinger (unchanged) |
+
+> There is an older Pages project called `amz-savvy-website` (direct-upload, no
+> domains attached). It is superseded and safe to delete. Cloudflare cannot
+> convert a direct-upload project to Git-connected, which is why a new one exists.
 
 DNS zone (6 records + DMARC): apex and `www` are CNAMEs to
 `amz-savvy-website.pages.dev` (proxied; Cloudflare flattens the apex). The rest
