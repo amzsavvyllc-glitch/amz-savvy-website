@@ -17,12 +17,27 @@ export const site = {
 } as const;
 
 export const nav = [
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Results", href: "#results" },
-  { label: "Calculator", href: "#calculator" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Services", href: "/#services" },
+  { label: "Process", href: "/#process" },
+  { label: "Calculator", href: "/#calculator" },
+  { label: "Answers", href: "/answers/" },
+  { label: "FAQ", href: "/#faq" },
 ] as const;
+
+/**
+ * Profile URLs for schema.org `sameAs`.
+ *
+ * This is how machines link "AMZ Savvy the website" to "AMZ Savvy the company"
+ * across the internet — the single strongest entity signal available, and the
+ * groundwork for being cited by AI search.
+ *
+ * Add ONLY real, live profiles. A sameAs pointing at a 404 or the wrong company
+ * actively weakens the entity rather than strengthening it.
+ *
+ * Good candidates: LinkedIn company page, Clutch, G2, Crunchbase,
+ * Google Business Profile, X, YouTube, Amazon Ads partner directory listing.
+ */
+export const profiles: string[] = [];
 
 /** Hero + trust band stats. Confirmed accurate by the owner 2026-07-30. */
 export const stats = [

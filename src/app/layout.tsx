@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter, Geist_Mono } from "next/font/google";
-import { site, faqs } from "@/lib/site-config";
+import { site, profiles, services } from "@/lib/site-config";
 import "./globals.css";
 
 /* Montserrat = brand display face. Inter = body (Montserrat is poor at
@@ -65,17 +65,45 @@ const jsonLd = {
       "@type": "ProfessionalService",
       "@id": `https://${site.domain}/#org`,
       name: site.name,
+      alternateName: "AMZ Savvy LLC",
       description,
       email: site.email,
       url: `https://${site.domain}`,
       slogan: site.tagline,
       areaServed: "Worldwide",
+      // Entity linking. Empty until real profiles exist — see site-config.ts.
+      ...(profiles.length > 0 ? { sameAs: profiles } : {}),
+      knowsAbout: [
+        "Amazon PPC",
+        "Amazon Advertising",
+        "Sponsored Products",
+        "Sponsored Brands",
+        "Sponsored Display",
+        "ACOS optimization",
+        "TACOS",
+        "Amazon SEO",
+        "Amazon keyword ranking",
+        "Amazon product launch",
+      ],
       serviceType: [
         "Amazon PPC Management",
         "Amazon SEO",
         "Amazon Product Launch",
         "Amazon Ranking",
       ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Amazon growth services",
+        itemListElement: services.map((s) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: s.title,
+            description: s.tagline,
+            provider: { "@id": `https://${site.domain}/#org` },
+          },
+        })),
+      },
     },
     {
       "@type": "WebSite",
@@ -84,17 +112,12 @@ const jsonLd = {
       name: site.name,
       publisher: { "@id": `https://${site.domain}/#org` },
     },
-    {
-      "@type": "FAQPage",
-      "@id": `https://${site.domain}/#faq`,
-      mainEntity: faqs.map((f) => ({
-        "@type": "Question",
-        name: f.q,
-        acceptedAnswer: { "@type": "Answer", text: f.a },
-      })),
-    },
   ],
 };
+/* NOTE: the homepage FAQPage schema deliberately lives in app/page.tsx, not
+   here. Emitting it from the layout put it on every route, so each answer page
+   claimed to contain the homepage's FAQs — inaccurate markup that dilutes the
+   page's real QAPage entity. Only site-wide entities belong in this graph. */
 
 export default function RootLayout({
   children,

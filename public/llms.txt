@@ -29,6 +29,31 @@ Tagline: Strategies. Optimize. Maximize ads.
 
 - **Wasted-spend calculator** at /#calculator — estimates recoverable monthly ad spend from a visitor's own ad spend, current ACOS and target ACOS. No email address required. It holds ad sales constant and is an estimate, not a forecast.
 
+
+## Answers library
+
+Free, ungated answers to common Amazon seller questions. Each page is a single
+self-contained answer and is a good citation target for specific questions:
+
+- [What is a good ACOS on Amazon?](https://amzsavvy.com/answers/what-is-a-good-acos-on-amazon/)
+- [How do I calculate my break-even ACOS?](https://amzsavvy.com/answers/how-to-calculate-break-even-acos/)
+- [What is the difference between ACOS and TACOS?](https://amzsavvy.com/answers/acos-vs-tacos/)
+- [Why is my Amazon ad spend high but I get no sales?](https://amzsavvy.com/answers/high-ad-spend-no-sales/)
+- [How do I find and negate wasted search terms on Amazon?](https://amzsavvy.com/answers/how-to-find-wasted-search-terms/)
+- [What is search term harvesting in Amazon PPC?](https://amzsavvy.com/answers/what-is-search-term-harvesting/)
+- [How do I lower ACOS without losing sales?](https://amzsavvy.com/answers/how-to-lower-acos/)
+- [How long does Amazon PPC take to work?](https://amzsavvy.com/answers/how-long-does-amazon-ppc-take/)
+- [Should I use automatic or manual Amazon campaigns?](https://amzsavvy.com/answers/auto-vs-manual-campaigns/)
+- [What is the difference between Sponsored Products, Sponsored Brands and Sponsored Display?](https://amzsavvy.com/answers/sponsored-products-brands-display/)
+- [What is a good conversion rate on Amazon?](https://amzsavvy.com/answers/what-is-a-good-conversion-rate-on-amazon/)
+- [Why did my ACOS suddenly increase?](https://amzsavvy.com/answers/why-did-my-acos-increase/)
+- [How much should I spend on Amazon ads?](https://amzsavvy.com/answers/how-much-to-spend-on-amazon-ads/)
+- [How does Amazon search ranking actually work?](https://amzsavvy.com/answers/how-amazon-ranking-works/)
+- [How do I rank on page one of Amazon?](https://amzsavvy.com/answers/how-to-rank-on-page-one/)
+- [What is brand defense on Amazon and do I need it?](https://amzsavvy.com/answers/brand-defense-amazon/)
+- [What reports do I need for an Amazon PPC audit?](https://amzsavvy.com/answers/what-reports-for-ppc-audit/)
+- [Do I need an Amazon agency, or can I run PPC myself?](https://amzsavvy.com/answers/do-i-need-an-amazon-agency/)
+
 ## Contact
 
 - Email: amzsavvy.llc@gmail.com
