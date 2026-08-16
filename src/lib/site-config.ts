@@ -36,8 +36,19 @@ export const nav = [
  *
  * Good candidates: LinkedIn company page, Clutch, G2, Crunchbase,
  * Google Business Profile, X, YouTube, Amazon Ads partner directory listing.
+ *
+ * Each URL below was loaded and confirmed live before being added.
+ * LinkedIn MUST be the public vanity URL (/company/amz-savvy/), not the numeric
+ * admin one — /company/101407041/ redirects logged-out visitors to a login wall,
+ * which is a dead end for a crawler.
  */
-export const profiles: string[] = [];
+export const profiles: string[] = [
+  // Amazon's own verified-partner listing — the strongest of the three, because
+  // Amazon publishes and verifies it, so it corroborates the FAQ claim below.
+  "https://advertising.amazon.com/partners/directory/details/amzn1.ads1.ma1.20ezhmglurcer9oabjewtxrsg/AMZ-Savvy-LLC/",
+  "https://www.linkedin.com/company/amz-savvy/",
+  "https://www.fiverr.com/agencies/AMZSavvy",
+];
 
 /** Hero + trust band stats. Confirmed accurate by the owner 2026-07-30. */
 export const stats = [
