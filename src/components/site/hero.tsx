@@ -40,8 +40,6 @@ export function Hero() {
 
             <h1
               className="mt-6 text-balance text-4xl font-extrabold leading-[1.06] tracking-tight sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem]"
-              data-reveal
-              style={revealDelay(1)}
             >
               Stop paying Amazon for clicks that{" "}
               <span className="bg-gradient-to-br from-brand-300 via-brand-400 to-brand-600 bg-clip-text text-transparent">
@@ -51,8 +49,6 @@ export function Hero() {
 
             <p
               className="mt-6 max-w-xl text-lg leading-relaxed text-navy-200"
-              data-reveal
-              style={revealDelay(2)}
             >
               We rebuild Amazon PPC accounts around the keywords that actually
               make you money — then hold the rank with SEO. Most brands find

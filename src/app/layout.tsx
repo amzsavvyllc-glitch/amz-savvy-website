@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Inter, Geist_Mono } from "next/font/google";
+import { Montserrat, Inter } from "next/font/google";
 import { site, profiles, services } from "@/lib/site-config";
 import "./globals.css";
 
@@ -18,10 +18,6 @@ const inter = Inter({
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 const description =
   "AMZ Savvy is an Amazon Ads Verified Partner running SEO, PPC, launches and ranking for Amazon brands. Get a free audit that shows exactly where your ad spend is leaking.";
@@ -48,11 +44,13 @@ export const metadata: Metadata = {
     title: "AMZ Savvy — Amazon PPC & SEO Agency",
     description,
     siteName: site.name,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "AMZ Savvy — Amazon PPC & SEO agency" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AMZ Savvy — Amazon PPC & SEO Agency",
     description,
+    images: ["/og.png"],
   },
   robots: { index: true, follow: true },
 };
@@ -128,7 +126,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${montserrat.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${montserrat.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-navy-800">
         <script

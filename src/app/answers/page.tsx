@@ -21,11 +21,13 @@ export const metadata: Metadata = {
     title: "Amazon PPC & SEO Answers",
     description,
     url: `https://${site.domain}/answers/`,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "AMZ Savvy — Amazon PPC & SEO agency" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Amazon PPC & SEO Answers",
     description,
+    images: ["/og.png"],
   },
 };
 

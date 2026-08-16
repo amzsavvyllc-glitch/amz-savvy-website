@@ -34,7 +34,7 @@ export function Services() {
           title={
             <>
               Four levers. Pulled in the{" "}
-              <span className="text-brand-600">right order.</span>
+              <span className="text-brand-700">right order.</span>
             </>
           }
           sub="Most accounts don't need more spend — they need the spend pointed somewhere else, and a listing that converts once the click lands."
@@ -52,14 +52,14 @@ export function Services() {
               >
                 <div className="pointer-events-none absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-gradient-to-r from-brand-500 to-brand-400 transition-transform duration-300 group-hover:scale-x-100" />
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 text-brand-600 transition-colors group-hover:bg-brand-500 group-hover:text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 text-brand-700 transition-colors group-hover:bg-brand-500 group-hover:text-white">
                   <Icon className="h-6 w-6" />
                 </div>
 
                 <h3 className="mt-5 text-lg font-extrabold text-navy-800">
                   {s.title}
                 </h3>
-                <p className="mt-1.5 text-sm font-medium text-brand-600">
+                <p className="mt-1.5 text-sm font-medium text-brand-700">
                   {s.tagline}
                 </p>
 
@@ -143,7 +143,6 @@ export function Process() {
    ================================================================ */
 export function Results() {
   const [active, setActive] = useState(0);
-  const play = playbooks[active];
 
   return (
     <section id="results" className="bg-white py-20 lg:py-28">
@@ -153,7 +152,7 @@ export function Results() {
           title={
             <>
               Tell us what&apos;s broken. Here&apos;s{" "}
-              <span className="text-brand-600">exactly what we do.</span>
+              <span className="text-brand-700">exactly what we do.</span>
             </>
           }
           sub="Pick the problem that sounds like your account."
@@ -164,8 +163,10 @@ export function Results() {
           {playbooks.map((p, i) => (
             <button
               key={p.category}
+              id={`playbook-tab-${i}`}
               role="tab"
               aria-selected={active === i}
+              aria-controls={`playbook-panel-${i}`}
               onClick={() => setActive(i)}
               className={cn(
                 "rounded-full px-5 py-2.5 text-sm font-bold transition-all",
@@ -179,35 +180,45 @@ export function Results() {
           ))}
         </div>
 
-        <div
-          className="mt-6 grid gap-8 rounded-3xl border border-navy-100 bg-navy-50/60 p-7 lg:grid-cols-5 lg:p-10"
-          data-reveal
-        >
-          <div className="lg:col-span-3">
-            <h3 className="text-balance text-2xl font-extrabold leading-tight text-navy-800 lg:text-3xl">
-              {play.headline}
-            </h3>
-            <p className="mt-4 leading-relaxed text-navy-500">{play.body}</p>
-            <CtaButton href="#book" variant="dark" className="mt-7">
-              Get this run on my account
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </CtaButton>
-          </div>
+        {/* All three panels are rendered so crawlers and AI retrieval see every
+            playbook. Only visibility toggles — conditional rendering would keep
+            two-thirds of this copy out of the HTML entirely. */}
+        {playbooks.map((p, i) => (
+          <div
+            key={p.category}
+            id={`playbook-panel-${i}`}
+            role="tabpanel"
+            aria-labelledby={`playbook-tab-${i}`}
+            hidden={active !== i}
+            className="mt-6 grid gap-8 rounded-3xl border border-navy-100 bg-navy-50/60 p-7 lg:grid-cols-5 lg:p-10"
+            data-reveal
+          >
+            <div className="lg:col-span-3">
+              <h3 className="text-balance text-2xl font-extrabold leading-tight text-navy-800 lg:text-3xl">
+                {p.headline}
+              </h3>
+              <p className="mt-4 leading-relaxed text-navy-500">{p.body}</p>
+              <CtaButton href="#book" variant="dark" className="mt-7">
+                Get this run on my account
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </CtaButton>
+            </div>
 
-          <ol className="space-y-3 lg:col-span-2">
-            {play.steps.map((s, i) => (
-              <li
-                key={s}
-                className="flex gap-3.5 rounded-xl border border-navy-100 bg-white p-4"
-              >
-                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/12 font-heading text-xs font-extrabold text-brand-700">
-                  {i + 1}
-                </span>
-                <span className="text-sm leading-relaxed text-navy-600">{s}</span>
-              </li>
-            ))}
-          </ol>
-        </div>
+            <ol className="space-y-3 lg:col-span-2">
+              {p.steps.map((step, n) => (
+                <li
+                  key={step}
+                  className="flex gap-3.5 rounded-xl border border-navy-100 bg-white p-4"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/12 font-heading text-xs font-extrabold text-brand-700">
+                    {n + 1}
+                  </span>
+                  <span className="text-sm leading-relaxed text-navy-600">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
       </div>
     </section>
   );

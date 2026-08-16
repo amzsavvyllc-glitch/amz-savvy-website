@@ -194,8 +194,11 @@ export function SectionHeading({
   as?: "h1" | "h2";
   className?: string;
 }) {
+  // An h1 is the page title and the likely LCP element. Hiding it until
+  // hydration pushes LCP from first paint to post-JS, which is a ranking cost.
+  const revealProps = Heading === "h1" ? {} : { "data-reveal": true };
   return (
-    <div className={cn("max-w-2xl", className)} data-reveal>
+    <div className={cn("max-w-2xl", className)} {...revealProps}>
       {eyebrow && (
         <div
           className={cn(

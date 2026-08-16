@@ -38,7 +38,7 @@ export function Faq() {
                   </span>
                   <ChevronDown
                     className={cn(
-                      "h-5 w-5 shrink-0 text-brand-600 transition-transform duration-300",
+                      "h-5 w-5 shrink-0 text-brand-700 transition-transform duration-300",
                       isOpen && "rotate-180",
                     )}
                   />
@@ -226,7 +226,7 @@ export function Contact() {
   }
 
   const field =
-    "w-full rounded-xl border border-navy-200 bg-white px-4 py-3 text-navy-800 placeholder:text-navy-300 outline-none transition-colors focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20";
+    "w-full rounded-xl border border-navy-200 bg-white px-4 py-3 text-navy-800 placeholder:text-navy-400 outline-none transition-colors focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20";
 
   return (
     <section id="contact" className="bg-navy-50 py-20 lg:py-28">
@@ -242,10 +242,10 @@ export function Contact() {
             <div className="mt-8 space-y-3" data-reveal>
               <a
                 href={`mailto:${site.email}`}
-                className="flex items-center gap-3 text-navy-600 transition-colors hover:text-brand-600"
+                className="flex items-center gap-3 text-navy-600 transition-colors hover:text-brand-700"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-navy-100">
-                  <Mail className="h-5 w-5 text-brand-600" />
+                  <Mail className="h-5 w-5 text-brand-700" />
                 </span>
                 {site.email}
               </a>
@@ -253,10 +253,10 @@ export function Contact() {
                 href={`https://wa.me/${site.whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 text-navy-600 transition-colors hover:text-brand-600"
+                className="flex items-center gap-3 text-navy-600 transition-colors hover:text-brand-700"
               >
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-navy-100">
-                  <MessageCircle className="h-5 w-5 text-brand-600" />
+                  <MessageCircle className="h-5 w-5 text-brand-700" />
                 </span>
                 +{site.whatsapp}
               </a>
@@ -284,17 +284,26 @@ export function Contact() {
                 <input type="text" name="_honey" className="hidden" tabIndex={-1} aria-hidden="true" />
 
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <input name="name" required placeholder="Your name" className={field} />
-                  <input
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="Email"
-                    className={field}
-                  />
+                  <div>
+                    <label htmlFor="cf-name" className="sr-only">Your name</label>
+                    <input id="cf-name" name="name" required placeholder="Your name" className={field} />
+                  </div>
+                  <div>
+                    <label htmlFor="cf-email" className="sr-only">Email</label>
+                    <input
+                      id="cf-email"
+                      name="email"
+                      type="email"
+                      required
+                      placeholder="Email"
+                      className={field}
+                    />
+                  </div>
                 </div>
-                <input name="brand" placeholder="Brand or storefront" className={field} />
-                <select name="spend" className={field} defaultValue="">
+                <label htmlFor="cf-brand" className="sr-only">Brand or storefront</label>
+                <input id="cf-brand" name="brand" placeholder="Brand or storefront" className={field} />
+                <label htmlFor="cf-spend" className="sr-only">Monthly ad spend</label>
+                <select id="cf-spend" name="spend" className={field} defaultValue="">
                   <option value="" disabled>
                     Monthly ad spend
                   </option>
@@ -304,7 +313,9 @@ export function Contact() {
                   <option>$50k+</option>
                   <option>Not running ads yet</option>
                 </select>
+                <label htmlFor="cf-message" className="sr-only">What is the main problem right now?</label>
                 <textarea
+                  id="cf-message"
                   name="message"
                   rows={4}
                   required

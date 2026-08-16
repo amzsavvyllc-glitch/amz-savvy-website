@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: a.question,
       description,
       url,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "AMZ Savvy — Amazon PPC & SEO agency" }],
     },
     // Without these, Twitter/X cards fall through to the homepage's copy while
     // the OG tags describe this page — two cards, two different subjects.
@@ -49,6 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: a.question,
       description,
+      images: ["/og.png"],
     },
   };
 }

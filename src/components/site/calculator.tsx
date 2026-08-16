@@ -43,7 +43,7 @@ function Slider({
         value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         aria-label={label}
-        className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full outline-none
+        className="mt-3 h-2 w-full cursor-pointer appearance-none rounded-full outline-none focus-visible:ring-2 focus-visible:ring-brand-700 focus-visible:ring-offset-2
           [&::-webkit-slider-thumb]:h-5 [&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:appearance-none
           [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-2
           [&::-webkit-slider-thumb]:border-white [&::-webkit-slider-thumb]:bg-brand-600
@@ -95,7 +95,7 @@ export function Calculator() {
           title={
             <>
               What is your current ACOS{" "}
-              <span className="text-brand-600">actually costing you?</span>
+              <span className="text-brand-700">actually costing you?</span>
             </>
           }
           sub="Move the sliders to your real numbers. This is the same arithmetic we run on day one of an audit — no email required."
