@@ -9,6 +9,8 @@ import {
   Target,
   TrendingUp,
   Check,
+  BadgeCheck,
+  Star,
 } from "lucide-react";
 import {
   deliverables,
@@ -16,6 +18,7 @@ import {
   process,
   services,
   testimonials,
+  reviewSource,
 } from "@/lib/site-config";
 import { CtaButton, SectionHeading, revealDelay } from "./primitives";
 import { cn } from "@/lib/utils";
@@ -358,7 +361,37 @@ export function Testimonials() {
   return (
     <section className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading eyebrow="In their words" title="What sellers say" />
+        <SectionHeading
+          eyebrow="In their words"
+          title="What sellers say"
+          sub="Every quote below is a real review left by a paying client on a completed order — not a line we wrote. Open the source and you can find each one."
+        />
+
+        {/* Attribution band. The rating is shown as plain visible text and
+            linked to its source; it is intentionally not marked up as
+            aggregateRating — see reviewSource in site-config.ts. */}
+        <div className="mt-8 flex justify-center" data-reveal>
+          <a
+            href={reviewSource.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 rounded-full border border-navy-100 bg-navy-50 px-5 py-2.5 text-sm transition-colors hover:border-brand-500/40 hover:bg-white"
+          >
+            <span className="inline-flex items-center gap-1.5">
+              <Star className="h-4 w-4 fill-brand-500 text-brand-500" />
+              <span className="font-extrabold text-navy-800">
+                {reviewSource.rating}
+              </span>
+              <span className="text-navy-500">
+                from {reviewSource.count} reviews on {reviewSource.platform}
+              </span>
+            </span>
+            <span className="font-semibold text-brand-600 group-hover:underline">
+              Read them all
+            </span>
+          </a>
+        </div>
+
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <figure
@@ -374,6 +407,10 @@ export function Testimonials() {
               <figcaption className="mt-6 border-t border-navy-100 pt-5">
                 <div className="font-bold text-navy-800">{t.name}</div>
                 <div className="text-sm text-navy-400">{t.role}</div>
+                <div className="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600">
+                  <BadgeCheck className="h-4 w-4" />
+                  Verified {reviewSource.platform} review
+                </div>
               </figcaption>
             </figure>
           ))}

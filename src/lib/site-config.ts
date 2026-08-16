@@ -172,27 +172,86 @@ export const playbooks = [
 ] as const;
 
 /**
- * TESTIMONIALS — intentionally empty.
+ * Where the testimonials below come from.
  *
- * The section renders ONLY when this array has entries, so the page is
- * complete without it and gains a testimonial block the moment one exists.
+ * Shown as visible text with a link, so any visitor can open the source and
+ * find the exact review. Deliberately NOT emitted as schema.org
+ * `aggregateRating`: Google's structured-data policy treats a rating collected
+ * on a third-party site and marked up on your own as self-serving, and it can
+ * cost the site its rich results. Visible text + link is the compliant form.
+ */
+export const reviewSource = {
+  platform: "Fiverr",
+  url: "https://www.fiverr.com/agencies/AMZSavvy",
+  rating: "4.9",
+  count: 216,
+} as const;
+
+/**
+ * TESTIMONIALS — every one is a real, public, verified-purchase review.
  *
- * To add a real one:
- *   1. Get the client's written OK to publish their name, role and words.
- *   2. Push an object here. That is the whole job — no component edits.
+ * Sourced from the Fiverr agency profile (see `reviewSource`), where each is
+ * tied to a completed paid order and attributed to the buyer's own public
+ * username. Quotes are VERBATIM, including the reviewers' own capitalisation
+ * and typos; where a long review is shortened, the cut is marked with an
+ * ellipsis and never changes the meaning.
  *
- *   { quote: "…their actual words…", name: "Real Name", role: "Founder, Their Brand" }
+ * The FTC's Consumer Reviews and Testimonials Rule (16 CFR 465) is what these
+ * constraints exist for — it treats invented endorsers, and edits that distort
+ * what a reviewer actually said, as deceptive. So:
  *
- * Anonymised is fine and still real — "Founder, supplements brand" works when a
- * client won't name their brand publicly. Do not add entries for people who did
- * not say these things: the FTC's Consumer Reviews and Testimonials Rule
- * (16 CFR 465) treats testimonials from non-existent endorsers as deceptive.
+ *   - Never add an entry for someone who did not write it.
+ *   - Never "tidy up" a quote into something the reviewer did not say.
+ *   - Never trim a qualifier that changes the sense (a 3-star review edited
+ *     down to its one warm sentence is the textbook violation).
+ *
+ * Direct client quotes are welcome here too — get the client's written OK to
+ * publish their name, role and words first, then push an object. Anonymised is
+ * fine and still real: "Founder, supplements brand" works when a client won't
+ * be named.
  */
 export const testimonials: {
   quote: string;
   name: string;
   role: string;
-}[] = [];
+}[] = [
+  {
+    quote:
+      "We began our partnership almost a year ago, and since then the Amazon Savvy team and Mehran have been the backbone of our marketing and operations for our brands on Amazon. As a demanding client with high standards who often parts ways with partners unable to deliver excellence, I can confidently say after a year that this team has exceeded expectations. … Speaking as a senior brand manager who has managed six-figure sales on Amazon, I can attest to their exceptional capabilities.",
+    name: "benja_team",
+    role: "Senior brand manager, Germany · Ongoing collaboration",
+  },
+  {
+    quote:
+      "Outstanding first month. We have tried several high dollar, recommended agencies in the US, and this has been the best team so far. This team went above and beyond our expectations. Ran a deep analysis, found issues, and improved every day. Excellent communication.",
+    name: "jmasters",
+    role: "Amazon seller, United States · Sponsored ads",
+  },
+  {
+    quote:
+      "I hired this group to assist with my Amazon store. Primarily to run ads. They are constantly testing new campaigns and niches in my market to acquire sales and also have returning customers. I am seeing that! I am blown away their work ethic and communication. … My numbers in Amazon are proof!",
+    name: "russellhtayler",
+    role: "Amazon seller, United States · Ongoing collaboration",
+  },
+  {
+    quote:
+      "His team is exceptional, in market depth and research, the knowledge is incomparable to any other freelancers in this platform, the professionalism is eye opening and his guidance before onboarding with them was a privilege to have.",
+    name: "engr_sufy",
+    role: "Amazon seller, Saudi Arabia",
+  },
+  {
+    quote:
+      "Amz Savvy not only saved my Amazon FBA business but also EXCEEDED my expectations with their professionalism and deep understanding of E-commerce management. Their quick responsiveness and proactive communication made the project seamless.",
+    name: "pprsgp",
+    role: "FBA seller, Australia",
+  },
+  {
+    quote:
+      "I'm so impressed with how quickly and efficiently this was done! AMZ Savvy nailed every detail and delivered exactly what I was looking for. The listing is perfectly optimized, and the whole process was super smooth.",
+    name: "arsalanriaz1",
+    role: "Amazon seller, Qatar · Listing optimization",
+  },
+];
 
 /** What the client actually receives. Their own deliverables — not client claims. */
 export const deliverables = [
