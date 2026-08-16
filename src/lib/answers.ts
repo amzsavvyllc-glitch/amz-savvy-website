@@ -469,6 +469,230 @@ export const answers: Answer[] = [
     related: ["how-to-find-wasted-search-terms", "do-i-need-an-amazon-agency", "high-ad-spend-no-sales"],
   },
   {
+    slug: "why-zero-impressions",
+    question: "Why is my Amazon campaign getting zero impressions?",
+    short:
+      "Zero impressions almost always means your ad is never entering the auction, not that it is losing it. The usual causes are a bid far below the going rate for your keywords, a listing that is not indexed for the terms you are targeting, no Buy Box on the advertised ASIN, the campaign not actually being live because of dates or budget, or ineligibility such as needing Brand Registry for Sponsored Brands.",
+    category: "PPC",
+    updated: "2026-08-15",
+    sections: [
+      {
+        heading: "Work through these in order",
+        body: [
+          "Check the campaign is genuinely running: status Delivering, start date in the past, no end date already passed, and daily budget not exhausted early in the day.",
+          "Check Buy Box. If you do not hold the Featured Offer on that ASIN, Sponsored Products will generally not serve at all. This is the single most common cause people miss, because the campaign looks perfectly healthy.",
+          "Check indexing. If your listing is not indexed for the keyword, targeting it produces nothing. Search the exact keyword plus your ASIN in the Amazon search box to confirm.",
+          "Check the bid against reality. A bid well under the suggested range for a competitive term will simply never win a placement. Raise it temporarily to test whether impressions appear at all.",
+          "Check eligibility. Sponsored Brands and Sponsored Display require Brand Registry. A campaign created without it can sit there looking active and never serve.",
+        ],
+      },
+      {
+        heading: "Low impressions is a different problem",
+        body: [
+          "If you are getting a trickle rather than nothing, you are entering the auction and losing it. That is a bid and relevance issue, not an eligibility issue, and the fix is bid strategy rather than the checklist above.",
+        ],
+      },
+      {
+        heading: "Give it time before concluding anything",
+        body: [
+          "New campaigns can take up to about 48 hours to begin serving consistently, and reporting itself lags. Judging a campaign a few hours after launch produces a lot of false alarms.",
+        ],
+      },
+    ],
+    related: ["negative-keywords-not-working", "how-to-check-keyword-indexing", "auto-vs-manual-campaigns"],
+  },
+  {
+    slug: "negative-keywords-not-working",
+    question: "Why are my negative keywords not working?",
+    short:
+      "Negatives usually are working — the traffic you are still seeing comes from close variants, from a different campaign that has no negatives applied, or from reporting lag. Negative exact only blocks that precise term, so plurals, misspellings and word-order changes still get through unless you use negative phrase.",
+    category: "PPC",
+    updated: "2026-08-15",
+    sections: [
+      {
+        heading: "The three real causes",
+        body: [
+          "Close variants: Amazon matches plurals, misspellings and small variations. A negative exact on one spelling leaves every variation live. Negative phrase catches the family.",
+          "Wrong level or wrong campaign: a negative added to one ad group does not apply to the others, and the spend you are seeing may be coming from a completely different campaign targeting the same term.",
+          "Reporting lag: search term data is delayed and sales are attributed up to 7 days after a click. Spend appearing today may have happened before the negative existed.",
+        ],
+      },
+      {
+        heading: "How to confirm which one it is",
+        body: [
+          "Pull the Search Term report and add the campaign and ad group columns. If the term appears under a campaign you did not negate, you have found it.",
+          "If it appears under the same ad group but as a slightly different string, it is close variants, and the fix is negative phrase rather than negative exact.",
+        ],
+      },
+    ],
+    related: ["how-to-find-wasted-search-terms", "why-zero-impressions", "what-is-search-term-harvesting"],
+  },
+  {
+    slug: "sudden-organic-rank-drop",
+    question: "Why did my organic rank suddenly drop on Amazon?",
+    short:
+      "A sudden rank drop usually traces to one of five things: you went out of stock or lost the Buy Box, your conversion rate fell, you edited the listing and lost indexing for a term, a competitor increased sales velocity on that keyword, or you were hit by a suppression or compliance flag. Check availability and Buy Box first — they are the fastest to confirm and the most common.",
+    category: "SEO",
+    updated: "2026-08-15",
+    sections: [
+      {
+        heading: "Check in this order",
+        body: [
+          "Stock and Buy Box. Going out of stock, even briefly, damages rank and recovery is not instant. Losing the Featured Offer has a similar effect.",
+          "Listing edits. If you changed the title or backend terms, you may have dropped a keyword you were indexed for. Compare against a saved copy and re-check indexing.",
+          "Conversion rate. If sessions held but conversion fell, something on the page changed — price, a new negative review, or a competitor undercutting you.",
+          "Account health. Policy flags, suppressed listings and restricted claims can remove you from results without an obvious notification.",
+        ],
+      },
+      {
+        heading: "What not to do",
+        body: [
+          "Do not rewrite the whole listing in a panic. If an edit caused the drop, further edits make the cause impossible to isolate. Change one thing, then wait for re-indexing before changing another.",
+        ],
+      },
+    ],
+    related: ["how-amazon-ranking-works", "how-to-check-keyword-indexing", "why-did-my-acos-increase"],
+  },
+  {
+    slug: "why-was-my-amazon-ad-rejected",
+    question: "Why was my Amazon ad rejected?",
+    short:
+      "Most rejections come from ad copy rather than the product: superlatives and unsubstantiated claims such as best or number one, references to price or promotions, ALL CAPS or excessive punctuation, mention of shipping or guarantees, or medical and health claims. Sponsored Brands headlines are moderated far more strictly than Sponsored Products, which have no custom copy to reject.",
+    category: "PPC",
+    updated: "2026-08-15",
+    sections: [
+      {
+        heading: "The usual offenders in headlines",
+        body: [
+          "Superlatives and rankings: best seller, number one, top rated. These need substantiation Amazon will not accept from you directly.",
+          "Price and promotion language: sale, discount, free shipping, cheapest. Pricing is handled by the listing, not the ad copy.",
+          "Formatting: all capitals, repeated exclamation marks, symbols used decoratively.",
+          "Claims about health outcomes, safety or guarantees, which face the tightest moderation of all.",
+        ],
+      },
+      {
+        heading: "If you believe the rejection is wrong",
+        body: [
+          "Rejections are partly automated and false positives happen. Resubmit once with the copy tightened, and if it fails again open a case rather than repeatedly resubmitting the same text.",
+          "Check the destination listing too. A suppressed or ineligible product can cause an ad rejection that reads as a copy problem.",
+        ],
+      },
+    ],
+    related: ["sponsored-products-brands-display", "why-zero-impressions", "brand-defense-amazon"],
+  },
+  {
+    slug: "roas-vs-acos",
+    question: "What is ROAS and how does it relate to ACOS?",
+    short:
+      "ROAS is revenue divided by ad spend; ACOS is ad spend divided by revenue. They are reciprocals of each other, so a 25% ACOS is a 4x ROAS and a 50% ACOS is a 2x ROAS. Convert between them with ROAS = 1 ÷ ACOS. Neither is better — Amazon reports ACOS by default, most other advertising platforms report ROAS.",
+    category: "Metrics",
+    updated: "2026-08-15",
+    sections: [
+      {
+        heading: "The conversion table",
+        body: [
+          "10% ACOS = 10x ROAS. 20% ACOS = 5x ROAS. 25% ACOS = 4x ROAS. 33% ACOS = 3x ROAS. 50% ACOS = 2x ROAS. 100% ACOS = 1x ROAS, meaning you spent exactly what you earned.",
+          "Because they are reciprocals, a small ACOS improvement at the low end is a large ROAS movement, which is why ROAS can look more dramatic in reporting.",
+        ],
+      },
+      {
+        heading: "Which one to manage against",
+        body: [
+          "Use whichever your team reads without converting in their head. What matters is comparing it against your break-even, not which format you picked.",
+          "If you run advertising outside Amazon, standardising on ROAS makes cross-channel comparison easier.",
+        ],
+      },
+    ],
+    related: ["what-is-a-good-acos-on-amazon", "acos-vs-tacos", "how-to-calculate-break-even-acos"],
+  },
+  {
+    slug: "how-to-check-keyword-indexing",
+    question: "How do I check if my listing is indexed for a keyword?",
+    short:
+      "Search Amazon for the exact keyword followed by your ASIN, for example: stainless steel water bottle B08XXXXXXX. If your product appears, you are indexed for that phrase. If nothing comes back, you are not indexed and no amount of advertising will make you rank organically for it.",
+    category: "SEO",
+    updated: "2026-08-15",
+    sections: [
+      {
+        heading: "Why this test matters before anything else",
+        body: [
+          "Indexing is binary and it is the precondition for ranking. Sellers routinely spend months trying to rank for a phrase their listing does not contain anywhere.",
+          "Run the test in the marketplace you are targeting, not just amazon.com, since indexing differs per marketplace.",
+        ],
+      },
+      {
+        heading: "If you are not indexed",
+        body: [
+          "Add the phrase naturally to the title, bullets or backend search terms, then re-test after Amazon has recrawled — usually a matter of days, not hours.",
+          "Do not add it multiple times. Once indexed, repetition adds nothing and damages readability, which hurts the click-through and conversion half of ranking.",
+        ],
+      },
+    ],
+    related: ["how-amazon-ranking-works", "sudden-organic-rank-drop", "how-to-rank-on-page-one"],
+  },
+  {
+    slug: "how-much-does-an-amazon-ppc-agency-cost",
+    question: "How much does an Amazon PPC agency cost?",
+    short:
+      "Amazon PPC agencies typically charge either a percentage of ad spend, commonly around 10–20%, or a flat monthly retainer that often falls in the low-to-mid four figures, sometimes with a performance component on top. The right question is not the headline fee but whether the efficiency gain exceeds it — at low ad spend it usually does not.",
+    category: "Strategy",
+    updated: "2026-08-15",
+    sections: [
+      {
+        heading: "The three common models",
+        body: [
+          "Percentage of ad spend: simple, but it rewards the agency for spending more of your money, so check how that conflict is handled.",
+          "Flat retainer: predictable, and does not penalise you for scaling. Usually banded by account size or ad spend.",
+          "Retainer plus performance: a smaller base with an upside tied to an agreed metric. Make sure the metric is one you actually care about — growth in profit, not growth in attributed revenue.",
+        ],
+      },
+      {
+        heading: "Do the arithmetic before you sign",
+        body: [
+          "If you spend $3,000 a month on ads, a 5-point ACOS improvement is worth about $150 a month, which does not cover any real retainer. At $30,000 a month the same improvement is worth $1,500 and the maths works.",
+          "Ask what is included, what reporting looks like, whether you keep the campaign structure and keyword lists if you leave, and whether it is month-to-month after an initial period.",
+        ],
+      },
+      {
+        heading: "Ranges vary, so treat any number as a starting point",
+        body: [
+          "Fees differ by marketplace, category complexity, number of ASINs and how much of the listing work is included. Any figure quoted online, including here, is an orientation rather than a quote.",
+        ],
+      },
+    ],
+    related: ["do-i-need-an-amazon-agency", "what-reports-for-ppc-audit", "how-much-to-spend-on-amazon-ads"],
+  },
+  {
+    slug: "how-many-clicks-before-pausing-keyword",
+    question: "How many clicks with no sales before I pause a keyword?",
+    short:
+      "Base the threshold on your conversion rate, not on a fixed number. If you convert at 10%, a sale is expected around every 10 clicks, so roughly 20–30 clicks with no orders is a real signal rather than bad luck. The widely repeated rule of 10 clicks is too aggressive for most accounts and kills keywords that were merely unlucky.",
+    category: "Metrics",
+    updated: "2026-08-15",
+    sections: [
+      {
+        heading: "Why a fixed rule misleads",
+        body: [
+          "At a 20% conversion rate, 10 clicks without a sale is unremarkable. At a 2% conversion rate, 10 clicks tells you almost nothing at all — you would expect roughly 50 clicks per sale.",
+          "Take your expected clicks per sale as 1 ÷ conversion rate, then wait for about two to three times that before judging a keyword.",
+        ],
+      },
+      {
+        heading: "Consider spend, not just clicks",
+        body: [
+          "A term with 40 cheap clicks and no orders has cost you little. A term with 12 expensive clicks may already have cost more than a sale is worth. Sorting by spend rather than clicks finds the real damage faster.",
+        ],
+      },
+      {
+        heading: "Lower the bid before removing it",
+        body: [
+          "Pausing removes the data. Reducing the bid keeps the keyword alive at a price where it can still be profitable, which is often the better first move for a term you believe in.",
+        ],
+      },
+    ],
+    related: ["how-to-find-wasted-search-terms", "how-to-lower-acos", "what-is-a-good-conversion-rate-on-amazon"],
+  },
+  {
     slug: "do-i-need-an-amazon-agency",
     question: "Do I need an Amazon agency, or can I run PPC myself?",
     short:
