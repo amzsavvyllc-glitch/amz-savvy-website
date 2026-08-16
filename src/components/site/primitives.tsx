@@ -183,12 +183,15 @@ export function SectionHeading({
   title,
   sub,
   tone = "light",
+  as: Heading = "h2",
   className,
 }: {
   eyebrow?: string;
   title: React.ReactNode;
   sub?: string;
   tone?: "light" | "dark";
+  /** Pages that use this as their page title must pass "h1". */
+  as?: "h1" | "h2";
   className?: string;
 }) {
   return (
@@ -204,14 +207,14 @@ export function SectionHeading({
           {eyebrow}
         </div>
       )}
-      <h2
+      <Heading
         className={cn(
           "text-balance text-3xl font-extrabold leading-[1.1] sm:text-4xl lg:text-5xl",
           tone === "dark" ? "text-white" : "text-navy-800",
         )}
       >
         {title}
-      </h2>
+      </Heading>
       {sub && (
         <p
           className={cn(

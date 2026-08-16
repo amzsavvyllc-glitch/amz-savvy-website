@@ -1,0 +1,19 @@
+# Cloudflare Pages reads this from the deployed root.
+# Copied from public/ into out/ automatically at build.
+
+# Content-hashed, immutable filenames — safe to cache for a year.
+# Cloudflare's default for these is only 4 hours, which fails Lighthouse's
+# "efficient cache policy" audit and re-validates ~180KB on every repeat visit.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  # script-src needs 'unsafe-inline' for Next's inline bootstrap and the JSON-LD
+  # blocks. connect-src covers the FormSubmit contact POST; frame-src the
+  # Calendly embed.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://assets.calendly.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://formsubmit.co https://calendly.com; frame-src https://calendly.com; base-uri 'self'; form-action 'self' https://formsubmit.co; object-src 'none'

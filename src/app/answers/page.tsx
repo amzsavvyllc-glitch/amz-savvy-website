@@ -7,11 +7,26 @@ import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/convert";
 import { RevealProvider, SectionHeading } from "@/components/site/primitives";
 
+const description =
+  "Straight answers to the questions Amazon sellers actually ask about ACOS, wasted ad spend, campaign structure, ranking and when an agency is worth it.";
+
 export const metadata: Metadata = {
   title: "Amazon PPC & SEO Answers",
-  description:
-    "Straight answers to the questions Amazon sellers actually ask about ACOS, wasted ad spend, campaign structure, ranking and when an agency is worth it.",
+  description,
   alternates: { canonical: "/answers/" },
+  // Without an explicit block this page inherits the layout's openGraph, which
+  // sets og:url to the homepage — contradicting this page's own canonical.
+  openGraph: {
+    type: "website",
+    title: "Amazon PPC & SEO Answers",
+    description,
+    url: `https://${site.domain}/answers/`,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amazon PPC & SEO Answers",
+    description,
+  },
 };
 
 /* A single FAQPage carrying every question, so one crawl of this index exposes
@@ -55,6 +70,7 @@ export default function AnswersIndex() {
           <div className="pointer-events-none absolute -right-32 top-10 h-[32rem] w-[32rem] rounded-full bg-brand-500/12 blur-[120px]" />
           <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
+              as="h1"
               tone="dark"
               eyebrow="Answers"
               title={

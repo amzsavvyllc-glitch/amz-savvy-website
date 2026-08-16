@@ -16,19 +16,39 @@ export function generateStaticParams() {
 // Next 16: route params arrive as a Promise.
 type Props = { params: Promise<{ slug: string }> };
 
+/** Trim to a word boundary near `max` — never mid-word, never mid-sentence if
+ *  a sentence end is close. A description cut at "bought at a los" looks broken
+ *  everywhere it is shown verbatim (Slack, WhatsApp and LinkedIn unfurls). */
+function metaDescription(text: string, max = 155): string {
+  if (text.length <= max) return text;
+  const window = text.slice(0, max + 1);
+  const sentenceEnd = window.lastIndexOf(". ");
+  if (sentenceEnd > max * 0.6) return window.slice(0, sentenceEnd + 1);
+  return window.replace(/\s+\S*$/, "") + "…";
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = answerBySlug(slug);
   if (!a) return {};
+  const description = metaDescription(a.short);
+  const url = `https://${site.domain}/answers/${a.slug}/`;
   return {
     title: a.question,
-    description: a.short.slice(0, 300),
+    description,
     alternates: { canonical: `/answers/${a.slug}/` },
     openGraph: {
       type: "article",
       title: a.question,
-      description: a.short.slice(0, 300),
-      url: `https://${site.domain}/answers/${a.slug}/`,
+      description,
+      url,
+    },
+    // Without these, Twitter/X cards fall through to the homepage's copy while
+    // the OG tags describe this page — two cards, two different subjects.
+    twitter: {
+      card: "summary_large_image",
+      title: a.question,
+      description,
     },
   };
 }

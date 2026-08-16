@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { ArrowRight, ChevronDown, Mail, MessageCircle, Loader2, CheckCircle2 } from "lucide-react";
 import { faqs, site } from "@/lib/site-config";
 import { CtaButton, Logo, PartnerBadge, SectionHeading, revealDelay } from "./primitives";
@@ -366,11 +367,11 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-2 text-sm">
-            <a href="#services" className="transition-colors hover:text-brand-400">Services</a>
-            <a href="#process" className="transition-colors hover:text-brand-400">Process</a>
-            <a href="#calculator" className="transition-colors hover:text-brand-400">Calculator</a>
-            <a href="#faq" className="transition-colors hover:text-brand-400">FAQ</a>
-            <a href="#book" className="transition-colors hover:text-brand-400">Book a call</a>
+            <Link href="/#services" className="transition-colors hover:text-brand-400">Services</Link>
+            <Link href="/#process" className="transition-colors hover:text-brand-400">Process</Link>
+            <Link href="/#calculator" className="transition-colors hover:text-brand-400">Calculator</Link>
+            <Link href="/#faq" className="transition-colors hover:text-brand-400">FAQ</Link>
+            <Link href="/#book" className="transition-colors hover:text-brand-400">Book a call</Link>
           </div>
 
           <div className="flex flex-col gap-2 text-sm">
@@ -436,13 +437,10 @@ export function FloatingActions() {
           show ? "translate-y-0" : "translate-y-full",
         )}
       >
-        <a
-          href="#book"
-          className="flex items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-sm font-bold text-navy-900 shadow-lg shadow-brand-500/25"
-        >
+        <Link href="/#book" className="flex items-center justify-center gap-2 rounded-full bg-brand-500 px-6 py-3.5 text-sm font-bold text-navy-900 shadow-lg shadow-brand-500/25">
           Get my free audit
           <ArrowRight className="h-4 w-4" />
-        </a>
+        </Link>
       </div>
     </>
   );
