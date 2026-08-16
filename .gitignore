@@ -45,3 +45,6 @@ next-env.d.ts
 # To enable automatic deploys:  gh auth refresh -s workflow
 # then delete these two lines and commit .github/workflows/deploy.yml
 .github/workflows/
+
+# IndexNow key reference (the key file itself in public/ IS public by design)
+.indexnow-key
