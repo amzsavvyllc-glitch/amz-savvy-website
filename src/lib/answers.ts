@@ -23,7 +23,7 @@ export type Answer = {
   related: string[];
 };
 
-export const answers: Answer[] = [
+const coreAnswers: Answer[] = [
   {
     slug: "what-is-a-good-acos-on-amazon",
     question: "What is a good ACOS on Amazon?",
@@ -717,6 +717,15 @@ export const answers: Answer[] = [
     ],
     related: ["what-reports-for-ppc-audit", "how-long-does-amazon-ppc-take", "how-much-to-spend-on-amazon-ads"],
   },
+];
+
+import { glossaryAnswers, comparisonAnswers } from "./answers-extra";
+
+/** Single source consumed by routing, sitemap and schema. */
+export const answers: Answer[] = [
+  ...coreAnswers,
+  ...glossaryAnswers,
+  ...comparisonAnswers,
 ];
 
 export const answerBySlug = (slug: string) => answers.find((a) => a.slug === slug);
