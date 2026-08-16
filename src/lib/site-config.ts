@@ -12,9 +12,31 @@ export const site = {
   tagline: "Strategies | Optimize | Maximize ads",
   domain: "amzsavvy.com",
   email: "amzsavvy.llc@gmail.com",
-  whatsapp: "97455401403", // wa.me number — digits only, no +
+
+  /* One number, three uses. `phone` is the E.164 form for tel: links and
+     schema; `phoneDisplay` is what humans read; `whatsapp` is the same number
+     digits-only, because wa.me rejects a leading + or any spacing. Change the
+     number here and every link on the site follows. */
+  phone: "+17372787962",
+  phoneDisplay: "+1 737 278 7962",
+  whatsapp: "17372787962",
+
+  /* A verifiable street address is the single strongest local-search signal an
+     agency site can carry, and AI answer engines lean on it to decide whether
+     "Amazon PPC agency in the US" describes this company. */
+  address: {
+    street: "5900 Balcones Drive, Suite 4000",
+    locality: "Austin",
+    region: "TX",
+    postalCode: "78731",
+    country: "US",
+  },
+
   calendly: "https://calendly.com/amzsavvy/30min",
 } as const;
+
+/** Address as one line, for footers and contact blocks. */
+export const addressLine = `${site.address.street}, ${site.address.locality}, ${site.address.region} ${site.address.postalCode}, USA`;
 
 export const nav = [
   { label: "Services", href: "/#services" },
@@ -246,10 +268,12 @@ export const testimonials: {
     role: "FBA seller, Australia",
   },
   {
+    // Sentence-initial capital added; the reviewer's own wording is otherwise
+    // untouched, grammar included.
     quote:
-      "I'm so impressed with how quickly and efficiently this was done! AMZ Savvy nailed every detail and delivered exactly what I was looking for. The listing is perfectly optimized, and the whole process was super smooth.",
-    name: "arsalanriaz1",
-    role: "Amazon seller, Qatar · Listing optimization",
+      "We have been working for two months, and we are about to launch a new Brand I am very happy and recommend to anyone who wants be successful on Amazon.",
+    name: "sobrinabrand",
+    role: "Brand owner, El Salvador · Repeat client",
   },
 ];
 

@@ -66,8 +66,20 @@ const jsonLd = {
       alternateName: "AMZ Savvy LLC",
       description,
       email: site.email,
+      telephone: site.phone,
       url: `https://${site.domain}`,
       slogan: site.tagline,
+      // A real postal address is what lets Google and the AI answer engines
+      // place this company geographically — without it the entity is stateless
+      // and never surfaces for "Amazon PPC agency in the US"-shaped questions.
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: site.address.street,
+        addressLocality: site.address.locality,
+        addressRegion: site.address.region,
+        postalCode: site.address.postalCode,
+        addressCountry: site.address.country,
+      },
       areaServed: "Worldwide",
       // Entity linking. Empty until real profiles exist — see site-config.ts.
       ...(profiles.length > 0 ? { sameAs: profiles } : {}),

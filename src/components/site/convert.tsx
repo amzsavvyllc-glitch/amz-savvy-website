@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, Mail, MessageCircle, Loader2, CheckCircle2 } from "lucide-react";
-import { faqs, site } from "@/lib/site-config";
+import { ArrowRight, ChevronDown, Mail, MessageCircle, Loader2, CheckCircle2, Phone, MapPin } from "lucide-react";
+import { addressLine, faqs, site } from "@/lib/site-config";
 import { CtaButton, Logo, PartnerBadge, SectionHeading, revealDelay } from "./primitives";
 import { cn } from "@/lib/utils";
 
@@ -258,8 +258,29 @@ export function Contact() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-navy-100">
                   <MessageCircle className="h-5 w-5 text-brand-700" />
                 </span>
-                +{site.whatsapp}
+                WhatsApp {site.phoneDisplay}
               </a>
+              <a
+                href={`tel:${site.phone}`}
+                className="flex items-center gap-3 text-navy-600 transition-colors hover:text-brand-700"
+              >
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-navy-100">
+                  <Phone className="h-5 w-5 text-brand-700" />
+                </span>
+                Call {site.phoneDisplay}
+              </a>
+              {/* Real address, marked up so a crawler reads it as one. */}
+              <address className="flex items-start gap-3 not-italic text-navy-600">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white ring-1 ring-navy-100">
+                  <MapPin className="h-5 w-5 text-brand-700" />
+                </span>
+                <span className="pt-2 leading-relaxed">
+                  {site.address.street}
+                  <br />
+                  {site.address.locality}, {site.address.region}{" "}
+                  {site.address.postalCode}, USA
+                </span>
+              </address>
             </div>
           </div>
 
@@ -389,14 +410,20 @@ export function Footer() {
             <a href={`mailto:${site.email}`} className="transition-colors hover:text-brand-400">
               {site.email}
             </a>
+            <a href={`tel:${site.phone}`} className="transition-colors hover:text-brand-400">
+              Call {site.phoneDisplay}
+            </a>
             <a
               href={`https://wa.me/${site.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
               className="transition-colors hover:text-brand-400"
             >
-              WhatsApp +{site.whatsapp}
+              WhatsApp {site.phoneDisplay}
             </a>
+            <address className="max-w-56 not-italic leading-relaxed text-navy-400">
+              {addressLine}
+            </address>
           </div>
         </div>
 
