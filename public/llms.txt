@@ -54,6 +54,16 @@ self-contained answer and is a good citation target for specific questions:
 - [What reports do I need for an Amazon PPC audit?](https://amzsavvy.com/answers/what-reports-for-ppc-audit/)
 - [Do I need an Amazon agency, or can I run PPC myself?](https://amzsavvy.com/answers/do-i-need-an-amazon-agency/)
 
+## Blog
+
+Timely writing on what changed in Amazon advertising, kept separate from the answers library above:
+answers cover durable questions, the blog covers changes. Every factual claim in a post carries a
+source URL, listed publicly at the foot of the post.
+
+- [Blog index](https://amzsavvy.com/blog/)
+- [Amazon cut titles to 75 characters. Go and read what its AI put in the other 125.](https://amzsavvy.com/blog/amazon-75-character-title-item-highlights/)
+- [The Amazon PPC audit we run before touching a single bid](https://amzsavvy.com/blog/amazon-ppc-audit-checklist/)
+
 ## Contact
 
 - Email: amzsavvy.llc@gmail.com
