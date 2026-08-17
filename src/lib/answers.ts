@@ -631,6 +631,49 @@ const coreAnswers: Answer[] = [
     related: ["how-amazon-ranking-works", "sudden-organic-rank-drop", "how-to-rank-on-page-one"],
   },
   {
+    slug: "amazon-backend-search-terms",
+    question: "How do Amazon backend search terms work, and what belongs in them?",
+    short:
+      "Backend search terms are a hidden field in Seller Central that adds keywords to a listing's search index without showing them to shoppers. They exist for the words a customer might type that do not fit naturally in the title, bullets or description — synonyms, alternative product names, materials, and use cases. They are not a second copy of your title: once a word is indexed anywhere on the listing, repeating it in the backend adds nothing to relevance.",
+    category: "SEO",
+    updated: "2026-08-17",
+    sections: [
+      {
+        heading: "What the field actually does",
+        body: [
+          "Amazon builds its search index from the whole listing — title, bullets, description, A+ content where applicable, and the backend search terms field. The backend field is the only one of those the shopper never reads, which makes it the place for words you need indexed but would not want in your copy.",
+          "That is its entire job. It makes you eligible to appear for a query. It does not push you up the results for that query — position is decided by click-through, conversion and sales velocity once you are eligible. Sellers who treat the backend field as a ranking lever rather than an indexing lever are disappointed by it every time.",
+          "It also means the field is worthless in isolation. Getting indexed for a phrase you convert badly on produces impressions, a falling click-through rate, and no sales.",
+        ],
+      },
+      {
+        heading: "What belongs in it",
+        body: [
+          "Start with the words your listing does not already contain. Write out the title and bullets, list the search terms you want to be found for, and delete every word already present in that copy. What remains is your backend candidate list — that subtraction alone usually halves what sellers were about to paste in.",
+          "The useful categories are consistent: genuine synonyms (a 'dog crate' shopper may search 'kennel'), regional word choices across marketplaces, materials and specifications, use cases and occasions, and the informal names customers actually use for the product when they are not using the industry term. Search-term reports from your own campaigns are the best source for this, because they show real queries that produced clicks rather than words you imagined.",
+          "Leave out competitor brand names and trademarks — using them here is against Amazon's policy and puts the listing at risk for no ranking benefit. Also drop subjective claims like 'best' or 'cheapest', temporary phrases such as 'new' or a sale date, ASINs, and anything you would not defend to a compliance reviewer.",
+        ],
+      },
+      {
+        heading: "Formatting: what changes indexing and what does not",
+        body: [
+          "The field has a size limit that Seller Central enforces, and it is measured in bytes rather than characters — so accented and non-Latin characters consume more of it than plain Latin letters do. Check the limit shown in the field itself for your marketplace rather than trusting a figure quoted in a blog post, because it varies and it has changed over time. Reports differ on whether the overflow is truncated or the whole field is discarded; either way the words past the limit do nothing for you, so stay comfortably inside it.",
+          "Amazon's guidance is to separate terms with spaces, not commas. There is no need to write phrases in the order a customer would type them — a query can be matched from words present across the listing — so 'stainless steel insulated water bottle' does not need to appear as a block if those words are already there individually. Repeating a word to build multiple phrases wastes the byte budget.",
+          "Do not spend the space on plurals, minor misspellings, or the same stem in several forms; Amazon's search handles that kind of variation. Duplicating words already in your title is the single most common way sellers burn the entire field without adding one new indexed term.",
+        ],
+      },
+      {
+        heading: "How to prove it worked",
+        body: [
+          "Backend changes are invisible on the listing page, so the only honest verification is an index test: search Amazon for the exact phrase followed by your ASIN. If the product comes back, the phrase is indexed; if it does not, the words are not doing what you assumed. Re-test in each marketplace you sell in, because indexing is per-marketplace.",
+          "Allow for recrawl time. A backend edit is not reflected immediately — treat a few days as normal before concluding a term failed to index, and re-run the same test rather than changing three things at once and losing track of which one worked.",
+          "Keep a dated record of what the field contained before and after each edit. When rank or impressions shift weeks later, that record is the difference between knowing which change caused it and guessing.",
+        ],
+      },
+    ],
+    related: ["how-to-check-keyword-indexing", "how-amazon-ranking-works", "amazon-seo-vs-ppc-for-ranking"],
+  },
+  {
     slug: "how-much-does-an-amazon-ppc-agency-cost",
     question: "How much does an Amazon PPC agency cost?",
     short:
