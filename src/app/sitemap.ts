@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { answers } from "@/lib/answers";
+import { posts } from "@/lib/blog";
 import { site } from "@/lib/site-config";
 
 /**
@@ -26,6 +27,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(a.updated),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    // Weekly changeFrequency on the index because a new post lands there first.
+    {
+      url: `${base}/blog/`,
+      lastModified: posts[0] ? new Date(posts[0].date) : lastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    ...posts.map((p) => ({
+      url: `${base}/blog/${p.slug}/`,
+      lastModified: new Date(p.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
     })),
   ];
 }

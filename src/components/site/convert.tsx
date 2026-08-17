@@ -402,6 +402,8 @@ export function Footer() {
             <Link href="/#services" className="transition-colors hover:text-brand-400">Services</Link>
             <Link href="/#process" className="transition-colors hover:text-brand-400">Process</Link>
             <Link href="/#calculator" className="transition-colors hover:text-brand-400">Calculator</Link>
+            <Link href="/answers/" className="transition-colors hover:text-brand-400">Answers</Link>
+            <Link href="/blog/" className="transition-colors hover:text-brand-400">Blog</Link>
             <Link href="/#faq" className="transition-colors hover:text-brand-400">FAQ</Link>
             <Link href="/#book" className="transition-colors hover:text-brand-400">Book a call</Link>
           </div>
