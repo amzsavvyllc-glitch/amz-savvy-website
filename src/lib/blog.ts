@@ -210,6 +210,84 @@ const allPosts: Post[] = [
       "how-to-find-wasted-search-terms",
     ],
   },
+  {
+    slug: "amazon-ad-billing-proceeds-deduction-who-it-hit",
+    title: "Amazon's ad billing change: who it actually hit, and the option nobody mentions",
+    excerpt:
+      "Amazon's switch from credit-card ad billing to deduction from retail proceeds took effect on 1 August 2026, and most of the coverage got the scope wrong. It applied to a subset of advertisers Amazon contacted directly, not to everyone — and there is a second option, Pay by Invoice on Net 30, that is arguably better than the credit card it replaced.",
+    date: "2026-08-24",
+    category: "Advertising",
+    readMinutes: 6,
+    sections: [
+      {
+        heading: "What changed, in order",
+        body: [
+          "In early April 2026 a group of Amazon advertisers received an email saying that from 15 April, the cost of Sponsored Products, Sponsored Brands and Sponsored Display would be deducted from their retail proceeds before disbursement, rather than charged to a credit card. There was no public announcement. Sellers found out because it landed in their inbox, and then because other sellers posted screenshots of it.",
+          "The reaction was strong enough to be organised. The seven-figure seller community Million Dollar Sellers coordinated a one-day advertising boycott, and the story was picked up in the mainstream business press.",
+          "On 14 April — a day after the original deadline had already taken effect for some accounts — Amazon deferred it. The wording was: \"Based on feedback we heard, we're deferring this change until August 1, 2026 to give this group of advertisers more time to prepare.\" That deadline has now passed.",
+        ],
+      },
+      {
+        heading: "The part most coverage got wrong",
+        body: [
+          "Read the trade write-ups and you would conclude that every Amazon advertiser was moved onto proceeds deduction on 1 August. That is not what Amazon said. The announcement stated the update applies only to the small group of advertisers who had been contacted directly — those still using a credit card as their primary payment method — and noted that the overwhelming majority of advertisers were already on account balance deduction and were unaffected.",
+          "If you never received the email, nothing changed for you. If you are not sure, the payment settings in your advertising console will tell you in under a minute, and that is a better use of the next sixty seconds than reading another article about it.",
+          "This distinction matters because the panic version of the story caused sellers who were never in scope to go looking for financing they did not need.",
+        ],
+      },
+      {
+        heading: "There are two options, not one",
+        body: [
+          "Advertisers in scope had a choice: deduction from the account balance, or Pay by Invoice with Net 30 terms running from month-end. Anyone who did not choose before 1 August was migrated to balance deduction by default, with their existing payment method retained as a backup for when the balance runs short.",
+          "The default is the worse of the two for most sellers, and the deadline for choosing has passed — but a payment preference is a setting, not a one-time door. It is worth checking which one you are on now.",
+          "Net 30 from month-end is genuinely better than a credit card for cash-flow purposes. Spend on 2 September is not due until the end of October. That is a longer float than most card cycles give you, and it does not consume card limit or accrue interest.",
+        ],
+      },
+      {
+        heading: "The arithmetic to run on your own account",
+        body: [
+          "The cash-flow effect of proceeds deduction is not the ad spend itself — you were always paying that. It is the change in when the money leaves. Under card billing you spent, then paid the card on its own cycle. Under proceeds deduction the spend comes out before the disbursement reaches you.",
+          "Work it out with your own numbers rather than a rule of thumb: take your average daily ad spend, multiply by the number of days between a charge and when you would previously have settled it, and that product is the working capital that quietly leaves your business once. It is a one-off transition cost, not a recurring one, which is why the effect is sharpest in the first disbursement cycle and then normalises.",
+          "The reason this hurts unevenly is inventory timing. A seller placing a large purchase order in the same fortnight as the transition feels it; a seller with slack in the account barely notices. That is why the same change produced both genuine distress and shrugs, and neither reaction was wrong.",
+        ],
+      },
+      {
+        heading: "What to do this week",
+        body: [
+          "Check which payment method your advertising account is actually on. Do this even if you believe you were never in scope, because the default migration was automatic and silent.",
+          "If you are on balance deduction and your cash position is tight, look at whether Pay by Invoice is available to you. If it is, the Net 30 terms are free working capital and there is no reason not to take them.",
+          "Then stop thinking about it. This was a change in payment timing, not in advertising economics. Nothing about it makes a wasteful campaign more wasteful or a profitable one less profitable, and the accounts that suffered most were the ones already running with no margin for a single cycle of timing change. That is a cash-flow problem the billing change revealed rather than caused.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label: "PPC Land — Amazon Ads delays advertiser payment overhaul to August after pushback",
+        url: "https://ppc.land/amazon-ads-delays-advertiser-payment-overhaul-to-august-after-pushback/",
+      },
+      {
+        label: "PPC Land — Amazon's payment change: ad costs to auto-deduct from seller proceeds April 15",
+        url: "https://ppc.land/amazons-payment-grab-ad-costs-to-auto-deduct-from-seller-proceeds-april-15/",
+      },
+      {
+        label: "CNBC — Amazon sellers boycott ads in policy change revolt",
+        url: "https://www.cnbc.com/2026/04/15/amazon-sellers-boycott-ads-payment-changes.html",
+      },
+      {
+        label: "EcommerceBytes — Amazon delays change that would contribute to seller cashflow crunch",
+        url: "https://www.ecommercebytes.com/2026/04/16/amazon-delays-change-that-would-contribute-to-seller-cashflow-crunch/",
+      },
+      {
+        label: "Modern Retail — Amazon hits pause on controversial advertising payment change",
+        url: "https://www.modernretail.co/operations/amazon-hits-pause-on-controversial-change-to-its-advertising-payment-system-that-had-caused-a-seller-revolt/",
+      },
+    ],
+    related: [
+      "how-much-to-spend-on-amazon-ads",
+      "how-to-calculate-break-even-acos",
+      "what-reports-for-ppc-audit",
+    ],
+  },
 ];
 
 /** Newest first. The index page, the sitemap and the homepage teaser all rely
