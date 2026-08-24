@@ -845,6 +845,59 @@ const coreAnswers: Answer[] = [
     ],
     related: ["how-to-rank-on-page-one", "amazon-backend-search-terms", "what-is-a-good-conversion-rate-on-amazon"],
   },
+  {
+    slug: "how-many-images-does-an-amazon-listing-need",
+    question: "How many images does an Amazon listing need, and what should each one do?",
+    short:
+      "Most Amazon listings allow around nine uploaded images and display roughly seven of them, but the number that decides sales is how many a shopper actually swipes through, which is far fewer. Fill the slots you have and give each one a single job: a compliant pure-white main image whose only task is winning the click from search results, then frames that establish scale, show the product in use, state what is in the box, separate it from the obvious alternative, and answer the objection that most often stops the sale. A gallery is judged by how quickly it removes doubt, not by how full it is — a seventh image that repeats the third adds nothing.",
+    category: "SEO",
+    updated: "2026-08-24",
+    sections: [
+      {
+        heading: "How many slots you actually get",
+        body: [
+          "The common arrangement is up to nine images uploaded, of which about seven appear in the gallery on the detail page, and a video usually occupies one of those displayed positions rather than adding to them. That arrangement is not universal: it varies by category and by marketplace, and it has changed before. The authority is the upload screen on your own listing in Seller Central, not a figure quoted in an article, so check yours before planning a shoot around a number.",
+          "Whatever the ceiling is, the binding constraint is not slots but attention. A shopper arrives from search already holding three or four other tabs, swipes a few frames, and decides. The early positions carry most of the weight; the last two exist for the buyer who is already close and wants one more detail before committing.",
+          "The practical consequence is that photography budget should not be spread evenly. Two frames that each land a complete idea outperform seven that each carry a fraction of one, and an unused slot costs you nothing compared with a filled slot that repeats what the shopper already saw.",
+        ],
+      },
+      {
+        heading: "The main image has a different job from every other image",
+        body: [
+          "It is the only image that competes outside your listing. It appears in search results, in Sponsored Products placements and in browse pages, at thumbnail size, directly beside competitors. Its job is to win the click. It is not the place to explain the product, and anything that makes it work harder as an explanation usually makes it worse at the one thing it is for.",
+          "The compliance rules are strict and worth treating as non-negotiable: a pure white background (RGB 255, 255, 255), the actual product and nothing else, filling most of the frame — Amazon's guidance is around 85% — and no text, logos, watermarks, borders, inset panels or props that are not part of what you are selling. Breaking these risks suppression, which removes the listing from search entirely. That cost dwarfs the cost of a merely mediocre photograph, so fix compliance before you think about styling.",
+          "Test the main image the way it will be seen. Shrink it to the size it occupies in a results page and set it beside three competitors in the same category. If you cannot tell what the product is at that size, the framing is wrong — almost always because the product sits too small in the frame, or because the angle makes its silhouette ambiguous.",
+        ],
+      },
+      {
+        heading: "Give each of the other slots one job",
+        body: [
+          "The remaining images are the sales conversation. A sequence that works for most physical products: a scale reference, the product in use, what is in the box, the one attribute that separates it from the obvious alternative, and the objection that most often stops the sale. One idea per frame, and the frame is finished when a stranger could state that idea after a second of looking.",
+          "Scale is the most consistently under-served of these. A dimensions callout is not a scale reference — a number requires the shopper to imagine it, and they will imagine it wrong. A photograph containing a hand, a doorway, a countertop or a familiar object answers 'is this the size I think it is' instantly, and size surprise is one of the most avoidable reasons a product comes back.",
+          "Derive the objection frames from your own data rather than a template. Recurring negative reviews, stated return reasons and repeated customer Q&A entries each name a doubt the listing has failed to settle. Every one of those is a candidate image, and the ranking is simply how often it comes up.",
+          "Text overlays are permitted on the additional images and usually earn their place, but they will be read on a phone. A short phrase in large, high-contrast type survives that; a paragraph baked into artwork does not, because it neither reflows nor scales. Keep the wording to what someone can absorb mid-swipe.",
+        ],
+      },
+      {
+        heading: "Resolution, format, and why zoom matters",
+        body: [
+          "Amazon enables its zoom viewer once an image passes a resolution threshold; the long-standing figure is 1,000 pixels on the longest side, and more is better. Zoom is worth engineering for, because it is the closest a shopper gets to handling the product — it is how they inspect stitching, grain, finish, weld quality and print sharpness, and those are exactly the details that separate a considered purchase from an abandoned one.",
+          "Upscaling a small file does not achieve this. Enlarging a 600-pixel photograph to 1,200 pixels satisfies the threshold and produces a soft, mushy image displayed under a zoom that now works, which reads as a cheap product. Shoot and archive well above any minimum so you never need to enlarge, and re-export from the original rather than from a previously compressed copy.",
+          "JPEG remains the safe default for photographs. Keep files inside Amazon's stated size cap, and check the current accepted formats and limits in Seller Central before a bulk re-upload rather than trusting a spec sheet you saved last year, because these do get revised.",
+        ],
+      },
+      {
+        heading: "How to tell whether the gallery is working",
+        body: [
+          "Two jobs need two different measurements. The main image affects click-through rate — whether people enter the listing at all. The additional images affect conversion rate — whether people who entered go on to buy. Judging a main-image change by conversion, or a lifestyle-image change by traffic, produces a confusing answer and usually the wrong decision.",
+          "A main-image change is fastest to read through advertising, because ads deliver enough impressions in days where organic search would take weeks. Hold a campaign completely still — same keywords, same bids, same budget, same placements — and compare click-through rate before and after the swap. The arithmetic is plain: if the campaign previously returned 300 clicks on 10,000 impressions, that is 3.0%; if the same campaign returns 360 clicks on 10,000 impressions afterwards, that is 3.6%, or a fifth more traffic for the same impressions. Run your own numbers the same way rather than accepting a claimed lift from anyone, including us.",
+          "The additional images are measured in the Business Report by ASIN: unit session percentage before and after, over enough weeks to see past ordinary variance, with price, coupons and ad spend held as steady as you can manage. Change one image at a time. Replacing four at once tells you the gallery improved and nothing about which frame did it, which leaves you unable to repeat the win on the next product.",
+          "Give it time before judging. Amazon does not serve a newly uploaded image consistently from the first hour, and a few hundred sessions is a small enough sample that it will swing on its own. Set the review date when you make the change, and do not read the result early.",
+        ],
+      },
+    ],
+    related: ["what-belongs-in-amazon-a-plus-content", "what-is-a-good-conversion-rate-on-amazon", "how-to-rank-on-page-one"],
+  },
 ];
 
 import { glossaryAnswers, comparisonAnswers } from "./answers-extra";
