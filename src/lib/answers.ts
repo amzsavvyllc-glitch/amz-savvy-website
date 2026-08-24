@@ -760,6 +760,55 @@ const coreAnswers: Answer[] = [
     ],
     related: ["what-reports-for-ppc-audit", "how-long-does-amazon-ppc-take", "how-much-to-spend-on-amazon-ads"],
   },
+  {
+    slug: "what-belongs-in-amazon-a-plus-content",
+    question: "What actually belongs in Amazon A+ content?",
+    short:
+      "A+ content is the place to answer the questions that stop someone buying — sizing and fit, what is in the box, how it compares to the obvious alternative, and who it is not for. It replaces the plain description on brand-registered listings, and its job is conversion rather than discovery: the fields that reliably drive Amazon search are still the title, bullets, backend search terms and structured attributes, so A+ should be written for the shopper who has already arrived and is deciding.",
+    category: "SEO",
+    updated: "2026-08-24",
+    sections: [
+      {
+        heading: "Write it against real objections, not features",
+        body: [
+          "The most common mistake is restating the bullets in larger type on a coloured background. The shopper has already read the bullets. If A+ repeats them, it adds a scroll and nothing else.",
+          "The useful source material is your own returns and negative reviews. Every recurring complaint is an objection that A+ can answer before the purchase instead of after it — the sizing that runs small, the part that is sold separately, the surface it will not stick to. Answering those honestly costs you a few sales you would have refunded anyway and keeps the ones you would have lost to hesitation.",
+          "Questions in the customer Q&A section are the second source. If the same question is asked repeatedly, the listing has failed to answer it and A+ is the place to fix that.",
+        ],
+      },
+      {
+        heading: "The comparison module earns its space",
+        body: [
+          "If you sell more than one variant or model, the comparison table is usually the highest-value module on the page. It moves shoppers to the right item instead of letting them guess and return the wrong one, and it keeps a browsing shopper inside your catalogue rather than sending them back to search.",
+          "Choose the columns that actually decide the purchase. A table comparing five products on eight specifications is a wall; one comparing them on the two or three attributes people genuinely weigh is a decision aid.",
+        ],
+      },
+      {
+        heading: "Do not treat it as a keyword surface",
+        body: [
+          "Sources disagree on how much of A+ content Amazon indexes for its own search, and the position has shifted over time. Because the answer is contested, the safe strategy is to assume it does not help ranking and place every keyword you care about where indexing is not in question: the title, the bullets, the backend search terms and the structured attribute fields.",
+          "If A+ text does turn out to contribute, you lose nothing by having written it for humans. If you invert that bet — stuffing A+ with keywords and neglecting the fields that certainly index — you lose either way, because keyword-stuffed A+ also converts worse.",
+          "One thing that is worth doing regardless: fill in the image alt text on every module. It costs a minute, it is what screen readers announce, and it is the part of A+ most consistently reported to be read by crawlers.",
+        ],
+      },
+      {
+        heading: "Design constraints that matter more than they sound",
+        body: [
+          "Most Amazon traffic is on a phone, and modules stack vertically on a small screen. Text set inside an image does not reflow and frequently becomes unreadable. Keep words in the text fields wherever the module allows it, and treat any text baked into artwork as decorative.",
+          "Put the strongest module first. A+ sits below the fold on a phone and engagement falls with every scroll, so the module answering the biggest objection should not be at the bottom.",
+          "Amazon rejects A+ submissions for things that have nothing to do with quality — mentions of price or promotions, claims about shipping, contact details, competitor references, and unsubstantiated guarantees. Reading the current guidelines before designing is faster than redesigning after a rejection.",
+        ],
+      },
+      {
+        heading: "How to tell whether it worked",
+        body: [
+          "A+ affects conversion rate, so the measurement is the Business Report by ASIN: unit session percentage before and after publication, over enough weeks to see past normal variance, with ad spend and price held as steady as you can manage.",
+          "Do not judge it on sales alone. If you publish A+ in the same fortnight you change price, add a coupon or scale a campaign, you will not know which one moved the number. Change one thing at a time or accept that the result is not attributable.",
+        ],
+      },
+    ],
+    related: ["how-to-rank-on-page-one", "amazon-backend-search-terms", "what-is-a-good-conversion-rate-on-amazon"],
+  },
 ];
 
 import { glossaryAnswers, comparisonAnswers } from "./answers-extra";
