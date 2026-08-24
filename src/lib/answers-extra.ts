@@ -42,6 +42,8 @@ export const glossaryAnswers: Answer[] = [
     question: "What is dayparting in Amazon PPC?",
     short:
       "Dayparting means varying bids or budgets by hour of day and day of week, so spend concentrates in the periods that convert and eases off in the periods that do not. It is only worth doing once you have enough hourly data to show a genuine repeating pattern rather than noise. Amazon's console offers scheduled budget rules rather than true hour-by-hour bid control, so most real dayparting runs through the Advertising API or third-party software.",
+    metaDescription:
+      "Dayparting shifts bids by hour and day. When it is worth setting up, when it quietly costs you sales, and how to tell which applies to you.",
     category: "PPC",
     updated: "2026-08-16",
     sections: [
@@ -117,6 +119,8 @@ export const glossaryAnswers: Answer[] = [
     question: "What does new-to-brand (NTB) mean in Amazon advertising?",
     short:
       "New-to-brand metrics count the orders and sales that came from customers who had not bought anything from your brand on Amazon in the previous twelve months. They separate genuine customer acquisition from repeat purchases, which matters because a campaign with an unremarkable ACOS can be the most valuable in the account if most of its orders are new customers.",
+    metaDescription:
+      "NTB counts orders from customers who had not bought your brand on Amazon in the past year. Here is what it tells you, and where it misleads.",
     category: "Metrics",
     updated: "2026-08-16",
     sections: [
@@ -346,6 +350,8 @@ export const comparisonAnswers: Answer[] = [
     question: "Search Term Report vs Search Query Performance — which should I use?",
     short:
       "The Search Term report shows only the searches your ads paid for, with clicks, spend and orders per term, which makes it the tool for cutting waste and harvesting winners. Search Query Performance, in Brand Analytics, shows the whole marketplace funnel for a query — impressions, clicks, cart adds and purchases — alongside your brand's share of each, covering organic as well as paid. Use the first to manage campaigns and the second to see how much of a query you are actually winning.",
+    metaDescription:
+      "Two reports, two different questions. Which one answers what, and why the numbers in them will never quite agree.",
     category: "Strategy",
     updated: "2026-08-16",
     sections: [

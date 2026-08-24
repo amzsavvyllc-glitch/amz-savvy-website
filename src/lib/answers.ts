@@ -17,6 +17,20 @@ export type Answer = {
   question: string;
   /** Self-contained answer. This is the passage an AI is most likely to quote. */
   short: string;
+  /**
+   * Optional SEARCH SNIPPET, written to earn the click.
+   *
+   * `short` is optimised for a different job — being retrieved and quoted whole
+   * by an answer engine — so it is dense and long, and truncating it at 155
+   * characters for a meta description reliably cuts mid-sentence. A Google
+   * snippet ending "…in the previous twelve…" reads as broken and costs clicks.
+   *
+   * Set this on any page that actually earns impressions. Keep it under ~155
+   * characters so it is never truncated, make it a complete thought, and give
+   * the searcher a reason to choose this result. Same proof rules as everywhere
+   * else: no numbers that are not in the page.
+   */
+  metaDescription?: string;
   category: "PPC" | "SEO" | "Strategy" | "Metrics";
   updated: string;
   sections: { heading: string; body: string[] }[];
@@ -29,6 +43,8 @@ const coreAnswers: Answer[] = [
     question: "What is a good ACOS on Amazon?",
     short:
       "There is no universal good ACOS — the only figure that matters is your break-even ACOS, which equals your profit margin before ad spend. If your product carries a 35% margin after all Amazon fees and COGS, then a 35% ACOS is break-even, anything below is profit, and anything above is bought at a loss. Most established sellers target 15–25%, but a launch may run 60% deliberately.",
+    metaDescription:
+      "There is no universal good ACOS — only yours. How to work out the number your margin can carry, and why copied targets lose money.",
     category: "Metrics",
     updated: "2026-08-15",
     sections: [
@@ -61,6 +77,8 @@ const coreAnswers: Answer[] = [
     question: "How do I calculate my break-even ACOS?",
     short:
       "Break-even ACOS equals your pre-advertising profit margin. Subtract COGS, Amazon referral fees, FBA fulfilment, storage, and a returns allowance from your selling price; divide the remainder by the selling price. If a $30 product leaves $9.60 after all costs, your margin is 32% and your break-even ACOS is 32%.",
+    metaDescription:
+      "Your break-even ACOS is your margin after every Amazon fee — not before. Work it out in a few minutes with the exact deductions to include.",
     category: "Metrics",
     updated: "2026-08-15",
     sections: [
@@ -86,6 +104,8 @@ const coreAnswers: Answer[] = [
     question: "What is the difference between ACOS and TACOS?",
     short:
       "ACOS is ad spend divided by ad-attributed sales, so it only measures advertising in isolation. TACOS is ad spend divided by total sales including organic, so it measures what advertising costs your whole business. A falling TACOS with steady revenue means organic rank is carrying more of the load — that is the healthiest signal in an Amazon account.",
+    metaDescription:
+      "ACOS measures ad spend against ad sales; TACOS measures it against total sales. Which one to watch, and what a rising TACOS actually means.",
     category: "Metrics",
     updated: "2026-08-15",
     sections: [
@@ -142,6 +162,8 @@ const coreAnswers: Answer[] = [
     question: "How do I find and negate wasted search terms on Amazon?",
     short:
       "Export the Sponsored Products Search Term report, filter to terms with zero orders, and sort by spend. Any term that has spent meaningfully more than your average cost-per-click without producing a single order is wasting money. Add those as negative exact keywords at the ad group level, and negate the obvious irrelevant patterns as negative phrase.",
+    metaDescription:
+      "Pull one report, sort it two ways, and the wasted spend is obvious in ten minutes. The exact filters, and what to negate versus what to leave.",
     category: "PPC",
     updated: "2026-08-15",
     sections: [
@@ -198,6 +220,8 @@ const coreAnswers: Answer[] = [
     question: "How do I lower ACOS without losing sales?",
     short:
       "Lower ACOS by removing spend that produces nothing rather than by cutting bids across the board. Negate zero-order search terms, move proven converters to exact match, reduce bids only on keywords that convert below your break-even, and improve conversion rate on the listing. Across-the-board bid cuts lower ACOS by lowering sales, which is not the same as improving efficiency.",
+    metaDescription:
+      "Lowering ACOS by cutting bids usually cuts sales too. The order to work in so efficiency improves without losing the volume.",
     category: "PPC",
     updated: "2026-08-15",
     sections: [
@@ -249,6 +273,8 @@ const coreAnswers: Answer[] = [
     question: "Should I use automatic or manual Amazon campaigns?",
     short:
       "Use both, for different jobs. Automatic campaigns are a discovery tool — they let Amazon find search terms you did not think of, at a low budget. Manual exact-match campaigns are where you put real money, on terms already proven to convert. Running only automatic means paying Amazon to guess forever; running only manual means never discovering anything new.",
+    metaDescription:
+      "You need both, but not for the reasons usually given. What each campaign type is actually for, and how they should feed each other.",
     category: "PPC",
     updated: "2026-08-15",
     sections: [
@@ -299,6 +325,8 @@ const coreAnswers: Answer[] = [
     question: "What is a good conversion rate on Amazon?",
     short:
       "Amazon conversion rates vary widely by category, but many sellers operate somewhere in the 10–20% range, which is far higher than typical ecommerce because Amazon shoppers arrive intending to buy. The useful comparison is not a global benchmark but your own category and your own historical rate — a sudden drop is far more diagnostic than an absolute number.",
+    metaDescription:
+      "Where to find your real conversion rate in Seller Central, what counts as healthy in your category, and what to fix first when it is low.",
     category: "Metrics",
     updated: "2026-08-15",
     sections: [
@@ -371,6 +399,8 @@ const coreAnswers: Answer[] = [
     question: "How does Amazon search ranking actually work?",
     short:
       "Amazon ranks listings primarily on relevance and sales performance. Relevance comes from whether your listing is indexed for a search term through title, bullets, backend keywords and A+ content. Performance comes from click-through rate, conversion rate and sales velocity for that term. A listing cannot rank for a keyword it is not indexed for, no matter how much you spend.",
+    metaDescription:
+      "Relevance, then conversion history, then velocity. How Amazon's ranking really behaves, and the levers you actually control.",
     category: "SEO",
     updated: "2026-08-15",
     sections: [
@@ -448,6 +478,8 @@ const coreAnswers: Answer[] = [
     question: "What reports do I need for an Amazon PPC audit?",
     short:
       "Three exports cover almost everything: the Sponsored Products Search Term report for at least 60 days, the Business Report by ASIN for sessions and conversion rate, and a Bulk Operations file for the full campaign structure, bids and negatives. Together these show what you paid for, what converted, and how the account is put together — without needing account access.",
+    metaDescription:
+      "Three exports cover almost everything: search terms, business report by ASIN, and a bulk file. What each one tells you and how they combine.",
     category: "Strategy",
     updated: "2026-08-15",
     sections: [
@@ -678,6 +710,8 @@ const coreAnswers: Answer[] = [
     question: "How much does an Amazon PPC agency cost?",
     short:
       "Amazon PPC agencies typically charge either a percentage of ad spend, commonly around 10–20%, or a flat monthly retainer that often falls in the low-to-mid four figures, sometimes with a performance component on top. The right question is not the headline fee but whether the efficiency gain exceeds it — at low ad spend it usually does not.",
+    metaDescription:
+      "Percentage of spend, flat retainer or hybrid — what each model really costs, and the spend level below which an agency cannot pay for itself.",
     category: "Strategy",
     updated: "2026-08-15",
     sections: [
@@ -740,6 +774,8 @@ const coreAnswers: Answer[] = [
     question: "Do I need an Amazon agency, or can I run PPC myself?",
     short:
       "You can run Amazon PPC yourself, and at low spend you probably should — the work is mostly disciplined weekly maintenance rather than secret knowledge. An agency becomes worth its fee when spend is high enough that a few points of ACOS exceed the retainer, or when the weekly cadence is not happening because nobody has time for it.",
+    metaDescription:
+      "The arithmetic that decides it: at what ad spend a few points of ACOS exceed a retainer, and what to check before signing anything.",
     category: "Strategy",
     updated: "2026-08-15",
     sections: [

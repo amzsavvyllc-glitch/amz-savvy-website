@@ -32,7 +32,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = answerBySlug(slug);
   if (!a) return {};
-  const description = metaDescription(a.short);
+  // A hand-written snippet always wins over a truncated `short` — see the
+  // field comment in answers.ts for why the two serve different jobs.
+  const description = a.metaDescription ?? metaDescription(a.short);
   const url = `https://${site.domain}/answers/${a.slug}/`;
   return {
     title: a.question,
