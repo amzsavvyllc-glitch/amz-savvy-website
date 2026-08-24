@@ -223,7 +223,7 @@ const allPosts: Post[] = [
         heading: "What changed, in order",
         body: [
           "In early April 2026 a group of Amazon advertisers received an email saying that from 15 April, the cost of Sponsored Products, Sponsored Brands and Sponsored Display would be deducted from their retail proceeds before disbursement, rather than charged to a credit card. There was no public announcement. Sellers found out because it landed in their inbox, and then because other sellers posted screenshots of it.",
-          "The reaction was strong enough to be organised. The seven-figure seller community Million Dollar Sellers coordinated a one-day advertising boycott, and the story was picked up in the mainstream business press.",
+          "The reaction was strong enough to be organised. Merchants in the private seller group Million Dollar Sellers coordinated a protest, with some calling for ads to be switched off on 15 April, the original implementation date. Co-founder Eugene Khayman's complaint was about accumulation rather than this change alone: Amazon had, he said, \"essentially rolled out three fees within a month.\"",
           "On 14 April — a day after the original deadline had already taken effect for some accounts — Amazon deferred it. The wording was: \"Based on feedback we heard, we're deferring this change until August 1, 2026 to give this group of advertisers more time to prepare.\" That deadline has now passed.",
         ],
       },
@@ -231,6 +231,7 @@ const allPosts: Post[] = [
         heading: "The part most coverage got wrong",
         body: [
           "Read the trade write-ups and you would conclude that every Amazon advertiser was moved onto proceeds deduction on 1 August. That is not what Amazon said. The announcement stated the update applies only to the small group of advertisers who had been contacted directly — those still using a credit card as their primary payment method — and noted that the overwhelming majority of advertisers were already on account balance deduction and were unaffected.",
+          "Amazon's own wording, quoted in the coverage, was that it \"commonly review[s] advertiser payment methods as part of our normal course of business\", and that \"notified advertisers continue to have credit or debit cards as a backup payment method and also have the option to pay by invoice\". Two things follow from that sentence: you had to have been notified, and the card never went away entirely.",
           "If you never received the email, nothing changed for you. If you are not sure, the payment settings in your advertising console will tell you in under a minute, and that is a better use of the next sixty seconds than reading another article about it.",
           "This distinction matters because the panic version of the story caused sellers who were never in scope to go looking for financing they did not need.",
         ],
@@ -268,10 +269,6 @@ const allPosts: Post[] = [
       {
         label: "PPC Land — Amazon's payment change: ad costs to auto-deduct from seller proceeds April 15",
         url: "https://ppc.land/amazons-payment-grab-ad-costs-to-auto-deduct-from-seller-proceeds-april-15/",
-      },
-      {
-        label: "CNBC — Amazon sellers boycott ads in policy change revolt",
-        url: "https://www.cnbc.com/2026/04/15/amazon-sellers-boycott-ads-payment-changes.html",
       },
       {
         label: "EcommerceBytes — Amazon delays change that would contribute to seller cashflow crunch",
