@@ -16,6 +16,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: `${base}/`, lastModified, changeFrequency: "monthly", priority: 1 },
+    // The entity page. High priority on purpose: it is the URL that resolves
+    // "who is AMZ Savvy" for both Google and AI answer engines, and the
+    // natural target for any inbound directory or profile link.
+    {
+      url: `${base}/about/`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     {
       url: `${base}/answers/`,
       lastModified,

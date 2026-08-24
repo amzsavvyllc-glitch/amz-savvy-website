@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, CalendarDays } from "lucide-react";
 import { answers, answerBySlug } from "@/lib/answers";
 import { site } from "@/lib/site-config";
+import { AuthorBox, Byline } from "@/components/site/author-box";
 import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/convert";
 import { CtaButton, RevealProvider } from "@/components/site/primitives";
@@ -81,7 +82,9 @@ export default async function AnswerPage({ params }: Props) {
             "@type": "Answer",
             text: a.short,
             url,
-            author: { "@type": "Organization", name: site.name },
+            // Attributed to the named practitioner, not the bare company.
+            // Answer engines quote a person far more readily than a domain.
+            author: { "@id": `https://${site.domain}/#founder` },
           },
         },
         isPartOf: { "@id": `https://${site.domain}/#website` },
@@ -132,6 +135,7 @@ export default async function AnswerPage({ params }: Props) {
                 <CalendarDays className="h-4 w-4" />
                 Updated {a.updated}
               </span>
+              <Byline />
             </div>
           </div>
         </section>
@@ -158,6 +162,8 @@ export default async function AnswerPage({ params }: Props) {
               ))}
             </section>
           ))}
+
+          <AuthorBox />
 
           {/* Conversion path from an informational page */}
           <div className="mt-12 rounded-2xl border border-navy-100 bg-navy-50/70 p-7">

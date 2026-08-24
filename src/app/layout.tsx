@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
-import { site, profiles, services } from "@/lib/site-config";
+import { site, profiles, services , founder } from "@/lib/site-config";
 import "./globals.css";
 
 /* Montserrat = brand display face. Inter = body (Montserrat is poor at
@@ -81,6 +81,10 @@ const jsonLd = {
         addressCountry: site.address.country,
       },
       areaServed: "Worldwide",
+      // Ties the company to a named human. Google's experience/expertise
+      // signals and AI answer engines both attribute to people more readily
+      // than to a bare domain.
+      founder: { "@id": `https://${site.domain}/#founder` },
       // Entity linking. Empty until real profiles exist — see site-config.ts.
       ...(profiles.length > 0 ? { sameAs: profiles } : {}),
       knowsAbout: [
@@ -114,6 +118,23 @@ const jsonLd = {
           },
         })),
       },
+    },
+    {
+      "@type": "Person",
+      "@id": `https://${site.domain}/#founder`,
+      name: founder.name,
+      jobTitle: founder.jobTitle,
+      description: founder.short,
+      worksFor: { "@id": `https://${site.domain}/#org` },
+      url: `https://${site.domain}/about/`,
+      knowsAbout: [
+        "Amazon PPC",
+        "Amazon Advertising",
+        "Amazon SEO",
+        "ACOS optimization",
+        "Amazon listing optimization",
+      ],
+      ...(founder.profiles.length > 0 ? { sameAs: founder.profiles } : {}),
     },
     {
       "@type": "WebSite",

@@ -36,6 +36,41 @@ export const site = {
 } as const;
 
 /** Address as one line, for footers and contact blocks. */
+/**
+ * THE FOUNDER — the site's human entity.
+ *
+ * Why this exists: 48 pages of Amazon advertising advice were published with
+ * `author: Organization`. That is a weak signal in both directions this site
+ * cares about. Google's guidance on experience and expertise wants a
+ * demonstrable practitioner behind advice like this, and AI answer engines
+ * attribute to people far more readily than to a domain — "according to
+ * Mehran Ali, an Amazon Ads Verified Partner" is quotable in a way that
+ * "according to amzsavvy.com" is not.
+ *
+ * Every claim here is owner-confirmed and corroborated somewhere public:
+ * the partner status by Amazon's own directory listing in `profiles`, the
+ * numbers by `stats`, the client feedback by `reviewSource`. Do not add a
+ * credential here that cannot be checked from outside.
+ */
+export const founder = {
+  name: "Mehran Ali",
+  jobTitle: "Founder",
+  /** One sentence. Used as the byline tooltip and the Person `description`. */
+  short:
+    "Founder of AMZ Savvy and an Amazon Ads Verified Partner, working on Amazon advertising and listing strategy since 2017.",
+  /** The author box under long-form pages. Two short paragraphs, no puffery. */
+  bio: [
+    "Mehran Ali runs AMZ Savvy, an Amazon advertising agency working with brand owners across the US and Europe. He has worked on Amazon for nine years and the agency has managed more than $8M in ad spend across 120+ brands.",
+    "AMZ Savvy is an Amazon Ads Verified Partner — a status Amazon grants and verifies directly rather than one you can buy. The writing on this site is the same method used on client accounts: no invented benchmarks, and arithmetic you can reproduce on your own numbers.",
+  ],
+  /** sameAs for the Person entity. Real, live profiles ONLY — same rule as
+   *  `profiles` above. Empty on purpose: the personal LinkedIn vanity URL was
+   *  not verifiable from here (LinkedIn answers 999 to bots), and a sameAs
+   *  pointing at the wrong person is worse than none. Add the real
+   *  linkedin.com/in/... URL and it flows into the Person schema automatically. */
+  profiles: [] as string[],
+} as const;
+
 export const addressLine = `${site.address.street}, ${site.address.locality}, ${site.address.region} ${site.address.postalCode}, USA`;
 
 export const nav = [
@@ -44,6 +79,7 @@ export const nav = [
   { label: "Calculator", href: "/#calculator" },
   { label: "Answers", href: "/answers/" },
   { label: "Blog", href: "/blog/" },
+  { label: "About", href: "/about/" },
   { label: "FAQ", href: "/#faq" },
 ] as const;
 

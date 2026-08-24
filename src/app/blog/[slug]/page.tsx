@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, CalendarDays, Clock, ExternalLink } from "lucide
 import { posts, postBySlug } from "@/lib/blog";
 import { answerBySlug } from "@/lib/answers";
 import { site } from "@/lib/site-config";
+import { AuthorBox, Byline } from "@/components/site/author-box";
 import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/convert";
 import { CtaButton, RevealProvider } from "@/components/site/primitives";
@@ -83,7 +84,7 @@ export default async function BlogPost({ params }: Props) {
         datePublished: p.date,
         dateModified: p.date,
         articleSection: p.category,
-        author: { "@id": `https://${site.domain}/#org` },
+        author: { "@id": `https://${site.domain}/#founder` },
         publisher: { "@id": `https://${site.domain}/#org` },
         isPartOf: { "@id": `https://${site.domain}/blog/` },
         mainEntityOfPage: url,
@@ -135,6 +136,7 @@ export default async function BlogPost({ params }: Props) {
                 <Clock className="h-4 w-4" />
                 {p.readMinutes} min read
               </span>
+              <Byline />
             </div>
           </div>
         </section>
@@ -177,6 +179,8 @@ export default async function BlogPost({ params }: Props) {
               </ul>
             </section>
           )}
+
+          <AuthorBox />
 
           <div className="mt-12 rounded-2xl border border-navy-100 bg-navy-50/70 p-7">
             <h2 className="text-lg font-extrabold text-navy-800">
