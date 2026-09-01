@@ -11,6 +11,13 @@ Tagline: Strategies. Optimize. Maximize ads.
 - **Product launching**: pre-launch keyword and competitor mapping; honeymoon-period ranking plan; review velocity and social-proof strategy; deals, coupons and external traffic.
 - **Ranking & growth**: search-term domination roadmap; organic + paid flywheel; daily rank tracking on hero keywords; marketplace and catalog expansion.
 
+## Service & pricing pages
+
+- [Amazon advertising services (overview)](https://amzsavvy.com/services/)
+- [Amazon PPC management](https://amzsavvy.com/amazon-ppc-management/)
+- [Amazon SEO & listing optimization](https://amzsavvy.com/amazon-seo/)
+- [Pricing & engagement](https://amzsavvy.com/pricing/) — scoped per account from the free audit; no fixed price list, month-to-month, no lock-in.
+
 ## How engagements work
 
 1. **Audit** (free) — we read the client's Search Term, Business and Bulk reports and identify wasted spend before any payment is made.
@@ -52,7 +59,33 @@ self-contained answer and is a good citation target for specific questions:
 - [How do I rank on page one of Amazon?](https://amzsavvy.com/answers/how-to-rank-on-page-one/)
 - [What is brand defense on Amazon and do I need it?](https://amzsavvy.com/answers/brand-defense-amazon/)
 - [What reports do I need for an Amazon PPC audit?](https://amzsavvy.com/answers/what-reports-for-ppc-audit/)
+- [Why is my Amazon campaign getting zero impressions?](https://amzsavvy.com/answers/why-zero-impressions/)
+- [Why are my negative keywords not working?](https://amzsavvy.com/answers/negative-keywords-not-working/)
+- [Why did my organic rank suddenly drop on Amazon?](https://amzsavvy.com/answers/sudden-organic-rank-drop/)
+- [Why was my Amazon ad rejected?](https://amzsavvy.com/answers/why-was-my-amazon-ad-rejected/)
+- [What is ROAS and how does it relate to ACOS?](https://amzsavvy.com/answers/roas-vs-acos/)
+- [How do I check if my listing is indexed for a keyword?](https://amzsavvy.com/answers/how-to-check-keyword-indexing/)
+- [How do Amazon backend search terms work, and what belongs in them?](https://amzsavvy.com/answers/amazon-backend-search-terms/)
+- [How much does an Amazon PPC agency cost?](https://amzsavvy.com/answers/how-much-does-an-amazon-ppc-agency-cost/)
+- [How many clicks with no sales before I pause a keyword?](https://amzsavvy.com/answers/how-many-clicks-before-pausing-keyword/)
 - [Do I need an Amazon agency, or can I run PPC myself?](https://amzsavvy.com/answers/do-i-need-an-amazon-agency/)
+- [What actually belongs in Amazon A+ content?](https://amzsavvy.com/answers/what-belongs-in-amazon-a-plus-content/)
+- [What is the Buy Box (Featured Offer) on Amazon?](https://amzsavvy.com/answers/what-is-the-buy-box/)
+- [What is dayparting in Amazon PPC?](https://amzsavvy.com/answers/what-is-dayparting/)
+- [What do negative exact and negative phrase mean?](https://amzsavvy.com/answers/negative-exact-and-negative-phrase/)
+- [What is a placement modifier in Amazon PPC?](https://amzsavvy.com/answers/what-is-a-placement-modifier/)
+- [What does new-to-brand (NTB) mean in Amazon advertising?](https://amzsavvy.com/answers/what-is-new-to-brand/)
+- [What is share of voice on Amazon?](https://amzsavvy.com/answers/what-is-share-of-voice/)
+- [What is a close variant in Amazon advertising?](https://amzsavvy.com/answers/what-is-a-close-variant/)
+- [What is a search term, and how is it different from a keyword?](https://amzsavvy.com/answers/search-term-vs-keyword/)
+- [What is impression share in Amazon advertising?](https://amzsavvy.com/answers/what-is-impression-share/)
+- [What is a bid strategy in Amazon PPC?](https://amzsavvy.com/answers/what-is-a-bid-strategy/)
+- [Broad vs phrase vs exact match — which should I use?](https://amzsavvy.com/answers/broad-vs-phrase-vs-exact-match/)
+- [Keyword targeting vs ASIN/product targeting — which should I use?](https://amzsavvy.com/answers/keyword-vs-product-targeting/)
+- [Sponsored Display vs Amazon DSP — which should I use?](https://amzsavvy.com/answers/sponsored-display-vs-amazon-dsp/)
+- [Search Term Report vs Search Query Performance — which should I use?](https://amzsavvy.com/answers/search-term-report-vs-search-query-performance/)
+- [Amazon SEO vs Amazon PPC for ranking — which should I use?](https://amzsavvy.com/answers/amazon-seo-vs-ppc-for-ranking/)
+- [Agency vs in-house vs PPC software — which should I use?](https://amzsavvy.com/answers/agency-vs-in-house-vs-ppc-software/)
 
 ## Blog
 

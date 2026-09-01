@@ -123,7 +123,7 @@ const coreAnswers: Answer[] = [
     metaDescription:
       "ACOS measures ad spend against ad sales; TACOS measures it against total sales. Which one to watch, and what a rising TACOS actually means.",
     category: "Metrics",
-    updated: "2026-08-15",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "How do ACOS and TACOS differ at a glance?",
@@ -337,7 +337,7 @@ const coreAnswers: Answer[] = [
     short:
       "Sponsored Products promote a single listing in search results and are where most accounts should concentrate spend, because intent is highest. Sponsored Brands promote your brand and a set of products with a custom headline or video, and require Brand Registry. Sponsored Display retargets shoppers on and off Amazon and is best used for defence and remarketing rather than primary acquisition.",
     category: "PPC",
-    updated: "2026-08-15",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "How do the three ad types compare?",
@@ -664,7 +664,7 @@ const coreAnswers: Answer[] = [
     short:
       "ROAS is revenue divided by ad spend; ACOS is ad spend divided by revenue. They are reciprocals of each other, so a 25% ACOS is a 4x ROAS and a 50% ACOS is a 2x ROAS. Convert between them with ROAS = 1 ÷ ACOS. Neither is better — Amazon reports ACOS by default, most other advertising platforms report ROAS.",
     category: "Metrics",
-    updated: "2026-08-15",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "How do ACOS and ROAS convert to each other?",

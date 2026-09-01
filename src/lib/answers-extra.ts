@@ -275,7 +275,7 @@ export const comparisonAnswers: Answer[] = [
     short:
       "Use all three, for different jobs, rather than choosing one. Broad match casts wide and belongs on a capped discovery budget; phrase match narrows to searches containing your keyword in order; exact match targets that search intent alone and is where proven converters and the bulk of your spend belong. The standard flow is broad and automatic campaigns to discover terms, exact to scale them, with negatives stopping the layers bidding against each other.",
     category: "PPC",
-    updated: "2026-08-16",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "What does each match type actually do?",
@@ -309,7 +309,7 @@ export const comparisonAnswers: Answer[] = [
     short:
       "Keyword targeting reaches shoppers by what they type; product targeting reaches them by what they are already looking at. Keyword targeting should be the primary engine for most accounts because search intent is explicit and measurable. Product targeting earns its place in two specific jobs: placing your ad on competitor listings you can beat on price, rating or format, and defending your own detail pages against competitors doing the same to you.",
     category: "PPC",
-    updated: "2026-08-16",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "How do keyword and product targeting compare?",
@@ -344,7 +344,7 @@ export const comparisonAnswers: Answer[] = [
     short:
       "Sponsored Display sits inside the normal Amazon Ads console, is self-service, has no meaningful spend floor, and is best used for retargeting and defending your own listings. Amazon DSP is a full programmatic platform with far wider inventory and deeper audience targeting, but it carries substantially higher minimum commitments that are negotiated case by case, and generally needs an agency or an Amazon account team. Sponsored Display is the sensible starting point.",
     category: "PPC",
-    updated: "2026-08-16",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "How do Sponsored Display and DSP compare?",
@@ -381,7 +381,7 @@ export const comparisonAnswers: Answer[] = [
     metaDescription:
       "Two reports, two different questions. Which one answers what, and why the numbers in them will never quite agree.",
     category: "Strategy",
-    updated: "2026-08-16",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "What does each report actually measure?",
@@ -416,7 +416,7 @@ export const comparisonAnswers: Answer[] = [
     short:
       "They are not alternatives. Amazon SEO decides whether you can rank for a keyword; PPC influences whether you do. SEO is indexing and relevance — if a phrase is nowhere in your title, bullets or backend terms, no budget will make you rank organically for it. PPC contributes the sales velocity and conversion history Amazon uses as evidence once you are indexed, which is why the listing work comes first.",
     category: "SEO",
-    updated: "2026-08-16",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "Why does the dependency run one way?",
@@ -450,7 +450,7 @@ export const comparisonAnswers: Answer[] = [
     short:
       "PPC software automates rules such as bid changes and negation, but it does not choose a strategy and still needs someone to configure and review it. In-house is the cheapest option and the right one when somebody genuinely has the weekly hours. An agency earns its fee when spend is high enough that a few points of ACOS exceed the retainer, or when the weekly maintenance simply is not happening. Run the arithmetic on your own spend before deciding.",
     category: "Strategy",
-    updated: "2026-08-16",
+    updated: "2026-09-01",
     sections: [
       {
         heading: "How do the three options compare?",
