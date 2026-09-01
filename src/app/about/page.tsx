@@ -11,7 +11,7 @@ import {
 } from "@/lib/site-config";
 import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/convert";
-import { RevealProvider, CtaButton } from "@/components/site/primitives";
+import { RevealProvider, CtaButton, PartnerBadge } from "@/components/site/primitives";
 
 /**
  * ABOUT — the entity page.
@@ -172,6 +172,9 @@ export default function AboutPage() {
               an exam for — Amazon checks the account history behind it. You can
               confirm the listing yourself rather than taking it on trust.
             </p>
+            <div className="mt-6">
+              <PartnerBadge width={180} />
+            </div>
             <a
               href={profiles[0]}
               target="_blank"

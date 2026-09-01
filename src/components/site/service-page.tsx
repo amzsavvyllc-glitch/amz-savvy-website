@@ -81,14 +81,14 @@ export function ServiceDetail({ data }: { data: ServicePage }) {
               {data.title}
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-navy-200">{data.tagline}</p>
-            <div className="mt-7 flex flex-wrap gap-3">
+            <div className="mt-7">
               <CtaButton href="/#book">
                 Get my free audit
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </CtaButton>
-              <div className="pt-1">
-                <PartnerBadge />
-              </div>
+            </div>
+            <div className="mt-6">
+              <PartnerBadge />
             </div>
           </div>
         </section>

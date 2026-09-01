@@ -2,6 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+import { profiles } from "@/lib/site-config";
+
+/* The official Amazon Ads partner-directory listing — the badge links here so
+   anyone can independently verify the credential on Amazon's own site. */
+const AMAZON_PARTNER_URL =
+  profiles.find((p) => p.includes("advertising.amazon.com")) ?? profiles[0];
 
 /* ------------------------------------------------------------------
    RevealProvider
@@ -67,42 +73,43 @@ export function Logo({ className }: { className?: string }) {
 }
 
 /* ------------------------------------------------------------------
-   Amazon Ads Verified Partner badge — real, verifiable credential, so
-   it carries more conversion weight than any invented stat.
+   Amazon Ads Verified Partner badge — the OFFICIAL Amazon Ads asset,
+   used unmodified and linked to AMZ Savvy's live listing in Amazon's
+   partner directory. A real, independently verifiable credential, so it
+   carries more conversion weight than any invented stat.
    ------------------------------------------------------------------ */
 export function PartnerBadge({
   className,
-  tone = "dark",
+  width = 156,
 }: {
   className?: string;
-  tone?: "dark" | "light";
+  /** Rendered width in px. Intrinsic asset is 480×366 (ratio 1.311). */
+  width?: number;
 }) {
+  const height = Math.round((width * 366) / 480);
   return (
-    <span
+    <a
+      href={AMAZON_PARTNER_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Amazon Ads Verified Partner — view AMZ Savvy's listing in Amazon's partner directory"
       className={cn(
-        "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-semibold tracking-wide backdrop-blur-md",
-        tone === "dark"
-          ? "border-white/15 bg-white/5 text-white/90"
-          : "border-navy-200 bg-white text-navy-700",
+        "inline-block rounded-xl transition-transform duration-200 hover:scale-[1.03] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
         className,
       )}
     >
-      <svg viewBox="0 0 20 20" className="h-4 w-4 shrink-0" aria-hidden="true">
-        <path
-          d="M10 1.5l2.35 1.7 2.9-.05.87 2.77 2.38 1.63-1.1 2.68 1.1 2.68-2.38 1.63-.87 2.77-2.9-.05L10 18.5l-2.35-1.7-2.9.05-.87-2.77L1.5 12.5l1.1-2.68L1.5 7.14l2.38-1.63.87-2.77 2.9.05L10 1.5z"
-          className="fill-brand-500"
-        />
-        <path
-          d="M6.6 10.2l2.2 2.2 4.6-4.6"
-          fill="none"
-          stroke="#fff"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-      Amazon Ads Verified Partner
-    </span>
+      <img
+        src="/amazon-ads-verified-partner.png"
+        alt="Amazon Ads Verified Partner"
+        width={width}
+        height={height}
+        loading="lazy"
+        decoding="async"
+        draggable={false}
+        className="block h-auto select-none"
+        style={{ width }}
+      />
+    </a>
   );
 }
 
