@@ -770,18 +770,27 @@ const coreAnswers: Answer[] = [
     metaDescription:
       "Percentage of spend, flat retainer or hybrid — what each model really costs, and the spend level below which an agency cannot pay for itself.",
     category: "Strategy",
-    updated: "2026-08-15",
+    updated: "2026-09-01",
     sections: [
       {
-        heading: "The three common models",
+        heading: "What are the three pricing models, and how do they compare?",
         body: [
           "Percentage of ad spend: simple, but it rewards the agency for spending more of your money, so check how that conflict is handled.",
           "Flat retainer: predictable, and does not penalise you for scaling. Usually banded by account size or ad spend.",
           "Retainer plus performance: a smaller base with an upside tied to an agreed metric. Make sure the metric is one you actually care about — growth in profit, not growth in attributed revenue.",
         ],
+        table: {
+          columns: ["Model", "Typical shape", "Best when", "What to watch"],
+          rows: [
+            ["% of ad spend", "Commonly around 10–20% of monthly ad spend", "Spend is stable and you want the fee to track the account", "It pays the agency to spend more of your money — ask how that conflict is handled"],
+            ["Flat retainer", "Often low-to-mid four figures monthly, banded by account size", "You are scaling and do not want the fee to rise with every extra dollar spent", "Check what is actually included, and whether listing work sits inside or outside it"],
+            ["Retainer + performance", "Smaller base plus an upside on an agreed metric", "Both sides want skin in the game", "Tie the upside to profit, not to attributed revenue — those two diverge fast"],
+          ],
+          caption: "Ranges are orientation, not quotes: fees move with marketplace, category, ASIN count and how much listing work is included.",
+        },
       },
       {
-        heading: "Do the arithmetic before you sign",
+        heading: "How do I work out whether the fee pays for itself?",
         body: [
           "If you spend $3,000 a month on ads, a 5-point ACOS improvement is worth about $150 a month, which does not cover any real retainer. At $30,000 a month the same improvement is worth $1,500 and the maths works.",
           "Ask what is included, what reporting looks like, whether you keep the campaign structure and keyword lists if you leave, and whether it is month-to-month after an initial period.",

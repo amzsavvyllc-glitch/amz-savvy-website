@@ -266,6 +266,56 @@ export const glossaryAnswers: Answer[] = [
     ],
     related: ["what-is-a-placement-modifier", "how-many-clicks-before-pausing-keyword", "how-to-lower-acos"],
   },
+  {
+    slug: "what-are-amazon-sponsored-listings",
+    question: "What are Amazon sponsored listings?",
+    short:
+      "Sponsored listings are Amazon's paid placements — the results carrying a small \"Sponsored\" label above, beside or among the organic results. It is not an official Amazon product name: what Amazon actually sells is Sponsored Products, Sponsored Brands and Sponsored Display. When someone says \"sponsored listing\" they almost always mean a Sponsored Products ad, which promotes a single product inside search results and takes the largest share of spend in most accounts.",
+    metaDescription:
+      "\"Sponsored listing\" is not an official Amazon term — it covers three different ad types. Which one people usually mean, and where each actually appears.",
+    category: "PPC",
+    updated: "2026-09-01",
+    sections: [
+      {
+        heading: "Which ad type does “sponsored listing” actually mean?",
+        body: [
+          "The phrase is shopper-and-seller shorthand, not Amazon terminology — you will not find a \"sponsored listing\" product anywhere in the advertising console. It describes the effect (a listing shown because someone paid for the placement) rather than the mechanism.",
+          "That matters the moment you try to act on it, because the three real formats are bought, targeted and reported differently. Matching the informal phrase to the right product is the first step.",
+        ],
+        table: {
+          columns: ["What people say", "What Amazon calls it", "Where it appears"],
+          rows: [
+            ["\"Sponsored listing\" / \"sponsored product\"", "Sponsored Products", "Within search results and on product detail pages, promoting one product"],
+            ["\"That banner with the brand at the top\"", "Sponsored Brands", "Top of search, a brand logo, headline and several products, or a video"],
+            ["\"The ads that follow me around\"", "Sponsored Display", "On and off Amazon — retargeting and competitor detail pages"],
+          ],
+          caption: "All three carry a “Sponsored” label; only the format and the buying mechanism differ.",
+        },
+      },
+      {
+        heading: "How is a sponsored listing different from an organic one?",
+        body: [
+          "A sponsored placement is bought per click through an auction: you set a bid, and you pay only when someone clicks. An organic placement is earned — Amazon decides it from relevance and the listing's own history of converting shoppers for that search.",
+          "Both point at exactly the same product detail page. The shopper sees the same price, images and reviews either way, which is why a listing that does not convert cannot be rescued by advertising: you are paying to send more people to a page that already fails to sell.",
+        ],
+      },
+      {
+        heading: "Do sponsored listings improve organic ranking?",
+        body: [
+          "Indirectly, and only under a condition people skip. Advertising produces sales and conversion history, and those are among the inputs Amazon uses to decide organic position — so paid activity can contribute to organic rank over time.",
+          "The condition is indexing. If the phrase is nowhere in your title, bullets or backend terms, your listing is not eligible to rank organically for it at all, and paying for the placement buys traffic for exactly as long as you keep paying and nothing that persists when you stop. Check indexing before you fund a rank campaign, not after.",
+        ],
+      },
+      {
+        heading: "Which type should a new advertiser start with?",
+        body: [
+          "Sponsored Products, on a small, deliberately structured set of campaigns. Search intent is explicit, the reporting is the clearest of the three, and the Search Term report it produces is what tells you which phrases are worth pursuing at all.",
+          "Launching all three at once on a modest budget spreads spend too thin to produce a readable signal anywhere, so you learn nothing from any of them. Establish Sponsored Products first, then layer Brands and Display once you know which terms actually convert.",
+        ],
+      },
+    ],
+    related: ["sponsored-products-brands-display", "how-to-check-keyword-indexing", "how-amazon-ranking-works"],
+  },
 ];
 
 export const comparisonAnswers: Answer[] = [

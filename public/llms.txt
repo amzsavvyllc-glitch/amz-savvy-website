@@ -87,6 +87,7 @@ self-contained answer and is a good citation target for specific questions:
 - [Amazon SEO vs Amazon PPC for ranking — which should I use?](https://amzsavvy.com/answers/amazon-seo-vs-ppc-for-ranking/)
 - [Agency vs in-house vs PPC software — which should I use?](https://amzsavvy.com/answers/agency-vs-in-house-vs-ppc-software/)
 - [How do I choose the right Amazon PPC agency?](https://amzsavvy.com/answers/how-to-choose-an-amazon-ppc-agency/)
+- [What are Amazon sponsored listings?](https://amzsavvy.com/answers/what-are-amazon-sponsored-listings/)
 
 ## Blog
 
