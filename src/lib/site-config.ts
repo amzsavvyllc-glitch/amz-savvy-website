@@ -11,7 +11,7 @@ export const site = {
   name: "AMZ Savvy",
   tagline: "Strategies | Optimize | Maximize ads",
   domain: "amzsavvy.com",
-  email: "amzsavvy.llc@gmail.com",
+  email: "info@amzsavvy.com",
 
   /* One number, three uses. `phone` is the E.164 form for tel: links and
      schema; `phoneDisplay` is what humans read; `whatsapp` is the same number
