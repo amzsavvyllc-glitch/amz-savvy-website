@@ -403,28 +403,28 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 text-sm">
-            <Link href="/#services" className="transition-colors hover:text-brand-400">Services</Link>
-            <Link href="/#process" className="transition-colors hover:text-brand-400">Process</Link>
-            <Link href="/#calculator" className="transition-colors hover:text-brand-400">Calculator</Link>
-            <Link href="/answers/" className="transition-colors hover:text-brand-400">Answers</Link>
-            <Link href="/blog/" className="transition-colors hover:text-brand-400">Blog</Link>
-            <Link href="/#faq" className="transition-colors hover:text-brand-400">FAQ</Link>
-            <Link href="/#book" className="transition-colors hover:text-brand-400">Book a call</Link>
+          <div className="flex flex-col text-sm sm:gap-2">
+            <Link href="/#services" className="py-3 transition-colors hover:text-brand-400 sm:py-0">Services</Link>
+            <Link href="/#process" className="py-3 transition-colors hover:text-brand-400 sm:py-0">Process</Link>
+            <Link href="/#calculator" className="py-3 transition-colors hover:text-brand-400 sm:py-0">Calculator</Link>
+            <Link href="/answers/" className="py-3 transition-colors hover:text-brand-400 sm:py-0">Answers</Link>
+            <Link href="/blog/" className="py-3 transition-colors hover:text-brand-400 sm:py-0">Blog</Link>
+            <Link href="/#faq" className="py-3 transition-colors hover:text-brand-400 sm:py-0">FAQ</Link>
+            <Link href="/#book" className="py-3 transition-colors hover:text-brand-400 sm:py-0">Book a call</Link>
           </div>
 
-          <div className="flex flex-col gap-2 text-sm">
-            <a href={`mailto:${site.email}`} className="transition-colors hover:text-brand-400">
+          <div className="flex flex-col text-sm sm:gap-2">
+            <a href={`mailto:${site.email}`} className="py-3 transition-colors hover:text-brand-400 sm:py-0">
               {site.email}
             </a>
-            <a href={`tel:${site.phone}`} className="transition-colors hover:text-brand-400">
+            <a href={`tel:${site.phone}`} className="py-3 transition-colors hover:text-brand-400 sm:py-0">
               Call {site.phoneDisplay}
             </a>
             <a
               href={`https://wa.me/${site.whatsapp}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-colors hover:text-brand-400"
+              className="py-3 transition-colors hover:text-brand-400 sm:py-0"
             >
               WhatsApp {site.phoneDisplay}
             </a>
@@ -478,7 +478,10 @@ export function FloatingActions() {
       {/* Sticky mobile conversion bar */}
       <div
         className={cn(
-          "fixed inset-x-0 bottom-0 z-40 border-t border-navy-100 bg-white/95 p-3 backdrop-blur-lg transition-transform duration-300 sm:hidden",
+          // Opaque, no backdrop-filter: this bar is sm:hidden, so the blur only
+          // ever ran on phones — a full-width filtered surface recompositing
+          // against every scroll frame, for an effect behind an opaque bar.
+          "fixed inset-x-0 bottom-0 z-40 border-t border-navy-100 bg-white p-3 transition-transform duration-300 sm:hidden",
           show ? "translate-y-0" : "translate-y-full",
         )}
       >

@@ -9,6 +9,7 @@ import { AuthorBox, Byline } from "@/components/site/author-box";
 import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/convert";
 import { CtaButton, RevealProvider } from "@/components/site/primitives";
+import { Diagram } from "@/components/site/diagram";
 
 /** Static export: every post is pre-rendered at build time. */
 export function generateStaticParams() {
@@ -164,17 +165,13 @@ export default async function BlogPost({ params }: Props) {
         </section>
 
         <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
-          {/* Eager, not lazy: this is the largest element above the fold, so
-              deferring it would only push out the LCP it already owns. */}
+          {/* The article hero: largest element above the fold, so it leads
+              the load rather than waiting behind lazy-loading. */}
           {p.image && (
-            <img
-              src={p.image.src}
-              alt={p.image.alt}
-              width={p.image.width}
-              height={p.image.height}
-              decoding="async"
-              fetchPriority="high"
-              style={{ backgroundColor: "#021d33" }}
+            <Diagram
+              image={p.image}
+              priority
+              sizes="(min-width: 768px) 704px, calc(100vw - 32px)"
               className="mb-10 w-full rounded-2xl border border-navy-100"
             />
           )}

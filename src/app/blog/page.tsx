@@ -6,6 +6,7 @@ import { site } from "@/lib/site-config";
 import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/convert";
 import { RevealProvider, SectionHeading } from "@/components/site/primitives";
+import { Diagram } from "@/components/site/diagram";
 
 const description =
   "Practical writing on Amazon advertising and listing optimisation — what changed, what it means for your account, and what to do about it.";
@@ -109,17 +110,12 @@ export default function BlogIndex() {
                     href={`/blog/${p.slug}/`}
                     className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white transition-all hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-navy-900/5"
                   >
-                    {/* The first card is the one most likely to be above the
-                        fold, so it loads eagerly; the rest stay lazy. */}
+                    {/* Only the first card is likely above the fold. */}
                     {p.image && (
-                      <img
-                        src={p.image.src}
-                        alt={p.image.alt}
-                        width={p.image.width}
-                        height={p.image.height}
-                        loading={i === 0 ? "eager" : "lazy"}
-                        decoding="async"
-                        style={{ backgroundColor: "#021d33" }}
+                      <Diagram
+                        image={p.image}
+                        priority={i === 0}
+                        sizes="(min-width: 640px) 470px, calc(100vw - 32px)"
                         className="w-full border-b border-navy-100"
                       />
                     )}

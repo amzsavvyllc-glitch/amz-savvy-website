@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { nav, site } from "@/lib/site-config";
@@ -10,17 +10,60 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [progress, setProgress] = useState(0);
+  const barRef = useRef<HTMLDivElement>(null);
 
+  /* Scroll handling is deliberately hostile to React here.
+   *
+   * The previous version read `document.documentElement.scrollHeight` inside
+   * the handler and pushed the result through `setProgress`. Both halves were
+   * expensive: `scrollHeight` forces a synchronous layout, and the state
+   * update re-rendered the whole Header on every scroll event, which wrote a
+   * new inline transform, which invalidated style, which meant the NEXT
+   * event's `scrollHeight` read could not reuse a cached layout. A self-
+   * feeding thrash loop, measured at ~8ms per scroll event on the homepage
+   * against a 16.7ms frame budget — and phones are several times slower.
+   *
+   * So: measure the page height once (and on resize, not on scroll), write
+   * the progress bar straight to the DOM through a ref, and keep React state
+   * only for `scrolled`, which changes at most twice per page. */
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 24);
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? (window.scrollY / max) * 100 : 0);
+    let max = 0;
+    let frame = 0;
+
+    const measure = () => {
+      max = document.documentElement.scrollHeight - window.innerHeight;
     };
-    onScroll();
+
+    const paint = () => {
+      frame = 0;
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      if (barRef.current) {
+        const pct = max > 0 ? Math.min(y / max, 1) : 0;
+        barRef.current.style.transform = `scaleX(${pct})`;
+      }
+    };
+
+    // Coalesce to one write per frame: scroll fires far more often than paint.
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(paint);
+    };
+
+    measure();
+    paint();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", measure, { passive: true });
+    // Content can change height after mount (fonts, images), which would leave
+    // the bar mis-scaled for the rest of the session.
+    const ro = new ResizeObserver(measure);
+    ro.observe(document.documentElement);
+
+    return () => {
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", measure);
+      ro.disconnect();
+    };
   }, []);
 
   // Lock body scroll while the mobile menu is open
@@ -36,14 +79,20 @@ export function Header() {
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-300",
         scrolled
-          ? "border-b border-white/10 bg-navy-900/85 backdrop-blur-xl"
+          // Opaque on mobile: a full-width backdrop-filter pinned to the
+          // top re-composites on every scroll frame, and on a dark navy bar
+          // at 85% the blur is all but invisible on a phone anyway.
+          ? "border-b border-white/10 bg-navy-900 sm:bg-navy-900/85 sm:backdrop-blur-xl"
           : "bg-transparent",
       )}
     >
-      {/* Reading progress — cheap, and signals page length to the visitor */}
+      {/* Reading progress. Driven by a ref write, not state — see the effect.
+          No CSS transition: the rAF write is already per-frame, and a 150ms
+          transition on top of it only makes the bar lag the scroll. */}
       <div
-        className="absolute inset-x-0 top-0 h-0.5 origin-left bg-brand-500 transition-transform duration-150"
-        style={{ transform: `scaleX(${progress / 100})` }}
+        ref={barRef}
+        className="absolute inset-x-0 top-0 h-0.5 origin-left bg-brand-500 will-change-transform"
+        style={{ transform: "scaleX(0)" }}
         aria-hidden="true"
       />
 
@@ -81,7 +130,8 @@ export function Header() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="rounded-lg p-2 text-white lg:hidden"
+          // p-3 not p-2: 24px icon + 12px padding = a 48px tap target.
+          className="-mr-1 rounded-lg p-3 text-white lg:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >

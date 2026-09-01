@@ -8,6 +8,7 @@ import { AuthorBox, Byline } from "@/components/site/author-box";
 import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/convert";
 import { CtaButton, RevealProvider } from "@/components/site/primitives";
+import { Diagram } from "@/components/site/diagram";
 
 /** Static export: every answer is pre-rendered at build time. */
 export function generateStaticParams() {
@@ -176,18 +177,13 @@ export default async function AnswerPage({ params }: Props) {
 
           {a.image && (
             <figure className="mt-8">
-              {/* The box is already reserved by width/height, but until the
-                  ~150KB PNG arrives it would be a white hole on a slow mobile
-                  connection. Painting it the diagram's own background colour
-                  means the image resolves into place instead of flashing. */}
-              <img
-                src={a.image.src}
-                alt={a.image.alt}
-                width={a.image.width}
-                height={a.image.height}
-                loading="lazy"
-                decoding="async"
-                style={{ backgroundColor: "#021d33" }}
+              {/* priority: this sits ~72px below the fold on a phone, so it is
+                  the first thing scrolled to and the mobile LCP candidate.
+                  There is exactly one per page, so eager costs nothing. */}
+              <Diagram
+                image={a.image}
+                priority
+                sizes="(min-width: 768px) 704px, calc(100vw - 32px)"
                 className="w-full rounded-2xl border border-navy-100"
               />
               {a.image.caption && (
