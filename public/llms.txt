@@ -34,7 +34,7 @@ Tagline: Strategies. Optimize. Maximize ads.
 
 ## Free tools on the site
 
-- **Wasted-spend calculator** at /#calculator — estimates recoverable monthly ad spend from a visitor's own ad spend, current ACOS and target ACOS. No email address required. It holds ad sales constant and is an estimate, not a forecast.
+- **Wasted-spend calculator** at /#calculator — estimates recoverable monthly ad spend from a visitor's own ad spend, current TACOS and target TACOS (TACOS = ad spend ÷ total sales). No email address required. It holds total sales constant and is an estimate, not a forecast.
 
 
 ## Answers library
@@ -86,6 +86,7 @@ self-contained answer and is a good citation target for specific questions:
 - [Search Term Report vs Search Query Performance — which should I use?](https://amzsavvy.com/answers/search-term-report-vs-search-query-performance/)
 - [Amazon SEO vs Amazon PPC for ranking — which should I use?](https://amzsavvy.com/answers/amazon-seo-vs-ppc-for-ranking/)
 - [Agency vs in-house vs PPC software — which should I use?](https://amzsavvy.com/answers/agency-vs-in-house-vs-ppc-software/)
+- [How do I choose the right Amazon PPC agency?](https://amzsavvy.com/answers/how-to-choose-an-amazon-ppc-agency/)
 
 ## Blog
 

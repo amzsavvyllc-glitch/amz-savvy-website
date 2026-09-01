@@ -62,30 +62,33 @@ function Slider({
 
 export function Calculator() {
   const [spend, setSpend] = useState(15000);
-  const [acos, setAcos] = useState(42);
-  const [targetAcos, setTargetAcos] = useState(26);
+  // TACOS = ad spend ÷ TOTAL sales (ad + organic), so the figure derived below
+  // is total revenue, not ad-attributed sales. Defaults reflect realistic TACOS
+  // levels, which sit well below typical ACOS.
+  const [tacos, setTacos] = useState(18);
+  const [targetTacos, setTargetTacos] = useState(11);
 
   // Target can never exceed current — clamp for sane output
-  const effectiveTarget = Math.min(targetAcos, acos);
+  const effectiveTarget = Math.min(targetTacos, tacos);
 
   const result = useMemo(() => {
-    const sales = spend / (acos / 100);
-    const spendAtTarget = sales * (effectiveTarget / 100);
+    const revenue = spend / (tacos / 100);
+    const spendAtTarget = revenue * (effectiveTarget / 100);
     const monthlySaving = Math.max(spend - spendAtTarget, 0);
-    const roasNow = sales / spend;
-    const roasAfter = spendAtTarget > 0 ? sales / spendAtTarget : 0;
-    // Alternative framing: keep the same budget, buy more sales
-    const extraSales = Math.max(spend / (effectiveTarget / 100) - sales, 0);
+    const roasNow = revenue / spend;
+    const roasAfter = spendAtTarget > 0 ? revenue / spendAtTarget : 0;
+    // Alternative framing: keep the same budget, earn more total revenue
+    const extraRevenue = Math.max(spend / (effectiveTarget / 100) - revenue, 0);
     return {
-      sales,
+      revenue,
       monthlySaving,
       annualSaving: monthlySaving * 12,
       roasNow,
       roasAfter,
-      extraSales,
+      extraRevenue,
       savedPct: spend > 0 ? (monthlySaving / spend) * 100 : 0,
     };
-  }, [spend, acos, effectiveTarget]);
+  }, [spend, tacos, effectiveTarget]);
 
   return (
     <section id="calculator" className="relative overflow-hidden bg-navy-50 py-20 lg:py-28">
@@ -94,7 +97,7 @@ export function Calculator() {
           eyebrow="Wasted spend calculator"
           title={
             <>
-              What is your current ACOS{" "}
+              What is your current TACOS{" "}
               <span className="text-brand-700">actually costing you?</span>
             </>
           }
@@ -118,32 +121,32 @@ export function Calculator() {
                 format={money}
               />
               <Slider
-                label="Your ACOS today"
-                value={acos}
-                min={5}
-                max={100}
+                label="Your TACOS today"
+                value={tacos}
+                min={2}
+                max={50}
                 step={1}
-                onChange={setAcos}
+                onChange={setTacos}
                 format={(v) => `${v}%`}
-                hint="Ad spend ÷ ad sales. Find it in Campaign Manager."
+                hint="Ad spend ÷ total sales (ad + organic)."
               />
               <Slider
-                label="Target ACOS"
+                label="Target TACOS"
                 value={effectiveTarget}
-                min={5}
-                max={100}
+                min={2}
+                max={50}
                 step={1}
-                onChange={setTargetAcos}
+                onChange={setTargetTacos}
                 format={(v) => `${v}%`}
-                hint="Set this at or below your break-even margin."
+                hint="Where you want ad cost to sit as a share of total revenue."
               />
             </div>
 
             <p className="mt-8 flex gap-2.5 rounded-xl bg-navy-50 p-4 text-xs leading-relaxed text-navy-500">
               <Info className="mt-0.5 h-4 w-4 shrink-0 text-navy-400" />
               <span>
-                An estimate from your own inputs, holding ad sales constant — not
-                a forecast or a guarantee. Real accounts move at different speeds
+                An estimate from your own inputs, holding total sales constant —
+                not a forecast or a guarantee. Real accounts move at different speeds
                 depending on category, margin and competition.
               </span>
             </p>
@@ -182,7 +185,7 @@ export function Calculator() {
               <div className="mt-8 space-y-4">
                 <div>
                   <div className="mb-1.5 flex justify-between text-xs font-medium text-navy-300">
-                    <span>Spend today at {acos}% ACOS</span>
+                    <span>Spend today at {tacos}% TACOS</span>
                     <span className="tabular-nums text-white">{money(spend)}</span>
                   </div>
                   <div className="h-3 w-full overflow-hidden rounded-full bg-white/10">
@@ -191,7 +194,7 @@ export function Calculator() {
                 </div>
                 <div>
                   <div className="mb-1.5 flex justify-between text-xs font-medium text-navy-300">
-                    <span>Same sales at {effectiveTarget}% ACOS</span>
+                    <span>Same revenue at {effectiveTarget}% TACOS</span>
                     <span className="tabular-nums text-white">
                       {money(spend - result.monthlySaving)}
                     </span>
@@ -212,20 +215,20 @@ export function Calculator() {
                   <div className="font-heading text-2xl font-extrabold tabular-nums">
                     {result.roasNow.toFixed(1)}x
                   </div>
-                  <div className="text-xs text-navy-400">ROAS now</div>
+                  <div className="text-xs text-navy-400">Total ROAS now</div>
                 </div>
                 <div>
                   <div className="font-heading text-2xl font-extrabold tabular-nums text-brand-400">
                     {result.roasAfter.toFixed(1)}x
                   </div>
-                  <div className="text-xs text-navy-400">ROAS at target</div>
+                  <div className="text-xs text-navy-400">Total ROAS at target</div>
                 </div>
                 <div>
                   <div className="font-heading text-2xl font-extrabold tabular-nums">
-                    {money(result.extraSales)}
+                    {money(result.extraRevenue)}
                   </div>
                   <div className="text-xs text-navy-400">
-                    Or extra sales at same budget
+                    Or extra revenue at same budget
                   </div>
                 </div>
               </div>

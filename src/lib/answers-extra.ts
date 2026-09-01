@@ -479,4 +479,56 @@ export const comparisonAnswers: Answer[] = [
     ],
     related: ["do-i-need-an-amazon-agency", "how-much-does-an-amazon-ppc-agency-cost", "what-reports-for-ppc-audit"],
   },
+  {
+    slug: "how-to-choose-an-amazon-ppc-agency",
+    question: "How do I choose the right Amazon PPC agency?",
+    short:
+      "Judge an Amazon PPC agency on four things, in order: whether they diagnose before they change anything, what they refuse to promise, who actually does the work, and what you keep if you leave. A good agency runs a real audit first, will not guarantee a specific ACOS or rank (nobody controls Amazon's algorithm), names the practitioner on your account, and lets you walk with your campaign structure intact. Any agency that demands your Seller Central password, guarantees a number, or locks you into a long contract is telling you something — walk.",
+    metaDescription:
+      "How to choose an Amazon PPC agency: the four things that actually matter, the questions to ask, and the red flags that should end the conversation.",
+    category: "Strategy",
+    updated: "2026-09-01",
+    sections: [
+      {
+        heading: "What are your options, really?",
+        body: [
+          "\"Agency\" is one of four ways to get the work done, and the right one depends on your spend and how much time you genuinely have. Comparing them honestly is the first step — before comparing one agency against another.",
+        ],
+        table: {
+          columns: ["Option", "Best for", "How it's priced", "Main risk"],
+          rows: [
+            ["Full-service agency", "Spend high enough that a few ACOS points beat the fee", "Monthly retainer or a share of ad spend", "Paying a fee before spend justifies it"],
+            ["Specialist freelancer", "Smaller accounts or single-channel help", "Hourly or a small retainer", "Bandwidth and continuity if they get busy"],
+            ["PPC software", "Large keyword sets needing fast, consistent rule execution", "Monthly subscription", "Automates the wrong decisions if it's misconfigured"],
+            ["In-house", "When someone truly has the weekly hours", "Staff time", "The cadence lapsing when they get pulled elsewhere"],
+          ],
+          caption: "Run the arithmetic on your own spend first — the right answer changes with account size.",
+        },
+      },
+      {
+        heading: "What questions actually separate a good agency from a bad one?",
+        body: [
+          "Do you audit before you change anything? A serious agency reads your Search Term, Business and bulk reports first, because roughly a third of what looks like a bidding problem is really a listing problem — and changing bids first destroys the baseline.",
+          "What will you not promise? The honest answer includes \"a specific ACOS or rank,\" because nobody controls Amazon's algorithm or a competitor's budget. An agency that guarantees a number is either naive or selling you something it cannot deliver.",
+          "Who actually works on my account, and can I see the reporting? You want a named practitioner and reporting you can read — not a junior on a template and a dashboard you never open.",
+          "What do I keep if I leave? Your campaign structure, keyword lists and negatives should be yours. If leaving means starting from zero, the contract is built to trap you, not to serve you.",
+        ],
+      },
+      {
+        heading: "What are the red flags that should end the conversation?",
+        body: [
+          "A guaranteed ACOS or rank in writing. A demand for your Seller Central password (scoped user access through Amazon's own permission system is all any agency needs). A long lock-in contract. No named person behind the work. Vague reporting that never ties a change to what it did.",
+          "Any one of these is a reason to slow down; two of them is a reason to walk.",
+        ],
+      },
+      {
+        heading: "Where does AMZ Savvy stand on all of this?",
+        body: [
+          "We run the free audit before anything is changed, never ask for your Seller Central password, name the practitioner on your account, and do not guarantee a rank or an ACOS — because it cannot be honestly promised. Engagements are month-to-month, and you keep your campaign structure and keyword lists if you leave.",
+          "You do not have to take that on trust: the Amazon Ads Verified Partner status is checkable in Amazon's own partner directory, and the reviews are public on Fiverr. See how the work is scoped on the pricing page, or the detail on the Amazon PPC management page.",
+        ],
+      },
+    ],
+    related: ["agency-vs-in-house-vs-ppc-software", "do-i-need-an-amazon-agency", "how-much-does-an-amazon-ppc-agency-cost"],
+  },
 ];
