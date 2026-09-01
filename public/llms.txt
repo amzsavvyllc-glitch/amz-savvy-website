@@ -98,6 +98,7 @@ source URL, listed publicly at the foot of the post.
 - [Blog index](https://amzsavvy.com/blog/)
 - [Amazon cut titles to 75 characters. Go and read what its AI put in the other 125.](https://amzsavvy.com/blog/amazon-75-character-title-item-highlights/)
 - [The Amazon PPC audit we run before touching a single bid](https://amzsavvy.com/blog/amazon-ppc-audit-checklist/)
+- [Your Sponsored Products ads now run off Amazon — and two of your bid controls do not follow them](https://amzsavvy.com/blog/sponsored-products-off-amazon-creator-placements/)
 
 ## Contact
 

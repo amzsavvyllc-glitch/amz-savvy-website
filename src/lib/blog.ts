@@ -285,6 +285,74 @@ const allPosts: Post[] = [
       "what-reports-for-ppc-audit",
     ],
   },
+  {
+    slug: "sponsored-products-off-amazon-creator-placements",
+    title:
+      "Your Sponsored Products ads now run off Amazon — and two of your bid controls do not follow them",
+    excerpt:
+      "Amazon's own help page confirms Sponsored Products campaigns extend to creators, apps and conversational surfaces off Amazon. The part worth your attention: Top of Search and Product Page bid adjustments do not apply there.",
+    date: "2026-09-01",
+    category: "News",
+    readMinutes: 6,
+    sections: [
+      {
+        heading: "What Amazon's own page says",
+        body: [
+          "Amazon's help article on off-Amazon advertising, updated on 27 August 2026, states that \"Your Sponsored Products campaigns extend beyond Amazon to premium sites, apps, conversational experiences, and Amazon creators (influencers and publishers)\", and that Amazon uses \"your existing targeting, bid, and budget settings to place your ads where they're most relevant\".",
+          "Availability, in Amazon's words, covers advertisers in Brazil, Canada, India, Mexico, the Middle East, North Africa, Türkiye and the United States. If you advertise only in a European marketplace, this does not currently apply to you.",
+          "Several trade outlets report the rollout began on 10 August 2026 and that advertisers were enrolled without needing to act. We could not find that date on any Amazon-hosted page — the notice appears to have gone out as an in-console notification — so treat the date as trade reporting rather than an Amazon-confirmed fact. The mechanism itself is documented by Amazon; the start date is not.",
+        ],
+      },
+      {
+        heading: "The detail that actually changes how you bid",
+        body: [
+          "Amazon states plainly that \"Bid adjustments for Top of Search and Product Pages don't apply to off-Amazon placements. However, dynamic bidding and other bidding strategies will apply for off-Amazon placements.\"",
+          "That is the sentence to sit with. If your account leans on a large Top of Search modifier to win the placements you care about, that lever simply is not operating on this inventory — while your dynamic bidding rules still are. The result is a slice of spend being bid in a way you did not specifically design, inside campaigns whose settings you did design carefully.",
+          "It does not make the placement bad. It makes it unmeasured until you go and look, which is a different problem and a fixable one.",
+        ],
+      },
+      {
+        heading: "Where your search terms come from when there is no search",
+        body: [
+          "A social feed or an article has no query behind it, so Amazon supplies one. Per the same help page: \"When your ad appears in off-Amazon placements that have no search context (such as social sites), we will infer and provide a search term with customer context that best matches your advertised product. These keywords will qualify for negative targeting.\"",
+          "Two practical consequences. First, terms you did not choose will appear in your Search Term report, and they are inferred rather than typed by a shopper. Second — and this is the useful half — they can be negated like any other term, so the normal harvesting and negation discipline still works here.",
+          "Amazon also notes that \"Text ads may include AI generated content using your product and landing page\". If your listing copy is thin or off-message, that is now the raw material for an ad creative you did not write.",
+        ],
+      },
+      {
+        heading: "What to do this week",
+        body: [
+          "Pull the Sponsored Products Placement Report and look at the off-Amazon rows against your on-Amazon rows: spend, clicks, orders and ACOS, judged against your break-even rather than against a general benchmark. Advertising API users can read the same split through the Placement Classification metric. Until you have that comparison you are guessing, in either direction.",
+          "Then review your Search Term report for terms you never targeted, and negate the ones that are clearly wrong for the product — the same rule you already apply on Amazon.",
+          "If you decide the inventory is not for you, the control is at campaign level under \"Choose where your ads appear\": \"Increase reach off Amazon\" is the default, and \"Limit reach to Amazon\" keeps ads on Amazon-owned properties only. Worth noting because several write-ups of this change name that second setting \"Limit off-Amazon spend\", which is not what Amazon's current page calls it.",
+        ],
+      },
+      {
+        heading: "Our read",
+        body: [
+          "New inventory is not automatically good or bad; it is untested. The reasonable posture is to leave it running long enough to produce a readable signal, measure it separately in the placement report, and decide on your own numbers — rather than opting out on reflex or leaving it unexamined because the campaigns look unchanged in the console.",
+          "The one thing we would not do is nothing at all. A placement that ignores two of your bid modifiers and generates its own search terms deserves a look at the report, even if the answer turns out to be that it is performing fine.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Amazon Ads — Understand Sponsored Products off-Amazon advertising (updated 27 Aug 2026)",
+        url: "https://advertising.amazon.com/help/GYTD2Z3SYMAAMVXA",
+      },
+      {
+        label:
+          "PPC Land — Amazon Sponsored Products campaigns gain creator placements (trade reporting for the 10 Aug date)",
+        url: "https://ppc.land/amazon-sponsored-products-campaigns-gain-creator-placements-on-august-10/",
+      },
+    ],
+    related: [
+      "what-are-amazon-sponsored-listings",
+      "how-to-find-wasted-search-terms",
+      "what-is-a-placement-modifier",
+    ],
+  },
 ];
 
 /** Newest first. The index page, the sitemap and the homepage teaser all rely
