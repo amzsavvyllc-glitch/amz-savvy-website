@@ -33,7 +33,23 @@ export type Answer = {
   metaDescription?: string;
   category: "PPC" | "SEO" | "Strategy" | "Metrics";
   updated: string;
-  sections: { heading: string; body: string[] }[];
+  sections: {
+    heading: string;
+    body: string[];
+    /**
+     * Optional comparison table, rendered after this section's paragraphs.
+     * AI Overviews and Perplexity preferentially lift real <table> markup, so
+     * comparison ("X vs Y") answers earn citations by structuring the contrast
+     * as data, not only prose. `columns` is the header row; every `rows` entry
+     * must have the same length as `columns`. Same HONESTY RULE as everywhere
+     * else — method and checkable fact only, no invented numbers.
+     */
+    table?: {
+      caption?: string;
+      columns: string[];
+      rows: string[][];
+    };
+  }[];
   related: string[];
 };
 
@@ -110,14 +126,34 @@ const coreAnswers: Answer[] = [
     updated: "2026-08-15",
     sections: [
       {
-        heading: "Why ACOS alone can mislead you",
+        heading: "How do ACOS and TACOS differ at a glance?",
+        body: [
+          "Both divide ad spend by sales — the difference is which sales sit in the denominator. ACOS uses only ad-attributed sales; TACOS uses every sale, paid and organic.",
+        ],
+        table: {
+          columns: ["", "ACOS", "TACOS"],
+          rows: [
+            ["Formula", "Ad spend ÷ ad-attributed sales", "Ad spend ÷ total sales (paid + organic)"],
+            ["Measures", "Efficiency of advertising in isolation", "What advertising costs the whole business"],
+            ["Best for", "Tuning bids, keywords and campaigns", "Tracking overall ad dependence over time"],
+            [
+              "A falling number means",
+              "Ads got more efficient — but can be faked by pausing non-branded campaigns",
+              "Organic rank is carrying more of the load — the healthiest signal in an account",
+            ],
+          ],
+          caption: "ACOS answers “were these ads efficient?”; TACOS answers “is the business growing?”",
+        },
+      },
+      {
+        heading: "When does ACOS alone mislead you?",
         body: [
           "You can improve ACOS simply by switching off every campaign except your branded terms. ACOS drops beautifully and total sales fall off a cliff, because you stopped acquiring new customers.",
           "ACOS answers 'were these ads efficient'. It cannot answer 'is the business growing', which is why it should never be read on its own.",
         ],
       },
       {
-        heading: "What TACOS tells you",
+        heading: "What does a rising or falling TACOS tell you?",
         body: [
           "TACOS falling while revenue holds or grows means organic sales are increasing relative to paid — your ranking is improving and you are becoming less dependent on ads.",
           "TACOS rising while revenue is flat means you are buying the same sales at a higher price. That is the early warning of listing decay or a new competitor bidding on your terms.",
@@ -304,15 +340,25 @@ const coreAnswers: Answer[] = [
     updated: "2026-08-15",
     sections: [
       {
-        heading: "Where each earns its place",
+        heading: "How do the three ad types compare?",
         body: [
           "Sponsored Products captures active purchase intent — someone typing a search is closer to buying than someone browsing. For most sellers this deserves the largest share of budget.",
           "Sponsored Brands works hardest when you have a range worth cross-selling, and Sponsored Brands Video in particular tends to earn attention in a crowded results page.",
           "Sponsored Display is strongest defending your own product pages against competitor ads, and retargeting shoppers who viewed but did not buy.",
         ],
+        table: {
+          columns: ["", "Sponsored Products", "Sponsored Brands", "Sponsored Display"],
+          rows: [
+            ["Where it shows", "In search results, single listing", "Top of search, brand + product set", "On/off Amazon product pages & retargeting"],
+            ["Primary job", "Acquisition on high intent", "Brand awareness & cross-sell", "Defence & remarketing"],
+            ["Brand Registry required", "No", "Yes", "Yes"],
+            ["Best share of budget", "Largest for most accounts", "Once you have a range to cross-sell", "Smaller, tactical"],
+          ],
+          caption: "Most accounts should establish Sponsored Products first, then layer the others.",
+        },
       },
       {
-        heading: "A common sequencing mistake",
+        heading: "What is the most common sequencing mistake?",
         body: [
           "Launching all three at once on a new product spreads a small budget too thin to produce a readable signal anywhere. Establish Sponsored Products first, then layer the others once you know which terms convert.",
         ],
@@ -621,14 +667,25 @@ const coreAnswers: Answer[] = [
     updated: "2026-08-15",
     sections: [
       {
-        heading: "The conversion table",
+        heading: "How do ACOS and ROAS convert to each other?",
         body: [
-          "10% ACOS = 10x ROAS. 20% ACOS = 5x ROAS. 25% ACOS = 4x ROAS. 33% ACOS = 3x ROAS. 50% ACOS = 2x ROAS. 100% ACOS = 1x ROAS, meaning you spent exactly what you earned.",
-          "Because they are reciprocals, a small ACOS improvement at the low end is a large ROAS movement, which is why ROAS can look more dramatic in reporting.",
+          "Because they are reciprocals (ROAS = 1 ÷ ACOS), a small ACOS improvement at the low end is a large ROAS movement, which is why ROAS can look more dramatic in reporting.",
         ],
+        table: {
+          columns: ["ACOS", "ROAS", "Meaning"],
+          rows: [
+            ["10%", "10x", "Every $1 of ad spend returns $10 of sales"],
+            ["20%", "5x", "Efficient — common target for established products"],
+            ["25%", "4x", "A frequently cited healthy target"],
+            ["33%", "3x", "Acceptable if margin is high enough"],
+            ["50%", "2x", "Break-even for a ~50% margin product"],
+            ["100%", "1x", "You spent exactly what you earned"],
+          ],
+          caption: "ACOS and ROAS are reciprocals — convert with ROAS = 1 ÷ ACOS.",
+        },
       },
       {
-        heading: "Which one to manage against",
+        heading: "Which one should I manage against?",
         body: [
           "Use whichever your team reads without converting in their head. What matters is comparing it against your break-even, not which format you picked.",
           "If you run advertising outside Amazon, standardising on ROAS makes cross-channel comparison easier.",

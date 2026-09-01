@@ -123,6 +123,11 @@ export function Booking() {
       id="book"
       className="relative overflow-hidden bg-navy-900 py-20 text-white lg:py-28"
     >
+      {/* Warm the TLS connection to Calendly's asset host before the ~2.6MB
+          widget bundle is requested. Next/React hoist these into <head> and
+          dedupe them; they only render on pages that mount Booking. */}
+      <link rel="preconnect" href="https://assets.calendly.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://calendly.com" />
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
       <div className="pointer-events-none absolute -left-40 bottom-0 h-[32rem] w-[32rem] rounded-full bg-brand-500/12 blur-[130px]" />
 

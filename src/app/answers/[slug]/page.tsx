@@ -162,6 +162,50 @@ export default async function AnswerPage({ params }: Props) {
                   {p}
                 </p>
               ))}
+              {s.table && (
+                <figure className="mt-6">
+                  <div className="overflow-x-auto rounded-xl border border-navy-100">
+                    <table className="w-full border-collapse text-left text-sm">
+                      <thead>
+                        <tr className="bg-navy-50">
+                          {s.table.columns.map((c) => (
+                            <th
+                              key={c}
+                              scope="col"
+                              className="px-4 py-3 font-bold text-navy-800"
+                            >
+                              {c}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {s.table.rows.map((row, ri) => (
+                          <tr key={ri} className="border-t border-navy-100 align-top">
+                            {row.map((cell, ci) => (
+                              <td
+                                key={ci}
+                                className={
+                                  ci === 0
+                                    ? "px-4 py-3 font-semibold text-navy-800"
+                                    : "px-4 py-3 leading-relaxed text-navy-600"
+                                }
+                              >
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  {s.table.caption && (
+                    <figcaption className="mt-2 text-xs text-navy-400">
+                      {s.table.caption}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
             </section>
           ))}
 

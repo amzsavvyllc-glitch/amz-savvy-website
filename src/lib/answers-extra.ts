@@ -278,15 +278,24 @@ export const comparisonAnswers: Answer[] = [
     updated: "2026-08-16",
     sections: [
       {
-        heading: "What each match type actually does",
+        heading: "What does each match type actually do?",
         body: [
           "Broad matches searches related to your keyword, including terms with additional or reordered words and related concepts. It is the loosest, and produces useful and wasteful terms in roughly equal measure.",
           "Phrase matches searches containing your keyword as a sequence, with words allowed before and after. It is the middle ground and often the most neglected of the three.",
           "Exact matches that search and its close variants only, giving you direct control of the bid on one intent.",
         ],
+        table: {
+          columns: ["Match type", "Matches", "Control", "Where it belongs"],
+          rows: [
+            ["Broad", "Related searches, reordered or extra words, related concepts", "Loosest", "Capped discovery budget"],
+            ["Phrase", "Searches containing your keyword in order", "Middle ground", "Discovery, then scaling proven terms"],
+            ["Exact", "That search and its close variants only", "Tightest", "Proven converters and the bulk of spend"],
+          ],
+          caption: "The standard flow: broad and automatic discover terms, exact scales them, negatives keep the layers from bidding against each other.",
+        },
       },
       {
-        heading: "The mistake that costs the most",
+        heading: "What is the costliest match-type mistake?",
         body: [
           "Running the same keyword in broad, phrase and exact without negating it downwards means your own campaigns compete in the same auction. You pay more for a click you were going to win anyway. Once a term is in exact, negate it in the looser layers.",
         ],
@@ -303,15 +312,24 @@ export const comparisonAnswers: Answer[] = [
     updated: "2026-08-16",
     sections: [
       {
-        heading: "Where product targeting genuinely wins",
+        heading: "How do keyword and product targeting compare?",
         body: [
           "Attacking a specific weaker competitor. If you have an advantage a shopper can see from the ad — better rating, more units, a stronger price — appearing on that listing is a direct comparison.",
           "Defending your own pages, which is usually cheap because your relevance on your own listing is high.",
           "Complementary products: targeting the item your product pairs with reaches a shopper mid-purchase, often better intent than a generic keyword.",
         ],
+        table: {
+          columns: ["", "Keyword targeting", "Product / ASIN targeting"],
+          rows: [
+            ["Reaches shoppers by", "What they type into search", "What they are already looking at"],
+            ["Role in the account", "Primary engine for most accounts", "Tactical — attack and defend"],
+            ["Strongest at", "Explicit, measurable search intent", "Beating weaker listings on price, rating or format; defending your own"],
+            ["Weakest at", "Reaching browsers not yet searching", "Beating stronger competitors; untuned category targeting"],
+          ],
+        },
       },
       {
-        heading: "Where it disappoints",
+        heading: "Where does product targeting disappoint?",
         body: [
           "Category targeting with broad refinements behaves much like an untuned automatic campaign — many impressions across thousands of ASINs, most irrelevant. It needs the same negation discipline, applied to ASINs.",
           "Targeting stronger competitors rarely works. If the listing you appear on has more reviews and a better price, you are paying to advertise their product to their shopper.",
@@ -329,14 +347,24 @@ export const comparisonAnswers: Answer[] = [
     updated: "2026-08-16",
     sections: [
       {
-        heading: "On the minimum spend question",
+        heading: "How do Sponsored Display and DSP compare?",
         body: [
           "Published figures for DSP minimums contradict each other and vary by market, by whether the seat is managed or self-service, and by the individual agreement. Anyone quoting a single universal number is guessing.",
           "Ask Amazon or a partner for the commitment that applies to your market and setup, and treat any figure you read online — including here — as no substitute for that conversation.",
         ],
+        table: {
+          columns: ["", "Sponsored Display", "Amazon DSP"],
+          rows: [
+            ["Access", "Self-service, normal Ads console", "Programmatic platform, usually agency or account-team managed"],
+            ["Minimum spend", "No meaningful floor", "Substantial, negotiated case by case"],
+            ["Inventory", "Amazon plus limited off-Amazon", "Far wider, on and off Amazon"],
+            ["Best used for", "Retargeting and defending your listings", "Upper-funnel reach and retention"],
+          ],
+          caption: "Sponsored Display is the sensible starting point; DSP earns its place once search is already efficient.",
+        },
       },
       {
-        heading: "The judgement call",
+        heading: "Which should I start with?",
         body: [
           "DSP is an upper-funnel and retention instrument. Buying it while your Sponsored Products account still contains obvious wasted spend means paying premium rates for reach you cannot yet convert efficiently.",
           "Get search working first. When Sponsored Products is efficient and additional search spend has stopped producing proportional sales, that is when DSP has something to add.",
@@ -356,14 +384,24 @@ export const comparisonAnswers: Answer[] = [
     updated: "2026-08-16",
     sections: [
       {
-        heading: "Different denominators, different questions",
+        heading: "What does each report actually measure?",
         body: [
           "The Search Term report's universe is your own ad spend. It cannot tell you how big a query is, only what you bought of it — exactly right for deciding what to negate and what to promote.",
           "Search Query Performance's universe is the query across the marketplace. It answers whether a term is worth pursuing at all, and where in the funnel you are losing.",
         ],
+        table: {
+          columns: ["", "Search Term Report", "Search Query Performance"],
+          rows: [
+            ["Universe", "Only searches your ads paid for", "The whole marketplace for a query"],
+            ["Shows", "Clicks, spend and orders per term", "Impressions, clicks, cart adds, purchases and your brand's share"],
+            ["Covers", "Paid only", "Paid and organic"],
+            ["Use it to", "Cut waste and harvest winners", "See how much of a query you are actually winning"],
+            ["Lives in", "Advertising reports", "Brand Analytics"],
+          ],
+        },
       },
       {
-        heading: "Using both together",
+        heading: "How do I use them together?",
         body: [
           "Search Query Performance identifies which queries are large and where your share is weak; the Search Term report tells you what your ads are currently doing about them.",
           "A query where your click share is high but purchase share is low is a conversion problem, and no amount of bidding will fix it. That diagnosis is only visible when you read the two against each other.",
@@ -381,14 +419,23 @@ export const comparisonAnswers: Answer[] = [
     updated: "2026-08-16",
     sections: [
       {
-        heading: "The dependency runs one way",
+        heading: "Why does the dependency run one way?",
         body: [
           "Indexing is binary and it is a precondition. Advertising on a keyword your listing does not contain can still produce ad sales, but it will not build the organic position you are paying to build.",
           "Conversion rate is the shared variable. It lowers ACOS on every keyword and strengthens your organic position for the terms you convert on. It is the only change that works on both sides at once.",
         ],
+        table: {
+          columns: ["", "Amazon SEO", "Amazon PPC"],
+          rows: [
+            ["Decides", "Whether you can rank (indexing + relevance)", "Whether you do (sales velocity + conversion history)"],
+            ["Order", "Comes first", "Contributes once you are indexed"],
+            ["Cannot", "Manufacture sales velocity", "Manufacture relevance or rank that persists after you stop paying"],
+            ["Shared lever", "Conversion rate lifts both at once", "Conversion rate lifts both at once"],
+          ],
+        },
       },
       {
-        heading: "What each cannot do",
+        heading: "What can each not do on its own?",
         body: [
           "SEO cannot manufacture velocity. A perfectly optimised listing with no sales history will not overtake an established competitor on a competitive head term by wording alone.",
           "PPC cannot manufacture relevance. Sustained spend on a term you are not indexed for buys placements for as long as you keep paying, and nothing that persists when you stop.",
@@ -406,14 +453,24 @@ export const comparisonAnswers: Answer[] = [
     updated: "2026-08-16",
     sections: [
       {
-        heading: "What software does and does not do",
+        heading: "How do the three options compare?",
         body: [
-          "It executes rules quickly and consistently at a scale a person cannot match — adjusting hundreds of bids, applying negatives, acting on thresholds. That is real value on a large keyword set.",
+          "Software executes rules quickly and consistently at a scale a person cannot match — adjusting hundreds of bids, applying negatives, acting on thresholds. That is real value on a large keyword set.",
           "It does not decide which keywords matter, whether your break-even is right, or whether the listing is the actual problem. Rules applied to a badly structured account automate the wrong decisions faster.",
         ],
+        table: {
+          columns: ["", "PPC software", "In-house", "Agency"],
+          rows: [
+            ["Best when", "A large keyword set needs fast, consistent rule execution", "Someone genuinely has the weekly hours", "Spend is high enough that a few ACOS points beat the retainer"],
+            ["Sets strategy", "No — executes rules only", "Yes, if the skill exists in-house", "Yes"],
+            ["Main cost", "Subscription plus configuration time", "Time and weekly discipline", "Retainer"],
+            ["Main risk", "Automates the wrong decisions faster", "The cadence lapsing", "Paying a fee before spend justifies it"],
+          ],
+          caption: "Run the arithmetic on your own spend before deciding — the right answer changes with account size.",
+        },
       },
       {
-        heading: "The hidden cost of in-house",
+        heading: "What is the hidden cost of in-house?",
         body: [
           "The work is mostly disciplined weekly maintenance — search term review, negation, harvesting, bid adjustments. It is learnable, and most sellers can do it.",
           "The failure mode is not incompetence, it is the cadence lapsing. An account maintained for two months then left alone for a quarter performs worse than one on a modest but unbroken routine. Be honest about whether the time exists.",
