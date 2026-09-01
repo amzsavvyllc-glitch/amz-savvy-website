@@ -360,6 +360,13 @@ export const comparisonAnswers: Answer[] = [
       "Keyword targeting reaches shoppers by what they type; product targeting reaches them by what they are already looking at. Keyword targeting should be the primary engine for most accounts because search intent is explicit and measurable. Product targeting earns its place in two specific jobs: placing your ad on competitor listings you can beat on price, rating or format, and defending your own detail pages against competitors doing the same to you.",
     category: "PPC",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/keyword-vs-product-targeting.png",
+      alt: "Keyword targeting reaches shoppers by what they type, using explicit search intent as the primary engine. Product targeting reaches them by what they are viewing, to attack weaker listings and defend your own.",
+      width: 1400,
+      height: 688,
+      caption: "Two different ways of reaching the same shopper.",
+    },
     sections: [
       {
         heading: "How do keyword and product targeting compare?",
@@ -395,6 +402,13 @@ export const comparisonAnswers: Answer[] = [
       "Sponsored Display sits inside the normal Amazon Ads console, is self-service, has no meaningful spend floor, and is best used for retargeting and defending your own listings. Amazon DSP is a full programmatic platform with far wider inventory and deeper audience targeting, but it carries substantially higher minimum commitments that are negotiated case by case, and generally needs an agency or an Amazon account team. Sponsored Display is the sensible starting point.",
     category: "PPC",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/sponsored-display-vs-amazon-dsp.png",
+      alt: "Sponsored Display is self-service with no meaningful spend floor, used for retargeting and defending your listings. Amazon DSP carries a negotiated commitment and is used for upper-funnel reach and retention.",
+      width: 1400,
+      height: 688,
+      caption: "Start with Sponsored Display; add DSP once search is efficient.",
+    },
     sections: [
       {
         heading: "How do Sponsored Display and DSP compare?",
@@ -432,6 +446,13 @@ export const comparisonAnswers: Answer[] = [
       "Two reports, two different questions. Which one answers what, and why the numbers in them will never quite agree.",
     category: "Strategy",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/search-term-report-vs-search-query-performance.png",
+      alt: "The Search Term Report covers only the searches your ads paid for. Search Query Performance covers the whole marketplace query, paid and organic.",
+      width: 1400,
+      height: 688,
+      caption: "Two reports, two different denominators.",
+    },
     sections: [
       {
         heading: "What does each report actually measure?",
@@ -467,6 +488,13 @@ export const comparisonAnswers: Answer[] = [
       "They are not alternatives. Amazon SEO decides whether you can rank for a keyword; PPC influences whether you do. SEO is indexing and relevance — if a phrase is nowhere in your title, bullets or backend terms, no budget will make you rank organically for it. PPC contributes the sales velocity and conversion history Amazon uses as evidence once you are indexed, which is why the listing work comes first.",
     category: "SEO",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/amazon-seo-vs-ppc-for-ranking.png",
+      alt: "Amazon SEO answers whether you can rank — indexing and relevance, the precondition. PPC answers whether you do rank — sales velocity and conversion history.",
+      width: 1400,
+      height: 688,
+      caption: "SEO decides if you can rank; PPC decides if you do.",
+    },
     sections: [
       {
         heading: "Why does the dependency run one way?",

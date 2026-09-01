@@ -680,6 +680,13 @@ const coreAnswers: Answer[] = [
       "ROAS is revenue divided by ad spend; ACOS is ad spend divided by revenue. They are reciprocals of each other, so a 25% ACOS is a 4x ROAS and a 50% ACOS is a 2x ROAS. Convert between them with ROAS = 1 ÷ ACOS. Neither is better — Amazon reports ACOS by default, most other advertising platforms report ROAS.",
     category: "Metrics",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/roas-vs-acos.png",
+      alt: "ACOS is ad spend divided by sales and shows the share of revenue spent on ads; ROAS is sales divided by ad spend and shows the return on each advertising dollar. They are reciprocals: ROAS equals 1 divided by ACOS.",
+      width: 1400,
+      height: 688,
+      caption: "The two metrics are reciprocals of each other.",
+    },
     sections: [
       {
         heading: "How do ACOS and ROAS convert to each other?",
