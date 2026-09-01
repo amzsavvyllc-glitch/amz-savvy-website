@@ -42,6 +42,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!p) return {};
   const description = metaDescription(p.excerpt);
   const url = `https://${site.domain}/blog/${p.slug}/`;
+  // Share this post's own hero rather than the generic site card: a unfurl
+  // that shows the headline beats one that shows the company name again.
+  const image = p.image
+    ? { url: p.image.src, width: p.image.width, height: p.image.height, alt: p.image.alt }
+    : { url: "/og.png", width: 1200, height: 630, alt: "AMZ Savvy — Amazon PPC & SEO agency" };
   return {
     title: p.title,
     description,
@@ -52,13 +57,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description,
       url,
       publishedTime: p.date,
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: "AMZ Savvy — Amazon PPC & SEO agency" }],
+      images: [image],
     },
     twitter: {
       card: "summary_large_image",
       title: p.title,
       description,
-      images: ["/og.png"],
+      images: [image.url],
     },
   };
 }
@@ -84,6 +89,23 @@ export default async function BlogPost({ params }: Props) {
         datePublished: p.date,
         dateModified: p.date,
         articleSection: p.category,
+        // ImageObject rather than a bare URL: the caption and description are
+        // what Google Images has to work with, and they are the only place the
+        // image's meaning is stated in machine-readable form.
+        ...(p.image && {
+          image: {
+            "@type": "ImageObject",
+            url: `https://${site.domain}${p.image.src}`,
+            contentUrl: `https://${site.domain}${p.image.src}`,
+            width: p.image.width,
+            height: p.image.height,
+            caption: p.image.alt,
+            description: p.image.alt,
+            representativeOfPage: true,
+            creditText: site.name,
+            creator: { "@id": `https://${site.domain}/#org` },
+          },
+        }),
         author: { "@id": `https://${site.domain}/#founder` },
         publisher: { "@id": `https://${site.domain}/#org` },
         isPartOf: { "@id": `https://${site.domain}/blog/` },
@@ -142,6 +164,19 @@ export default async function BlogPost({ params }: Props) {
         </section>
 
         <article className="mx-auto max-w-3xl px-4 py-14 sm:px-6 lg:px-8">
+          {/* Eager, not lazy: this is the largest element above the fold, so
+              deferring it would only push out the LCP it already owns. */}
+          {p.image && (
+            <img
+              src={p.image.src}
+              alt={p.image.alt}
+              width={p.image.width}
+              height={p.image.height}
+              decoding="async"
+              className="mb-10 w-full rounded-2xl border border-navy-100"
+            />
+          )}
+
           <p className="text-lg leading-relaxed text-navy-700">{p.excerpt}</p>
 
           {p.sections.map((s) => (

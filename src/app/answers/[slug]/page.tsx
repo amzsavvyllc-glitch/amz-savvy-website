@@ -36,6 +36,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // field comment in answers.ts for why the two serve different jobs.
   const description = a.metaDescription ?? metaDescription(a.short);
   const url = `https://${site.domain}/answers/${a.slug}/`;
+  // The answer's own diagram makes a far better unfurl than the generic site
+  // card — it shows the actual answer, not the company name.
+  const image = a.image
+    ? { url: a.image.src, width: a.image.width, height: a.image.height, alt: a.image.alt }
+    : { url: "/og.png", width: 1200, height: 630, alt: "AMZ Savvy — Amazon PPC & SEO agency" };
   return {
     title: a.question,
     description,
@@ -45,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: a.question,
       description,
       url,
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "AMZ Savvy — Amazon PPC & SEO agency" }],
+      images: [image],
     },
     // Without these, Twitter/X cards fall through to the homepage's copy while
     // the OG tags describe this page — two cards, two different subjects.
@@ -53,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: a.question,
       description,
-      images: ["/og.png"],
+      images: [image.url],
     },
   };
 }
@@ -92,6 +97,23 @@ export default async function AnswerPage({ params }: Props) {
         isPartOf: { "@id": `https://${site.domain}/#website` },
         about: { "@type": "Thing", name: "Amazon advertising" },
         publisher: { "@id": `https://${site.domain}/#org` },
+        // ImageObject rather than a bare URL. `caption` and `description` are
+        // the image's own machine-readable meta description — without them
+        // Google Images has only the filename and the alt attribute to go on.
+        ...(a.image && {
+          image: {
+            "@type": "ImageObject",
+            url: `https://${site.domain}${a.image.src}`,
+            contentUrl: `https://${site.domain}${a.image.src}`,
+            width: a.image.width,
+            height: a.image.height,
+            caption: a.image.caption ?? a.image.alt,
+            description: a.image.alt,
+            representativeOfPage: true,
+            creditText: site.name,
+            creator: { "@id": `https://${site.domain}/#org` },
+          },
+        }),
       },
       {
         "@type": "BreadcrumbList",

@@ -28,6 +28,10 @@ export type Post = {
   category: "Advertising" | "SEO" | "Strategy" | "News";
   /** Rough minutes; shown on the card so a reader can judge the commitment. */
   readMinutes: number;
+  /** Card thumbnail and article hero. Every word in the image also appears as
+   *  real text on the page — the image supports the post, it never carries
+   *  information alone (accessibility, and AI engines read text not pixels). */
+  image?: { src: string; alt: string; width: number; height: number };
   sections: { heading: string; body: string[] }[];
   /** Where the factual claims came from. Rendered publicly — that is the point. */
   sources?: { label: string; url: string }[];
@@ -52,6 +56,12 @@ const allPosts: Post[] = [
     date: "2026-08-17",
     category: "News",
     readMinutes: 7,
+    image: {
+      src: "/blog/amazon-75-character-title-item-highlights.png",
+      alt: "Amazon cut product titles to 75 characters — check which title is live on your ASINs right now.",
+      width: 1400,
+      height: 689,
+    },
     sections: [
       {
         heading: "What actually changed",
@@ -146,6 +156,12 @@ const allPosts: Post[] = [
     date: "2026-08-17",
     category: "Advertising",
     readMinutes: 7,
+    image: {
+      src: "/blog/amazon-ppc-audit-checklist.png",
+      alt: "The Amazon PPC audit we run before touching a single bid: five steps, three reports, no account access.",
+      width: 1400,
+      height: 689,
+    },
     sections: [
       {
         heading: "Why an audit comes before any optimisation",
@@ -218,6 +234,12 @@ const allPosts: Post[] = [
     date: "2026-08-24",
     category: "Advertising",
     readMinutes: 6,
+    image: {
+      src: "/blog/amazon-ad-billing-proceeds-deduction-who-it-hit.png",
+      alt: "Amazon's ad billing change and who it actually hit — a subset of advertisers Amazon contacted, not everyone.",
+      width: 1400,
+      height: 689,
+    },
     sections: [
       {
         heading: "What changed, in order",
@@ -294,6 +316,12 @@ const allPosts: Post[] = [
     date: "2026-09-01",
     category: "News",
     readMinutes: 6,
+    image: {
+      src: "/blog/sponsored-products-off-amazon-creator-placements.png",
+      alt: "Sponsored Products ads now run off Amazon, and two of your bid controls do not follow them.",
+      width: 1400,
+      height: 689,
+    },
     sections: [
       {
         heading: "What Amazon's own page says",

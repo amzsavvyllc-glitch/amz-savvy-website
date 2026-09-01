@@ -47,6 +47,15 @@ const jsonLd = {
         description: p.excerpt,
         datePublished: p.date,
         url: `https://${site.domain}/blog/${p.slug}/`,
+        ...(p.image && {
+          image: {
+            "@type": "ImageObject",
+            url: `https://${site.domain}${p.image.src}`,
+            width: p.image.width,
+            height: p.image.height,
+            caption: p.image.alt,
+          },
+        }),
       })),
     },
   ],
@@ -94,12 +103,26 @@ export default function BlogIndex() {
             <p className="text-navy-500">First posts are on the way.</p>
           ) : (
             <ul className="grid gap-5 sm:grid-cols-2">
-              {posts.map((p) => (
+              {posts.map((p, i) => (
                 <li key={p.slug}>
                   <Link
                     href={`/blog/${p.slug}/`}
-                    className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-navy-900/5"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white transition-all hover:-translate-y-0.5 hover:border-brand-500/40 hover:shadow-lg hover:shadow-navy-900/5"
                   >
+                    {/* The first card is the one most likely to be above the
+                        fold, so it loads eagerly; the rest stay lazy. */}
+                    {p.image && (
+                      <img
+                        src={p.image.src}
+                        alt={p.image.alt}
+                        width={p.image.width}
+                        height={p.image.height}
+                        loading={i === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                        className="w-full border-b border-navy-100"
+                      />
+                    )}
+                    <div className="flex flex-1 flex-col p-6">
                     <span className="w-fit rounded-full bg-navy-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-600">
                       {p.category}
                     </span>
@@ -122,6 +145,7 @@ export default function BlogIndex() {
                         Read
                         <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                       </span>
+                    </div>
                     </div>
                   </Link>
                 </li>

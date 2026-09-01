@@ -19,6 +19,13 @@ export const glossaryAnswers: Answer[] = [
       "The Buy Box — now officially called the Featured Offer — is the box on a product page containing the Add to Cart button, and it determines which seller receives the sale when several sellers list the same ASIN. Amazon awards it on price, fulfilment method, delivery speed, stock position and seller performance. It matters to advertisers because Sponsored Products generally will not serve for an ASIN where you do not hold the Featured Offer.",
     category: "PPC",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/what-is-the-buy-box.png",
+      alt: "Diagram defining the Amazon Buy Box, now called the Featured Offer, as the box holding Add to Cart that decides which seller receives the sale on a shared ASIN.",
+      width: 1400,
+      height: 689,
+      caption: "What the Buy Box is, and why advertisers care.",
+    },
     sections: [
       {
         heading: "How it is awarded",
@@ -46,6 +53,13 @@ export const glossaryAnswers: Answer[] = [
       "Dayparting shifts bids by hour and day. When it is worth setting up, when it quietly costs you sales, and how to tell which applies to you.",
     category: "PPC",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/what-is-dayparting.png",
+      alt: "Diagram defining dayparting in Amazon PPC as varying bids or budgets by hour of day and day of week, so spend concentrates in the periods that convert.",
+      width: 1400,
+      height: 689,
+      caption: "What dayparting is, and what Amazon actually offers.",
+    },
     sections: [
       {
         heading: "The evidence you need first",
@@ -71,6 +85,13 @@ export const glossaryAnswers: Answer[] = [
       "Negative exact blocks one precise search term and nothing else. Negative phrase blocks any search containing that word or sequence of words in that order, so it removes a whole family of searches at once. Use negative exact for individual proven losers, and negative phrase for entire categories of wrong intent — but check what else a phrase would catch before applying it.",
     category: "PPC",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/negative-exact-and-negative-phrase.png",
+      alt: "Diagram comparing Amazon negative exact, which blocks one precise search term, with negative phrase, which blocks every search containing those words in that order.",
+      width: 1400,
+      height: 689,
+      caption: "One precise term, or a whole family of searches.",
+    },
     sections: [
       {
         heading: "What each one actually blocks",
@@ -96,6 +117,13 @@ export const glossaryAnswers: Answer[] = [
       "A placement modifier is a percentage increase applied to your bid for a specific ad placement — Top of Search, Product Pages, or Rest of Search. Amazon allows increases of up to 900%, applied on top of your keyword bid, so a 50% modifier turns a $1.00 bid into $1.50 for that placement. Modifiers only go upwards, so the way to spend less in a weak placement is to lower the base bid and raise the modifier on the placement that performs.",
     category: "PPC",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/what-is-a-placement-modifier.png",
+      alt: "Diagram defining an Amazon placement modifier as a bid increase of up to 900 percent applied to Top of Search, Product Pages or Rest of Search.",
+      width: 1400,
+      height: 689,
+      caption: "How placement modifiers change your bid — upward only.",
+    },
     sections: [
       {
         heading: "Why placements differ so much",
@@ -123,6 +151,13 @@ export const glossaryAnswers: Answer[] = [
       "NTB counts orders from customers who had not bought your brand on Amazon in the past year. Here is what it tells you, and where it misleads.",
     category: "Metrics",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/what-is-new-to-brand.png",
+      alt: "Diagram defining Amazon new-to-brand metrics as orders from customers who had not bought from your brand in the previous twelve months.",
+      width: 1400,
+      height: 689,
+      caption: "What new-to-brand counts, and why it changes how you read ACOS.",
+    },
     sections: [
       {
         heading: "What it corrects for",
@@ -148,6 +183,13 @@ export const glossaryAnswers: Answer[] = [
       "Share of voice is the proportion of the advertising or search real estate for a given keyword that your brand occupies, relative to everyone else competing for it. Amazon does not publish a single share-of-voice figure, so any number you see is derived — either from Amazon's impression share reporting, or from third-party tools that scrape search results and count placements. Treat a specific percentage as the output of one method rather than a fact from Amazon.",
     category: "Metrics",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/what-is-share-of-voice.png",
+      alt: "Diagram defining share of voice on Amazon as the share of a keyword's real estate your brand occupies, noting that Amazon publishes no single official figure.",
+      width: 1400,
+      height: 689,
+      caption: "What share of voice measures, and where the number comes from.",
+    },
     sections: [
       {
         heading: "The two ways it gets calculated",
@@ -173,6 +215,13 @@ export const glossaryAnswers: Answer[] = [
       "A close variant is a version of your keyword that Amazon treats as effectively the same search — singulars and plurals, common misspellings, changes in word order, and stemmed forms. Close variant matching applies to exact match too, which is why an exact-match keyword still picks up search terms that are not literally identical to it, and why your Search Term report never lines up with your keyword list one for one.",
     category: "PPC",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/what-is-a-close-variant.png",
+      alt: "Diagram defining an Amazon close variant as a singular, plural, misspelling or reordered form that Amazon treats as the same search, including on exact match.",
+      width: 1400,
+      height: 689,
+      caption: "Why exact match is not literally exact.",
+    },
     sections: [
       {
         heading: "Why exact match is not literal",
@@ -198,6 +247,13 @@ export const glossaryAnswers: Answer[] = [
       "A keyword is what you bid on; a search term is what the shopper actually typed into Amazon. Amazon matches search terms to your keywords according to the match type you selected, so a single broad keyword can collect hundreds of different search terms. Optimisation happens on the search term side — reading what you actually paid for, then deciding which terms deserve their own keyword and which deserve a negative.",
     category: "PPC",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/search-term-vs-keyword.png",
+      alt: "Diagram distinguishing an Amazon keyword, which is what you bid on, from a search term, which is what the shopper actually typed into Amazon.",
+      width: 1400,
+      height: 689,
+      caption: "You bid on keywords. Shoppers type search terms.",
+    },
     sections: [
       {
         heading: "A concrete example",
@@ -223,6 +279,13 @@ export const glossaryAnswers: Answer[] = [
       "Impression share is the percentage of the impressions available for a search term that your ads actually received. A low share on a keyword that converts profitably means there is volume you are not buying, usually because your bid or your daily budget takes you out of the auction. Amazon exposes this for brand-registered sellers, including a separate figure for the top-of-search placement.",
     category: "Metrics",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/what-is-impression-share.png",
+      alt: "Diagram defining Amazon impression share as the percentage of the available impressions for a search term that your ads actually received.",
+      width: 1400,
+      height: 689,
+      caption: "What impression share tells you about volume you are missing.",
+    },
     sections: [
       {
         heading: "What it tells you that ACOS cannot",
@@ -248,6 +311,13 @@ export const glossaryAnswers: Answer[] = [
       "Amazon offers three campaign bid strategies. Dynamic bids down only lowers your bid in real time when a click looks less likely to convert. Dynamic bids up and down does the same but will also raise your bid — by up to 100% for top-of-search and up to 50% for other placements — when a conversion looks likely. Fixed bids use the bid exactly as entered, with no automatic adjustment in either direction.",
     category: "PPC",
     updated: "2026-08-16",
+    image: {
+      src: "/answers/what-is-a-bid-strategy.png",
+      alt: "Three-column comparison of Amazon bid strategies: dynamic bids down only, dynamic bids up and down, and fixed bids.",
+      width: 1400,
+      height: 689,
+      caption: "The three bid strategies, and which one can raise a bid.",
+    },
     sections: [
       {
         heading: "What each one is for",
@@ -275,6 +345,13 @@ export const glossaryAnswers: Answer[] = [
       "\"Sponsored listing\" is not an official Amazon term — it covers three different ad types. Which one people usually mean, and where each actually appears.",
     category: "PPC",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/what-are-amazon-sponsored-listings.png",
+      alt: "Three-column diagram of what Amazon sponsored listings actually are: Sponsored Products, Sponsored Brands and Sponsored Display.",
+      width: 1400,
+      height: 689,
+      caption: "What people mean by sponsored listing, and what Amazon sells.",
+    },
     sections: [
       {
         heading: "Which ad type does “sponsored listing” actually mean?",
@@ -326,6 +403,13 @@ export const comparisonAnswers: Answer[] = [
       "Use all three, for different jobs, rather than choosing one. Broad match casts wide and belongs on a capped discovery budget; phrase match narrows to searches containing your keyword in order; exact match targets that search intent alone and is where proven converters and the bulk of your spend belong. The standard flow is broad and automatic campaigns to discover terms, exact to scale them, with negatives stopping the layers bidding against each other.",
     category: "PPC",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/broad-vs-phrase-vs-exact-match.png",
+      alt: "Three-column comparison of Amazon broad, phrase and exact match types, and the job each one does in a campaign structure.",
+      width: 1400,
+      height: 689,
+      caption: "What each match type is for.",
+    },
     sections: [
       {
         heading: "What does each match type actually do?",
@@ -529,6 +613,13 @@ export const comparisonAnswers: Answer[] = [
       "PPC software automates rules such as bid changes and negation, but it does not choose a strategy and still needs someone to configure and review it. In-house is the cheapest option and the right one when somebody genuinely has the weekly hours. An agency earns its fee when spend is high enough that a few points of ACOS exceed the retainer, or when the weekly maintenance simply is not happening. Run the arithmetic on your own spend before deciding.",
     category: "Strategy",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/agency-vs-in-house-vs-ppc-software.png",
+      alt: "Three-column comparison of Amazon PPC software, in-house management and an agency, showing when each one is the right choice.",
+      width: 1400,
+      height: 689,
+      caption: "Three ways to run Amazon PPC, and when each fits.",
+    },
     sections: [
       {
         heading: "How do the three options compare?",
@@ -566,6 +657,13 @@ export const comparisonAnswers: Answer[] = [
       "How to choose an Amazon PPC agency: the four things that actually matter, the questions to ask, and the red flags that should end the conversation.",
     category: "Strategy",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/how-to-choose-an-amazon-ppc-agency.png",
+      alt: "Checklist of four questions for choosing an Amazon PPC agency: do they diagnose first, what will they refuse to promise, who does the work, and what you keep if you leave.",
+      width: 1400,
+      height: 689,
+      caption: "Four questions, in the order that matters.",
+    },
     sections: [
       {
         heading: "What are your options, really?",

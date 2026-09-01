@@ -56,11 +56,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    // `images` emits <image:image> entries, which is how Google Images finds
+    // a diagram that lives on a page it has already crawled. Without them the
+    // images are discoverable only by re-parsing the HTML.
     ...answers.map((a) => ({
       url: `${base}/answers/${a.slug}/`,
       lastModified: new Date(a.updated),
       changeFrequency: "monthly" as const,
       priority: 0.8,
+      ...(a.image && { images: [`${base}${a.image.src}`] }),
     })),
     // Weekly changeFrequency on the index because a new post lands there first.
     {
@@ -68,12 +72,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: posts[0] ? new Date(posts[0].date) : lastModified,
       changeFrequency: "weekly" as const,
       priority: 0.9,
+      // Every card image appears on this page, so they belong on this entry.
+      images: posts.flatMap((p) => (p.image ? [`${base}${p.image.src}`] : [])),
     },
     ...posts.map((p) => ({
       url: `${base}/blog/${p.slug}/`,
       lastModified: new Date(p.date),
       changeFrequency: "monthly" as const,
       priority: 0.7,
+      ...(p.image && { images: [`${base}${p.image.src}`] }),
     })),
   ];
 }

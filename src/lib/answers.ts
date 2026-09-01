@@ -71,6 +71,13 @@ const coreAnswers: Answer[] = [
       "There is no universal good ACOS — only yours. How to work out the number your margin can carry, and why copied targets lose money.",
     category: "Metrics",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/what-is-a-good-acos-on-amazon.png",
+      alt: "Diagram showing that most established Amazon sellers target a 15 to 25 percent ACOS, while the figure that actually decides profit is your own break-even ACOS.",
+      width: 1400,
+      height: 689,
+      caption: "The common target range, and the number that decides profit.",
+    },
     sections: [
       {
         heading: "Why the 'industry average' is a trap",
@@ -105,6 +112,13 @@ const coreAnswers: Answer[] = [
       "Your break-even ACOS is your margin after every Amazon fee — not before. Work it out in a few minutes with the exact deductions to include.",
     category: "Metrics",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-to-calculate-break-even-acos.png",
+      alt: "Diagram of the break-even ACOS formula: selling price minus all costs, divided by selling price, which equals your pre-advertising profit margin.",
+      width: 1400,
+      height: 689,
+      caption: "Break-even ACOS is your pre-advertising margin.",
+    },
     sections: [
       {
         heading: "A worked example",
@@ -184,6 +198,13 @@ const coreAnswers: Answer[] = [
       "High spend with few sales almost always means you are paying for clicks from shoppers with the wrong intent, or sending the right shoppers to a listing that does not convert. Pull your Search Term report and check the ratio of clicks to orders per term — if terms with many clicks and zero orders dominate spend, it is a targeting problem; if your conversion rate is below your category norm across the board, it is a listing problem.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/high-ad-spend-no-sales.png",
+      alt: "Diagram contrasting the two reasons for high Amazon ad spend with no sales: wrong traffic, meaning clicks with no buying intent, and a weak listing that the right shoppers do not convert on.",
+      width: 1400,
+      height: 689,
+      caption: "The two causes of high spend and no sales.",
+    },
     sections: [
       {
         heading: "Diagnose targeting first",
@@ -217,6 +238,13 @@ const coreAnswers: Answer[] = [
       "Pull one report, sort it two ways, and the wasted spend is obvious in ten minutes. The exact filters, and what to negate versus what to leave.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-to-find-wasted-search-terms.png",
+      alt: "Four-step checklist for finding wasted Amazon search terms: export the Search Term report, filter to terms with zero orders, sort by spend, then negate as exact or phrase.",
+      width: 1400,
+      height: 689,
+      caption: "The four steps, in the order we run them.",
+    },
     sections: [
       {
         heading: "Set a defensible threshold",
@@ -248,6 +276,13 @@ const coreAnswers: Answer[] = [
       "Search term harvesting is the practice of finding customer searches that have already produced orders in your broad, phrase or automatic campaigns, and promoting them into their own exact-match campaigns where you control the bid directly. It concentrates budget on proven converters instead of leaving them mixed in with untested traffic.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/what-is-search-term-harvesting.png",
+      alt: "Diagram of Amazon search term harvesting: a converting search term is discovered in broad, phrase and automatic campaigns, then promoted into its own exact-match campaign where you control the bid.",
+      width: 1400,
+      height: 689,
+      caption: "Where a converting term is found, and where it should end up.",
+    },
     sections: [
       {
         heading: "Why it works",
@@ -275,6 +310,13 @@ const coreAnswers: Answer[] = [
       "Lowering ACOS by cutting bids usually cuts sales too. The order to work in so efficiency improves without losing the volume.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-to-lower-acos.png",
+      alt: "Checklist of four ways to lower Amazon ACOS without losing sales: negate zero-order search terms, move proven converters to exact match, cut bids selectively, and improve listing conversion.",
+      width: 1400,
+      height: 689,
+      caption: "Four moves that lower ACOS without lowering sales.",
+    },
     sections: [
       {
         heading: "The wrong way",
@@ -301,6 +343,13 @@ const coreAnswers: Answer[] = [
       "Wasted spend can be cut within two to three weeks, because switching off losing terms takes effect immediately. Genuine gains in rank and organic sales usually take 60 to 90 days, since Amazon's ranking responds to sustained sales velocity rather than to any single change. Anyone promising a transformation in days is describing budget cuts, not growth.",
     category: "Strategy",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-long-does-amazon-ppc-take.png",
+      alt: "Timeline diagram for Amazon PPC results: wasted spend can be cut in two to three weeks, while gains in rank and organic sales take 60 to 90 days.",
+      width: 1400,
+      height: 689,
+      caption: "Two different clocks: cutting waste, and building rank.",
+    },
     sections: [
       {
         heading: "What moves quickly",
@@ -328,6 +377,13 @@ const coreAnswers: Answer[] = [
       "You need both, but not for the reasons usually given. What each campaign type is actually for, and how they should feed each other.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/auto-vs-manual-campaigns.png",
+      alt: "Diagram comparing Amazon automatic campaigns as a low-budget discovery tool with manual exact-match campaigns, where proven converters get real budget and full bid control.",
+      width: 1400,
+      height: 689,
+      caption: "Automatic discovers. Manual exact scales.",
+    },
     sections: [
       {
         heading: "The division of labour",
@@ -353,6 +409,13 @@ const coreAnswers: Answer[] = [
       "Sponsored Products promote a single listing in search results and are where most accounts should concentrate spend, because intent is highest. Sponsored Brands promote your brand and a set of products with a custom headline or video, and require Brand Registry. Sponsored Display retargets shoppers on and off Amazon and is best used for defence and remarketing rather than primary acquisition.",
     category: "PPC",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/sponsored-products-brands-display.png",
+      alt: "Three-column comparison of Amazon Sponsored Products, Sponsored Brands and Sponsored Display, showing what each format promotes and where it belongs in an account.",
+      width: 1400,
+      height: 689,
+      caption: "What each Amazon ad format does, side by side.",
+    },
     sections: [
       {
         heading: "How do the three ad types compare?",
@@ -390,6 +453,13 @@ const coreAnswers: Answer[] = [
       "Where to find your real conversion rate in Seller Central, what counts as healthy in your category, and what to fix first when it is low.",
     category: "Metrics",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/what-is-a-good-conversion-rate-on-amazon.png",
+      alt: "Diagram showing that many Amazon sellers convert in the 10 to 20 percent range, far above typical ecommerce, and that your own trend matters more than any benchmark.",
+      width: 1400,
+      height: 689,
+      caption: "Where many Amazon sellers sit, and why your trend matters more.",
+    },
     sections: [
       {
         heading: "Where to find your real number",
@@ -414,6 +484,13 @@ const coreAnswers: Answer[] = [
       "A sudden ACOS rise usually has one of four causes: a competitor started bidding on your terms and pushed CPCs up, your conversion rate dropped, your campaign structure changed and budget shifted to weaker terms, or you lost the Buy Box. Check CPC and conversion rate separately — ACOS is a ratio, and knowing which side of it moved tells you which problem you have.",
     category: "Metrics",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/why-did-my-acos-increase.png",
+      alt: "Diagram showing the two sides of a sudden Amazon ACOS increase: cost per click went up, or conversion rate fell.",
+      width: 1400,
+      height: 689,
+      caption: "ACOS is a ratio — find out which side of it moved.",
+    },
     sections: [
       {
         heading: "Split the ratio",
@@ -438,6 +515,13 @@ const coreAnswers: Answer[] = [
       "Budget should follow proven efficiency rather than a fixed percentage of revenue. Once a campaign converts below your break-even ACOS, additional spend on it is profitable and should be increased until efficiency degrades. For a new product, a common starting approach is a modest daily budget held long enough to gather statistically meaningful click data before judging anything.",
     category: "Strategy",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-much-to-spend-on-amazon-ads.png",
+      alt: "Diagram showing that Amazon ad budget should follow proven efficiency rather than a fixed percentage of revenue, increasing while a campaign converts below break-even ACOS.",
+      width: 1400,
+      height: 689,
+      caption: "Budget follows proof, not a fixed percentage.",
+    },
     sections: [
       {
         heading: "Why percentage-of-revenue rules mislead",
@@ -464,6 +548,13 @@ const coreAnswers: Answer[] = [
       "Relevance, then conversion history, then velocity. How Amazon's ranking really behaves, and the levers you actually control.",
     category: "SEO",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-amazon-ranking-works.png",
+      alt: "Diagram of how Amazon search ranking works: relevance decides whether you can rank, through indexing; performance decides how high, through click-through rate, conversion rate and sales velocity.",
+      width: 1400,
+      height: 689,
+      caption: "Relevance decides if you can rank. Performance decides how high.",
+    },
     sections: [
       {
         heading: "Indexing comes first",
@@ -494,6 +585,13 @@ const coreAnswers: Answer[] = [
       "Page-one ranking requires being indexed for the keyword, converting well when shown, and sustaining sales velocity for that term over weeks. In practice that means a listing optimised for the exact search, a competitive price and review position, and targeted advertising on that keyword to generate the velocity Amazon uses as evidence. There is no shortcut that bypasses conversion.",
     category: "SEO",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-to-rank-on-page-one.png",
+      alt: "Checklist of what page-one ranking on Amazon requires: be indexed for the keyword, convert when shown, sustain sales velocity, and advertise on that keyword.",
+      width: 1400,
+      height: 689,
+      caption: "What page one actually requires, in order.",
+    },
     sections: [
       {
         heading: "Pick fewer keywords",
@@ -517,6 +615,13 @@ const coreAnswers: Answer[] = [
       "Brand defense means advertising on your own brand name and your own product pages so competitors cannot capture shoppers who are already looking for you. It is usually cheap, because your relevance on your own brand is high, and it protects sales you would otherwise lose to a competitor's ad placed directly on your listing.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/brand-defense-amazon.png",
+      alt: "Diagram defining Amazon brand defense as advertising on your own brand name, which is cheap because your relevance is high and protects sales from competitor ads on your page.",
+      width: 1400,
+      height: 689,
+      caption: "What brand defense is, and why it costs so little.",
+    },
     sections: [
       {
         heading: "The objection, and the answer",
@@ -543,6 +648,13 @@ const coreAnswers: Answer[] = [
       "Three exports cover almost everything: search terms, business report by ASIN, and a bulk file. What each one tells you and how they combine.",
     category: "Strategy",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/what-reports-for-ppc-audit.png",
+      alt: "Three-column diagram of the three exports an Amazon PPC audit needs: the Sponsored Products Search Term report, the Business Report by ASIN, and a Bulk Operations file.",
+      width: 1400,
+      height: 689,
+      caption: "Three exports cover an entire PPC audit.",
+    },
     sections: [
       {
         heading: "What each one answers",
@@ -568,6 +680,13 @@ const coreAnswers: Answer[] = [
       "Zero impressions almost always means your ad is never entering the auction, not that it is losing it. The usual causes are a bid far below the going rate for your keywords, a listing that is not indexed for the terms you are targeting, no Buy Box on the advertised ASIN, the campaign not actually being live because of dates or budget, or ineligibility such as needing Brand Registry for Sponsored Brands.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/why-zero-impressions.png",
+      alt: "Checklist of the usual causes of zero impressions on an Amazon campaign: a bid far below the going rate, a listing not indexed, no Buy Box, or a campaign that is not live.",
+      width: 1400,
+      height: 689,
+      caption: "The usual causes, cheapest to check first.",
+    },
     sections: [
       {
         heading: "Work through these in order",
@@ -601,6 +720,13 @@ const coreAnswers: Answer[] = [
       "Negatives usually are working — the traffic you are still seeing comes from close variants, from a different campaign that has no negatives applied, or from reporting lag. Negative exact only blocks that precise term, so plurals, misspellings and word-order changes still get through unless you use negative phrase.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/negative-keywords-not-working.png",
+      alt: "Checklist explaining why Amazon negative keywords look like they are not working: close variants, another campaign without negatives, reporting lag, and the limits of negative exact.",
+      width: 1400,
+      height: 689,
+      caption: "Why traffic still appears after you negate.",
+    },
     sections: [
       {
         heading: "The three real causes",
@@ -627,6 +753,13 @@ const coreAnswers: Answer[] = [
       "A sudden rank drop usually traces to one of five things: you went out of stock or lost the Buy Box, your conversion rate fell, you edited the listing and lost indexing for a term, a competitor increased sales velocity on that keyword, or you were hit by a suppression or compliance flag. Check availability and Buy Box first — they are the fastest to confirm and the most common.",
     category: "SEO",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/sudden-organic-rank-drop.png",
+      alt: "Checklist for diagnosing a sudden Amazon organic rank drop: stock and Buy Box, a fall in conversion rate, lost indexing after a listing edit, or a competitor's sales velocity.",
+      width: 1400,
+      height: 689,
+      caption: "Check these first — fastest to confirm, most often the cause.",
+    },
     sections: [
       {
         heading: "Check in this order",
@@ -653,6 +786,13 @@ const coreAnswers: Answer[] = [
       "Most rejections come from ad copy rather than the product: superlatives and unsubstantiated claims such as best or number one, references to price or promotions, ALL CAPS or excessive punctuation, mention of shipping or guarantees, or medical and health claims. Sponsored Brands headlines are moderated far more strictly than Sponsored Products, which have no custom copy to reject.",
     category: "PPC",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/why-was-my-amazon-ad-rejected.png",
+      alt: "Checklist of the usual reasons an Amazon ad is rejected: superlatives, references to price or promotions, all caps and excessive punctuation, and shipping or health claims.",
+      width: 1400,
+      height: 689,
+      caption: "Almost always the copy, not the product.",
+    },
     sections: [
       {
         heading: "The usual offenders in headlines",
@@ -723,6 +863,13 @@ const coreAnswers: Answer[] = [
       "Search Amazon for the exact keyword followed by your ASIN, for example: stainless steel water bottle B08XXXXXXX. If your product appears, you are indexed for that phrase. If nothing comes back, you are not indexed and no amount of advertising will make you rank organically for it.",
     category: "SEO",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-to-check-keyword-indexing.png",
+      alt: "Diagram of the Amazon indexing check: search Amazon for the exact keyword followed by your ASIN, and if your product appears you are indexed for that phrase.",
+      width: 1400,
+      height: 689,
+      caption: "The one-search test for keyword indexing.",
+    },
     sections: [
       {
         heading: "Why this test matters before anything else",
@@ -748,6 +895,13 @@ const coreAnswers: Answer[] = [
       "Backend search terms are a hidden field in Seller Central that adds keywords to a listing's search index without showing them to shoppers. They exist for the words a customer might type that do not fit naturally in the title, bullets or description — synonyms, alternative product names, materials, and use cases. They are not a second copy of your title: once a word is indexed anywhere on the listing, repeating it in the backend adds nothing to relevance.",
     category: "SEO",
     updated: "2026-08-17",
+    image: {
+      src: "/answers/amazon-backend-search-terms.png",
+      alt: "Diagram of what belongs in Amazon backend search terms — synonyms, alternative product names, materials and use cases — versus what does not, such as words already indexed in the title.",
+      width: 1400,
+      height: 689,
+      caption: "What belongs in the hidden field, and what is wasted there.",
+    },
     sections: [
       {
         heading: "What the field actually does",
@@ -793,6 +947,13 @@ const coreAnswers: Answer[] = [
       "Percentage of spend, flat retainer or hybrid — what each model really costs, and the spend level below which an agency cannot pay for itself.",
     category: "Strategy",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/how-much-does-an-amazon-ppc-agency-cost.png",
+      alt: "Three-column comparison of Amazon PPC agency pricing models: a percentage of ad spend, a flat monthly retainer, and a performance component on top.",
+      width: 1400,
+      height: 689,
+      caption: "The three ways Amazon PPC agencies charge.",
+    },
     sections: [
       {
         heading: "What are the three pricing models, and how do they compare?",
@@ -834,6 +995,13 @@ const coreAnswers: Answer[] = [
       "Base the threshold on your conversion rate, not on a fixed number. If you convert at 10%, a sale is expected around every 10 clicks, so roughly 20–30 clicks with no orders is a real signal rather than bad luck. The widely repeated rule of 10 clicks is too aggressive for most accounts and kills keywords that were merely unlucky.",
     category: "Metrics",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/how-many-clicks-before-pausing-keyword.png",
+      alt: "Diagram showing that the clicks needed before pausing an Amazon keyword should be two to three times your conversion rate, not a fixed count of ten.",
+      width: 1400,
+      height: 689,
+      caption: "Base the threshold on your conversion rate.",
+    },
     sections: [
       {
         heading: "Why a fixed rule misleads",
@@ -866,6 +1034,13 @@ const coreAnswers: Answer[] = [
       "The arithmetic that decides it: at what ad spend a few points of ACOS exceed a retainer, and what to check before signing anything.",
     category: "Strategy",
     updated: "2026-08-15",
+    image: {
+      src: "/answers/do-i-need-an-amazon-agency.png",
+      alt: "Diagram comparing running Amazon PPC yourself at low spend against hiring an agency when spend is high enough that a few points of ACOS exceed the retainer.",
+      width: 1400,
+      height: 689,
+      caption: "The deciding factor is spend level, not skill.",
+    },
     sections: [
       {
         heading: "The honest arithmetic",
@@ -891,6 +1066,13 @@ const coreAnswers: Answer[] = [
       "A+ content is the place to answer the questions that stop someone buying — sizing and fit, what is in the box, how it compares to the obvious alternative, and who it is not for. It replaces the plain description on brand-registered listings, and its job is conversion rather than discovery: the fields that reliably drive Amazon search are still the title, bullets, backend search terms and structured attributes, so A+ should be written for the shopper who has already arrived and is deciding.",
     category: "SEO",
     updated: "2026-08-24",
+    image: {
+      src: "/answers/what-belongs-in-amazon-a-plus-content.png",
+      alt: "Checklist of what belongs in Amazon A+ content: sizing and fit, what is actually in the box, how it compares to the obvious alternative, and who the product is not for.",
+      width: 1400,
+      height: 689,
+      caption: "The four questions A+ content should answer.",
+    },
     sections: [
       {
         heading: "Write it against real objections, not features",
