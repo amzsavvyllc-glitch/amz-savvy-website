@@ -845,6 +845,61 @@ const coreAnswers: Answer[] = [
     ],
     related: ["how-to-rank-on-page-one", "amazon-backend-search-terms", "what-is-a-good-conversion-rate-on-amazon"],
   },
+  {
+    slug: "how-to-write-an-amazon-title",
+    question: "How do I write an Amazon title that ranks and still converts?",
+    short:
+      "An Amazon title has to do two jobs at once: carry the words that make the listing eligible to appear in search, and tell a shopper scanning a results page what the product is and whether it suits them. Since 2026 the copy is split across two fields — an item name capped at 75 characters and an Item Highlights field of up to 125 more that displays beneath it — and Amazon has said both are inputs to search with neither prioritised. So the ordering is decided by the shopper, not the index: brand, the plain noun a customer would actually type, then the one or two attributes that distinguish this variation, keeping any phrase you rank for intact inside the 75 rather than broken across the boundary. Supporting detail — materials, compatibility, use cases — belongs in Item Highlights, written in readable fragments rather than as a keyword dump, because people read it too.",
+    metaDescription:
+      "The title has to earn the click and carry the keywords, now across two fields. How to order the 75 characters, and what belongs in Item Highlights.",
+    category: "SEO",
+    updated: "2026-09-01",
+    sections: [
+      {
+        heading: "The two jobs pull in opposite directions",
+        body: [
+          "Indexing wants breadth. Every genuine phrase a customer might search is one you would like to be eligible for, and the title area is the strongest place on the listing to put one. Left to that logic alone, the ideal title is a keyword list.",
+          "Conversion wants the opposite. A shopper reads titles in a results grid, several at a time, while comparing images and prices — a few words each, at speed. A title built as a keyword list reads as noise at that speed, so the shopper skips it and clicks the one they understood. Impressions rise and click-through falls, which is the worst trade available on Amazon: you have bought visibility with the one metric that decides whether visibility keeps being granted.",
+          "The resolution is not a compromise between the two but an ordering. Position within the title does not appear to change whether a word is indexed; Amazon has stated that the item name and Item Highlights are both search inputs with neither prioritised over the other. Shoppers absolutely do weight by position. So the sequence that serves both jobs is decided entirely by the human: put what a person needs to make a decision first, and let the words that exist mainly for the index sit behind them.",
+        ],
+      },
+      {
+        heading: "Spend the item name in strict priority order",
+        body: [
+          "Seventy-five characters is roughly one short sentence, so the field only has room for what a buyer cannot choose without. The order that survives contact with a results page is brand, then the core product noun a shopper would actually type, then the one or two attributes that separate this variation from your others — colour, size, pack count.",
+          "The plain noun matters more than it looks. Sellers frequently open with a marketing name or a model number, and someone scanning for a travel mug does not recognise Voyager 450 Thermal Vessel as the thing they are shopping for. Which attributes deserve the remaining space is category-specific and worth checking rather than guessing: look at the filters Amazon offers in the left rail of the results page for your category, because those are the attributes Amazon has already determined shoppers narrow by. In cables it is length and connector type; in supplements it is count and dosage; in apparel it is size and material.",
+          "One rule overrides the rest. Keep the phrases you actually rank for and bid on intact and inside the item name, rather than letting one half sit in the title and the other in Item Highlights. Both fragments remain indexed, but whether a split phrase is matched identically to an intact one has not been confirmed, and the failure is silent — nothing errors and nothing is flagged, the listing simply competes a little differently. Where a phrase has to be rebuilt, evict something else to make room for it.",
+          "Two tests catch most bad item names. Read it aloud and ask whether a stranger could say what the product is and who it is for. Then open a results page on a phone, find your listing, and read what is actually displayed rather than what you typed — if the visible portion ends mid-attribute or shows the brand and nothing useful, the ordering is wrong however complete the full string is.",
+        ],
+      },
+      {
+        heading: "Item Highlights is read by people, not just crawlers",
+        body: [
+          "The second field is not a hidden attribute like backend search terms. It renders beneath the item name on desktop and mobile, so anything written there is merchandising copy as well as index fodder. That rules out the obvious temptation to treat it as 125 more characters of keyword space.",
+          "What belongs there is genuine supporting detail: materials and construction, compatibility, use cases and occasions, and secondary phrases that did not fit the item name. Write it as short attribute fragments separated by a visible divider rather than as prose or as a run-on string. Fragments survive being read on a phone at a glance; a paragraph does not, and a keyword dump actively signals a low-quality listing to the person deciding whether to click.",
+          "There is a structural reason not to stay over the limit in the hope of keeping a long title. Item Highlights is generally only displayed when the item name is inside the character limit, so a non-compliant title does not preserve your old copy and win the new field as a bonus — it costs you the field. Media categories such as books, music and video sit outside these rules, and the authority for your own category is the current style guide in Seller Central and the field itself, not a figure quoted in an article.",
+        ],
+      },
+      {
+        heading: "What gets a title rewritten, suppressed or flagged",
+        body: [
+          "The content rules are a recognisable set: no promotional or pricing language such as free shipping, sale or best seller; no subjective superlatives; no contact details or URLs; no decorative symbols; and no typographic shouting such as a title set entirely in capitals. Requirements on capitalisation, and on whether units are spelled out or abbreviated, are set per category in the style guide.",
+          "The consequence is not always a rejection you notice. Amazon may normalise a title programmatically, and a non-compliant title can be suppressed from search results while the detail page still loads perfectly for anyone holding the link. That failure mode is quiet and expensive: traffic falls, nothing on the page looks broken, and the seller spends a fortnight investigating bids. If organic impressions drop sharply after a listing edit, check compliance before anything else.",
+          "Since the two-field change, there is a second way a title stops being yours. For listings over the limit Amazon has been generating its own split and publishing it if nobody reviews the suggestion in time, which means the live title may differ from the one you wrote without anything in your reports announcing it. Before rewriting anything, export your live titles and compare them against your intended copy — you cannot improve a title you are not actually looking at.",
+          "Keep competitor brand names and trademarks out of both fields. It carries the same policy risk as putting them in the backend search terms, with the added problem of being visible to the brand owner.",
+        ],
+      },
+      {
+        heading: "How to tell whether a new title worked",
+        body: [
+          "A title change moves two different numbers and they need separate measurements. New words change what the listing is eligible for, which shows up as impressions and is verified with an index test: search the exact phrase followed by your ASIN and see whether the product comes back. Re-test after a few days rather than immediately, since a recrawl is not instant, and test the phrases you moved between fields rather than assuming they survived the move.",
+          "The wording change moves click-through rate, and the fastest honest read on that is advertising, because a campaign delivers in days the impression volume organic search would take weeks to supply. Hold one campaign completely still — same keywords, same bids, same budget, same placements — and compare click-through before and after. The arithmetic is plain: 250 clicks on 10,000 impressions is 2.5%; if the same campaign returns 300 clicks on 10,000 impressions after the rewrite, that is 3.0%, a fifth more traffic at the same impression volume. Run that on your own account rather than accepting a claimed lift from anyone, including us.",
+          "Change the title on its own. If you rewrite it in the same week you swap the main image, add a coupon or raise bids, the result is unattributable and you have spent the experiment for nothing. Record the previous item name and Item Highlights verbatim with the date before you edit, because reverting is the fastest fix if impressions fall and you will not remember the old string otherwise.",
+        ],
+      },
+    ],
+    related: ["amazon-backend-search-terms", "how-amazon-ranking-works", "how-to-check-keyword-indexing"],
+  },
 ];
 
 import { glossaryAnswers, comparisonAnswers } from "./answers-extra";
