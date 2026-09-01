@@ -33,6 +33,14 @@ export type Answer = {
   metaDescription?: string;
   category: "PPC" | "SEO" | "Strategy" | "Metrics";
   updated: string;
+  /**
+   * Optional explanatory diagram, rendered directly under the short answer.
+   * Built in Canva (the single source for AMZ Savvy visuals, so assets stay
+   * editable by the owner in the tool he owns) and exported to /public/answers/.
+   * Every word in the image must also appear as real text on the page — the
+   * image supports the answer, it never carries information alone.
+   */
+  image?: { src: string; alt: string; width: number; height: number; caption?: string };
   sections: {
     heading: string;
     body: string[];
@@ -124,6 +132,13 @@ const coreAnswers: Answer[] = [
       "ACOS measures ad spend against ad sales; TACOS measures it against total sales. Which one to watch, and what a rising TACOS actually means.",
     category: "Metrics",
     updated: "2026-09-01",
+    image: {
+      src: "/answers/acos-vs-tacos.png",
+      alt: "ACOS equals ad spend divided by ad sales and measures the ads in isolation; TACOS equals ad spend divided by total sales and measures what ads cost the whole business. Same numerator, different denominator.",
+      width: 1400,
+      height: 688,
+      caption: "The only difference is the denominator.",
+    },
     sections: [
       {
         heading: "How do ACOS and TACOS differ at a glance?",

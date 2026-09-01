@@ -152,6 +152,25 @@ export default async function AnswerPage({ params }: Props) {
             <p className="mt-3 text-lg leading-relaxed text-navy-800">{a.short}</p>
           </div>
 
+          {a.image && (
+            <figure className="mt-8">
+              <img
+                src={a.image.src}
+                alt={a.image.alt}
+                width={a.image.width}
+                height={a.image.height}
+                loading="lazy"
+                decoding="async"
+                className="w-full rounded-2xl border border-navy-100"
+              />
+              {a.image.caption && (
+                <figcaption className="mt-2 text-xs text-navy-400">
+                  {a.image.caption}
+                </figcaption>
+              )}
+            </figure>
+          )}
+
           {a.sections.map((s) => (
             <section key={s.heading} className="mt-10">
               <h2 className="text-xl font-extrabold text-navy-800 sm:text-2xl">
