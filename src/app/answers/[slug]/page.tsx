@@ -176,6 +176,10 @@ export default async function AnswerPage({ params }: Props) {
 
           {a.image && (
             <figure className="mt-8">
+              {/* The box is already reserved by width/height, but until the
+                  ~150KB PNG arrives it would be a white hole on a slow mobile
+                  connection. Painting it the diagram's own background colour
+                  means the image resolves into place instead of flashing. */}
               <img
                 src={a.image.src}
                 alt={a.image.alt}
@@ -183,6 +187,7 @@ export default async function AnswerPage({ params }: Props) {
                 height={a.image.height}
                 loading="lazy"
                 decoding="async"
+                style={{ backgroundColor: "#021d33" }}
                 className="w-full rounded-2xl border border-navy-100"
               />
               {a.image.caption && (

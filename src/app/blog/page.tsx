@@ -119,6 +119,7 @@ export default function BlogIndex() {
                         height={p.image.height}
                         loading={i === 0 ? "eager" : "lazy"}
                         decoding="async"
+                        style={{ backgroundColor: "#021d33" }}
                         className="w-full border-b border-navy-100"
                       />
                     )}

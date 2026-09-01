@@ -173,6 +173,8 @@ export default async function BlogPost({ params }: Props) {
               width={p.image.width}
               height={p.image.height}
               decoding="async"
+              fetchPriority="high"
+              style={{ backgroundColor: "#021d33" }}
               className="mb-10 w-full rounded-2xl border border-navy-100"
             />
           )}
