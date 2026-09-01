@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { BadgeCheck } from "lucide-react";
 import { founder, stats, reviewSource } from "@/lib/site-config";
+import { PartnerBadge } from "@/components/site/primitives";
 
 /**
  * AUTHOR BOX — the human behind the advice.
@@ -23,22 +23,20 @@ export function AuthorBox() {
 
   return (
     <aside className="mt-14 rounded-2xl border border-navy-100 bg-white p-7">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-        <span className="text-xs font-bold uppercase tracking-[0.16em] text-brand-600">
-          Written by
-        </span>
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-2.5 py-1 text-xs font-semibold text-brand-700">
-          <BadgeCheck className="h-3.5 w-3.5" />
-          Amazon Ads Verified Partner
-        </span>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <span className="text-xs font-bold uppercase tracking-[0.16em] text-brand-600">
+            Written by
+          </span>
+          <h2 className="mt-2 text-lg font-extrabold text-navy-800">
+            {founder.name}
+            <span className="ml-2 text-sm font-semibold text-navy-400">
+              {founder.jobTitle}, AMZ Savvy
+            </span>
+          </h2>
+        </div>
+        <PartnerBadge width={112} className="mt-1 shrink-0" />
       </div>
-
-      <h2 className="mt-3 text-lg font-extrabold text-navy-800">
-        {founder.name}
-        <span className="ml-2 text-sm font-semibold text-navy-400">
-          {founder.jobTitle}, AMZ Savvy
-        </span>
-      </h2>
 
       {founder.bio.map((p, i) => (
         <p key={i} className="mt-3 text-sm leading-relaxed text-navy-600">

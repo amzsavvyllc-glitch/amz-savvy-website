@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BadgeCheck, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import {
   site,
   founder,
@@ -113,11 +113,8 @@ export default function AboutPage() {
           <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
           <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full bg-brand-500/12 blur-[120px]" />
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-400">
-              <BadgeCheck className="h-3.5 w-3.5" />
-              Amazon Ads Verified Partner
-            </span>
-            <h1 className="mt-5 text-balance text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-[2.75rem]">
+            <PartnerBadge width={168} />
+            <h1 className="mt-6 text-balance text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-[2.75rem]">
               About AMZ Savvy
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-navy-200">
@@ -172,9 +169,6 @@ export default function AboutPage() {
               an exam for — Amazon checks the account history behind it. You can
               confirm the listing yourself rather than taking it on trust.
             </p>
-            <div className="mt-6">
-              <PartnerBadge width={180} />
-            </div>
             <a
               href={profiles[0]}
               target="_blank"
