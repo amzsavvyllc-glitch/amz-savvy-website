@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { founder, stats, reviewSource } from "@/lib/site-config";
-import { PartnerBadge } from "@/components/site/primitives";
+import { PartnerBadge } from "@/components/site/ui";
 
 /**
  * AUTHOR BOX — the human behind the advice.

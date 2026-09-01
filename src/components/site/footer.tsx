@@ -12,7 +12,7 @@
 
 import Link from "next/link";
 import { addressLine, site } from "@/lib/site-config";
-import { Logo, PartnerBadge } from "./primitives";
+import { Logo, PartnerBadge } from "./ui";
 
 /** 44px tap target on mobile; unchanged from `sm:` up. Ten stacked 20px-tall
  *  links were genuinely hard to hit on a phone. */

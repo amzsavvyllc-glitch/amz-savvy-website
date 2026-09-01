@@ -12,7 +12,8 @@ import {
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { FloatingActions } from "@/components/site/floating-actions";
-import { RevealProvider, CtaButton, PartnerBadge } from "@/components/site/primitives";
+import { RevealProvider } from "@/components/site/primitives";
+import { CtaButton, PartnerBadge } from "@/components/site/ui";
 
 /**
  * ABOUT — the entity page.
@@ -112,7 +113,7 @@ export default function AboutPage() {
         {/* Title band */}
         <section className="relative overflow-hidden bg-navy-900 pb-14 pt-32 text-white md:pt-40">
           <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
-          <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full bg-brand-500/12 blur-[120px]" />
+          <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] glow" />
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <PartnerBadge width={168} />
             <h1 className="mt-6 text-balance text-3xl font-extrabold leading-[1.12] sm:text-4xl lg:text-[2.75rem]">

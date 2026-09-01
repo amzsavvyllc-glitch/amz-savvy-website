@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
-import { CtaButton } from "@/components/site/primitives";
+import { CtaButton } from "@/components/site/ui";
 import { answers } from "@/lib/answers";
 
 /* The root layout sets robots index:true and canonical:"/". Without these

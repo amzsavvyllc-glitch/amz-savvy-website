@@ -6,7 +6,8 @@ import { site } from "@/lib/site-config";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { FloatingActions } from "@/components/site/floating-actions";
-import { RevealProvider, SectionHeading } from "@/components/site/primitives";
+import { RevealProvider } from "@/components/site/primitives";
+import { SectionHeading } from "@/components/site/ui";
 
 const description =
   "Straight answers to the questions Amazon sellers actually ask about ACOS, wasted ad spend, campaign structure, ranking and when an agency is worth it.";
@@ -70,7 +71,7 @@ export default function AnswersIndex() {
       <main className="flex-1 bg-white">
         <section className="relative overflow-hidden bg-navy-900 pb-16 pt-32 text-white md:pt-40">
           <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
-          <div className="pointer-events-none absolute -right-32 top-10 h-[32rem] w-[32rem] rounded-full bg-brand-500/12 blur-[120px]" />
+          <div className="pointer-events-none absolute -right-32 top-10 h-[32rem] w-[32rem] glow" />
           <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <SectionHeading
               as="h1"

@@ -226,6 +226,34 @@
   background-size: 56px 56px;
 }
 
+/* ---------------------------------------------------------------
+   Ambient brand glow.
+
+   These were solid circles under `blur-[120px]`/`blur-[130px]`. A
+   large-radius Gaussian is one of the most expensive things a mobile GPU can
+   be asked to composite: it forces its own layer and a wide convolution over
+   every pixel, and the homepage alone had SEVEN of them covering ~1.5M px².
+   Every page carried at least one.
+
+   A radial-gradient paints the same soft wash with no filter, no promoted
+   layer and no per-frame work. Change --glow to restyle; the boxes keep the
+   sizes and offsets they already had.
+   --------------------------------------------------------------- */
+.glow {
+  --glow: rgb(79 196 127 / 0.12); /* brand-500 */
+  border-radius: 9999px;
+  background-image: radial-gradient(closest-side, var(--glow), transparent);
+}
+.glow-strong {
+  --glow: rgb(79 196 127 / 0.18);
+}
+.glow-soft {
+  --glow: rgb(79 196 127 / 0.1);
+}
+.glow-alt {
+  --glow: rgb(111 212 151 / 0.1); /* brand-400 */
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

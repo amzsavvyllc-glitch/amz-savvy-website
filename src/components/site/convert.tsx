@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, Mail, MessageCircle, Loader2, CheckCircle2, Phone, MapPin } from "lucide-react";
 import { faqs, site } from "@/lib/site-config";
-import { CtaButton, PartnerBadge, SectionHeading, revealDelay } from "./primitives";
+import { CtaButton, PartnerBadge, SectionHeading, revealDelay } from "./ui";
 import { cn } from "@/lib/utils";
 
 /* ================================================================
@@ -69,11 +69,17 @@ export function Booking() {
   const ref = useRef<HTMLDivElement>(null);
   const [load, setLoad] = useState(false);
 
-  /* Load when the section comes near the viewport — but never depend on
-     IntersectionObserver alone. Booking is the primary conversion path, so a
-     timer and the first user interaction both act as fallbacks (IO can be
-     throttled in background/occluded tabs, and a widget that never appears
-     costs far more than one early 30KB script fetch). */
+  /* Load when the section comes near the viewport, and never before.
+     Calendly is ~1MB over 8 requests from an origin that measures a ~1s TTFB,
+     so it must not compete with our own page load.
+
+     There is deliberately NO timer here. This section sits ~27,500px down a
+     ~31,000px page: a reader who has not scrolled cannot be looking at it, and
+     a timer only ever fires for the visitor who never reaches it at all. The
+     three signals below cover everyone who can actually see the widget —
+     IntersectionObserver with 400px of lead, plus scroll and the first pointer
+     event as fallbacks in case IO is throttled. Someone landing on /#book
+     starts with the section in view, so IO fires immediately. */
   useEffect(() => {
     let done = false;
     const trigger = () => {
@@ -94,13 +100,11 @@ export function Booking() {
         : null;
     if (io && ref.current) io.observe(ref.current);
 
-    const timer = window.setTimeout(trigger, 4000);
     window.addEventListener("scroll", trigger, { passive: true, once: true });
     window.addEventListener("pointerdown", trigger, { once: true });
 
     function cleanup() {
       io?.disconnect();
-      window.clearTimeout(timer);
       window.removeEventListener("scroll", trigger);
       window.removeEventListener("pointerdown", trigger);
     }
@@ -123,13 +127,15 @@ export function Booking() {
       id="book"
       className="relative overflow-hidden bg-navy-900 py-20 text-white lg:py-28"
     >
-      {/* Warm the TLS connection to Calendly's asset host before the ~2.6MB
-          widget bundle is requested. Next/React hoist these into <head> and
-          dedupe them; they only render on pages that mount Booking. */}
+      {/* Warm the TLS connection to Calendly's asset host before the widget is
+          requested — measured ~1s TTFB to calendly.com, so the handshake is
+          worth doing early even though the bundle is not. Next/React hoist
+          these into <head> and dedupe them; they only render on pages that
+          mount Booking. */}
       <link rel="preconnect" href="https://assets.calendly.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://calendly.com" />
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
-      <div className="pointer-events-none absolute -left-40 bottom-0 h-[32rem] w-[32rem] rounded-full bg-brand-500/12 blur-[130px]" />
+      <div className="pointer-events-none absolute -left-40 bottom-0 h-[32rem] w-[32rem] glow" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -189,16 +195,43 @@ export function Booking() {
                   style={{ minWidth: "320px", height: "660px" }}
                 />
               ) : (
-                <div className="flex h-[660px] items-center justify-center bg-navy-50 text-navy-400">
-                  <Loader2 className="h-6 w-6 animate-spin" />
+                /* Pre-load state. This must be USEFUL, not decorative: it is
+                   the only thing standing between a visitor and the primary
+                   conversion path if the embed never triggers. It used to be a
+                   spinner that span forever, which is why a 4s timer was
+                   loading Calendly for every visitor — the timer was covering
+                   for a dead end. A real link removes the need for both.
+
+                   In normal use nobody lingers here: the observer fires 400px
+                   before the section arrives, so by the time it is on screen
+                   `load` is already true and Calendly is drawing itself. */
+                <div className="flex h-[660px] flex-col items-center justify-center gap-4 bg-navy-50 px-6 text-center">
+                  {/* For a visitor without JS the embed is never coming, so a
+                      spinner and the word "loading" would be a lie. Hide both
+                      for them and leave the link, which works for everyone.
+                      This replaces the old <noscript> link that sat below a
+                      spinner that span forever. */}
+                  <noscript>
+                    <style>{`.calendly-pending{display:none}`}</style>
+                  </noscript>
+                  <Loader2
+                    className="calendly-pending h-6 w-6 animate-spin text-navy-300"
+                    aria-hidden="true"
+                  />
+                  <p className="calendly-pending text-sm text-navy-500">
+                    Loading the calendar…
+                  </p>
+                  <a
+                    href={site.calendly}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-brand-500 px-6 py-3 text-sm font-bold text-navy-900 shadow-lg shadow-brand-500/25 transition-colors hover:bg-brand-400"
+                  >
+                    Open the booking page instead
+                  </a>
                 </div>
               )}
             </div>
-            <noscript>
-              <a href={site.calendly} className="mt-3 block text-brand-400 underline">
-                Book a call on Calendly
-              </a>
-            </noscript>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
-"use client";
-
-import { useState } from "react";
+/**
+ * sections.tsx — static homepage sections. No "use client": these render to
+ * HTML and never hydrate. The tabbed playbooks section that used to force a
+ * client boundary on this whole file now lives in playbooks.tsx.
+ */
 import {
   ArrowRight,
   Quote,
@@ -14,13 +16,12 @@ import {
 } from "lucide-react";
 import {
   deliverables,
-  playbooks,
   process,
   services,
   testimonials,
   reviewSource,
 } from "@/lib/site-config";
-import { CtaButton, SectionHeading, revealDelay } from "./primitives";
+import { CtaButton, SectionHeading, revealDelay } from "./ui";
 import { cn } from "@/lib/utils";
 
 const ICONS = { Search, Target, Rocket, TrendingUp } as const;
@@ -90,7 +91,7 @@ export function Process() {
   return (
     <section id="process" className="relative overflow-hidden bg-navy-900 py-20 text-white lg:py-28">
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
-      <div className="pointer-events-none absolute -right-40 top-20 h-[30rem] w-[30rem] rounded-full bg-brand-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-40 top-20 h-[30rem] w-[30rem] glow glow-soft" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -106,7 +107,7 @@ export function Process() {
               key={p.step}
               data-reveal
               style={revealDelay(i)}
-              className="group relative rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm transition-colors hover:border-brand-500/40 hover:bg-white/[0.07]"
+              className="group relative rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:backdrop-blur-sm transition-colors hover:border-brand-500/40 hover:bg-white/[0.07]"
             >
               {/* Connector line on desktop */}
               {i < process.length - 1 && (
@@ -141,93 +142,6 @@ export function Process() {
 }
 
 /* ================================================================
-   PLAYBOOKS — tabbed, by account situation.
-   Describes method, not client outcomes.
-   ================================================================ */
-export function Results() {
-  const [active, setActive] = useState(0);
-
-  return (
-    <section id="results" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Our playbooks"
-          title={
-            <>
-              Tell us what&apos;s broken. Here&apos;s{" "}
-              <span className="text-brand-700">exactly what we do.</span>
-            </>
-          }
-          sub="Pick the problem that sounds like your account."
-        />
-
-        {/* Tabs */}
-        <div className="mt-10 flex flex-wrap gap-2" data-reveal role="tablist">
-          {playbooks.map((p, i) => (
-            <button
-              key={p.category}
-              id={`playbook-tab-${i}`}
-              role="tab"
-              aria-selected={active === i}
-              aria-controls={`playbook-panel-${i}`}
-              onClick={() => setActive(i)}
-              className={cn(
-                "rounded-full px-5 py-2.5 text-sm font-bold transition-all",
-                active === i
-                  ? "bg-navy-800 text-white shadow-md"
-                  : "bg-navy-50 text-navy-500 hover:bg-navy-100 hover:text-navy-700",
-              )}
-            >
-              {p.category}
-            </button>
-          ))}
-        </div>
-
-        {/* All three panels are rendered so crawlers and AI retrieval see every
-            playbook. Only visibility toggles — conditional rendering would keep
-            two-thirds of this copy out of the HTML entirely. */}
-        {playbooks.map((p, i) => (
-          <div
-            key={p.category}
-            id={`playbook-panel-${i}`}
-            role="tabpanel"
-            aria-labelledby={`playbook-tab-${i}`}
-            hidden={active !== i}
-            className="mt-6 grid gap-8 rounded-3xl border border-navy-100 bg-navy-50/60 p-7 lg:grid-cols-5 lg:p-10"
-            data-reveal
-          >
-            <div className="lg:col-span-3">
-              <h3 className="text-balance text-2xl font-extrabold leading-tight text-navy-800 lg:text-3xl">
-                {p.headline}
-              </h3>
-              <p className="mt-4 leading-relaxed text-navy-500">{p.body}</p>
-              <CtaButton href="#book" variant="dark" className="mt-7">
-                Get this run on my account
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </CtaButton>
-            </div>
-
-            <ol className="space-y-3 lg:col-span-2">
-              {p.steps.map((step, n) => (
-                <li
-                  key={step}
-                  className="flex gap-3.5 rounded-xl border border-navy-100 bg-white p-4"
-                >
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-500/12 font-heading text-xs font-extrabold text-brand-700">
-                    {n + 1}
-                  </span>
-                  <span className="text-sm leading-relaxed text-navy-600">{step}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ================================================================
    DELIVERABLES — shows the actual artefacts a client receives.
    The mock report is drawn in CSS and labelled SAMPLE: it depicts
    AMZ Savvy's own deliverable, so it makes no claim about any client.
@@ -236,7 +150,7 @@ export function Deliverables() {
   return (
     <section className="relative overflow-hidden bg-navy-900 py-20 text-white lg:py-28">
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
-      <div className="pointer-events-none absolute -left-32 bottom-0 h-[30rem] w-[30rem] rounded-full bg-brand-500/12 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-32 bottom-0 h-[30rem] w-[30rem] glow" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -259,7 +173,7 @@ export function Deliverables() {
                   key={d.title}
                   data-reveal
                   style={revealDelay(i)}
-                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm"
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-6 sm:backdrop-blur-sm"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="text-lg font-extrabold text-white">{d.title}</h3>

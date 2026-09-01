@@ -6,7 +6,8 @@ import { answerBySlug } from "@/lib/answers";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { FloatingActions } from "@/components/site/floating-actions";
-import { RevealProvider, CtaButton, PartnerBadge } from "@/components/site/primitives";
+import { RevealProvider } from "@/components/site/primitives";
+import { CtaButton, PartnerBadge } from "@/components/site/ui";
 
 /**
  * Shared renderer for a single service page. Content comes entirely from
@@ -70,7 +71,7 @@ export function ServiceDetail({ data }: { data: ServicePage }) {
         {/* Title band */}
         <section className="relative overflow-hidden bg-navy-900 pb-14 pt-32 text-white md:pt-40">
           <div className="pointer-events-none absolute inset-0 bg-grid opacity-50" />
-          <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] rounded-full bg-brand-500/12 blur-[120px]" />
+          <div className="pointer-events-none absolute -left-40 top-0 h-[30rem] w-[30rem] glow" />
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <Link
               href="/services/"

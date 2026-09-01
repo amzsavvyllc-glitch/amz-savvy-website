@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { nav, site } from "@/lib/site-config";
-import { Logo, CtaButton } from "./primitives";
+import { Logo, CtaButton } from "./ui";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -142,7 +142,7 @@ export function Header() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "overflow-hidden border-t border-white/10 bg-navy-900/95 backdrop-blur-xl transition-[max-height] duration-300 lg:hidden",
+          "overflow-hidden border-t border-white/10 bg-navy-900/95 transition-[max-height] duration-300 lg:hidden",
           open ? "max-h-96" : "max-h-0 border-t-0",
         )}
       >

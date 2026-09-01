@@ -1,8 +1,13 @@
-"use client";
-
+/**
+ * hero.tsx — no "use client": this section is pure markup. It carried the
+ * directive without ever using a hook or an event handler, so ~190 lines of
+ * copy and icons were being shipped and hydrated for nothing. Counter is the
+ * only interactive thing here and brings its own client boundary.
+ */
 import { ArrowRight, CalendarCheck, Target, TrendingDown } from "lucide-react";
 import { stats } from "@/lib/site-config";
-import { Counter, CtaButton, PartnerBadge, revealDelay } from "./primitives";
+import { Counter } from "./primitives";
+import { CtaButton, PartnerBadge, revealDelay } from "./ui";
 
 /* Marketplaces we actually work in — used instead of invented client
    logos, which would be fabricated social proof. */
@@ -26,8 +31,8 @@ export function Hero() {
       {/* Ambient brand glow — Aurora-style, per Pro Max marketing-agency
           style recommendation (motion-driven + bold brand colour) */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-grid opacity-60" />
-      <div className="pointer-events-none absolute -left-40 top-[-10rem] -z-10 h-[38rem] w-[38rem] rounded-full bg-brand-500/18 blur-[130px]" />
-      <div className="pointer-events-none absolute -right-32 top-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-brand-400/10 blur-[130px]" />
+      <div className="pointer-events-none absolute -left-40 top-[-10rem] -z-10 h-[38rem] w-[38rem] glow glow-strong" />
+      <div className="pointer-events-none absolute -right-32 top-40 -z-10 h-[34rem] w-[34rem] glow glow-alt" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-40 bg-gradient-to-b from-transparent to-white" />
 
       <div className="mx-auto max-w-7xl px-4 pb-20 pt-32 sm:px-6 md:pt-40 lg:px-8 lg:pb-28">
@@ -92,11 +97,11 @@ export function Hero() {
           <div className="lg:col-span-5 lg:mt-4">
             {/* Glass stats card */}
             <div
-              className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] p-7 shadow-2xl backdrop-blur-xl"
+              className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.06] p-7 shadow-2xl sm:backdrop-blur-xl"
               data-reveal
               style={revealDelay(3)}
             >
-              <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-brand-500/15 blur-3xl" />
+              <div className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 glow [--glow:rgb(79_196_127/0.15)]" />
 
               <div className="relative">
                 <div className="flex items-center gap-2">
@@ -153,7 +158,7 @@ export function Hero() {
 
             {/* Marketplace marquee */}
             <div
-              className="relative mt-5 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] py-6 backdrop-blur-xl"
+              className="relative mt-5 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] py-6 sm:backdrop-blur-xl"
               data-reveal
               style={revealDelay(4)}
             >
