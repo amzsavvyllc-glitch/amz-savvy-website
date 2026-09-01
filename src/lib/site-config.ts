@@ -74,8 +74,8 @@ export const founder = {
 export const addressLine = `${site.address.street}, ${site.address.locality}, ${site.address.region} ${site.address.postalCode}, USA`;
 
 export const nav = [
-  { label: "Services", href: "/#services" },
-  { label: "Process", href: "/#process" },
+  { label: "Services", href: "/services/" },
+  { label: "Pricing", href: "/pricing/" },
   { label: "Calculator", href: "/#calculator" },
   { label: "Answers", href: "/answers/" },
   { label: "Blog", href: "/blog/" },
