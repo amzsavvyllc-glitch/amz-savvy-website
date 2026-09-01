@@ -4,7 +4,8 @@ import { site } from "@/lib/site-config";
 import type { ServicePage } from "@/lib/services-content";
 import { answerBySlug } from "@/lib/answers";
 import { Header } from "@/components/site/header";
-import { Footer, FloatingActions } from "@/components/site/convert";
+import { Footer } from "@/components/site/footer";
+import { FloatingActions } from "@/components/site/floating-actions";
 import { RevealProvider, CtaButton, PartnerBadge } from "@/components/site/primitives";
 
 /**

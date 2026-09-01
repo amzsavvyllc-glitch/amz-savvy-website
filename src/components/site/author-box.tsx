@@ -64,7 +64,7 @@ export function AuthorBox() {
           href={reviewSource.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-semibold text-brand-600 underline-offset-4 hover:underline"
+          className="-my-3 inline-block py-3 font-semibold text-brand-600 underline-offset-4 hover:underline"
         >
           {reviewSource.rating}★ from {reviewSource.count} reviews on{" "}
           {reviewSource.platform}
@@ -73,7 +73,7 @@ export function AuthorBox() {
 
       <Link
         href="/about/"
-        className="mt-5 inline-block text-sm font-semibold text-brand-600 underline-offset-4 hover:underline"
+        className="mt-5 inline-block py-2 text-sm font-semibold text-brand-600 underline-offset-4 hover:underline"
       >
         More about AMZ Savvy and how we work →
       </Link>
@@ -86,7 +86,7 @@ export function Byline({ className = "" }: { className?: string }) {
   return (
     <span className={className}>
       By{" "}
-      <Link href="/about/" className="font-semibold underline-offset-4 hover:underline">
+      <Link href="/about/" className="-my-3 inline-block py-3 font-semibold underline-offset-4 hover:underline">
         {founder.name}
       </Link>
     </span>

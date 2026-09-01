@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/site/header";
-import { Footer } from "@/components/site/convert";
+import { Footer } from "@/components/site/footer";
 import { CtaButton } from "@/components/site/primitives";
 import { answers } from "@/lib/answers";
 

@@ -4,7 +4,8 @@ import { ArrowRight, CalendarDays, Clock } from "lucide-react";
 import { posts } from "@/lib/blog";
 import { site } from "@/lib/site-config";
 import { Header } from "@/components/site/header";
-import { Footer, FloatingActions } from "@/components/site/convert";
+import { Footer } from "@/components/site/footer";
+import { FloatingActions } from "@/components/site/floating-actions";
 import { RevealProvider, SectionHeading } from "@/components/site/primitives";
 import { Diagram } from "@/components/site/diagram";
 

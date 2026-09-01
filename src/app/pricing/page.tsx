@@ -3,7 +3,8 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { site } from "@/lib/site-config";
 import { Header } from "@/components/site/header";
-import { Footer, FloatingActions } from "@/components/site/convert";
+import { Footer } from "@/components/site/footer";
+import { FloatingActions } from "@/components/site/floating-actions";
 import { RevealProvider, CtaButton } from "@/components/site/primitives";
 
 const description =

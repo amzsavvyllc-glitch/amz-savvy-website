@@ -7,7 +7,8 @@ import { answerBySlug } from "@/lib/answers";
 import { site } from "@/lib/site-config";
 import { AuthorBox, Byline } from "@/components/site/author-box";
 import { Header } from "@/components/site/header";
-import { Footer, FloatingActions } from "@/components/site/convert";
+import { Footer } from "@/components/site/footer";
+import { FloatingActions } from "@/components/site/floating-actions";
 import { CtaButton, RevealProvider } from "@/components/site/primitives";
 import { Diagram } from "@/components/site/diagram";
 
@@ -139,7 +140,7 @@ export default async function BlogPost({ params }: Props) {
           <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <Link
               href="/blog/"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 transition-colors hover:text-brand-300"
+              className="-my-3 inline-flex items-center gap-2 py-3 text-sm font-semibold text-brand-400 transition-colors hover:text-brand-300"
             >
               <ArrowLeft className="h-4 w-4" />
               All posts

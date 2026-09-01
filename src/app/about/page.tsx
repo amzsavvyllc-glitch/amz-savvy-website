@@ -10,7 +10,8 @@ import {
   profiles,
 } from "@/lib/site-config";
 import { Header } from "@/components/site/header";
-import { Footer, FloatingActions } from "@/components/site/convert";
+import { Footer } from "@/components/site/footer";
+import { FloatingActions } from "@/components/site/floating-actions";
 import { RevealProvider, CtaButton, PartnerBadge } from "@/components/site/primitives";
 
 /**

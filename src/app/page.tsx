@@ -8,7 +8,9 @@ import {
   Deliverables,
   Testimonials,
 } from "@/components/site/sections";
-import { Faq, Booking, Contact, Footer, FloatingActions } from "@/components/site/convert";
+import { Faq, Booking, Contact } from "@/components/site/convert";
+import { Footer } from "@/components/site/footer";
+import { FloatingActions } from "@/components/site/floating-actions";
 import { RevealProvider } from "@/components/site/primitives";
 import { faqs, site } from "@/lib/site-config";
 

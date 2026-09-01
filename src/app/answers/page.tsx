@@ -4,7 +4,8 @@ import { ArrowRight } from "lucide-react";
 import { answers, categories } from "@/lib/answers";
 import { site } from "@/lib/site-config";
 import { Header } from "@/components/site/header";
-import { Footer, FloatingActions } from "@/components/site/convert";
+import { Footer } from "@/components/site/footer";
+import { FloatingActions } from "@/components/site/floating-actions";
 import { RevealProvider, SectionHeading } from "@/components/site/primitives";
 
 const description =
