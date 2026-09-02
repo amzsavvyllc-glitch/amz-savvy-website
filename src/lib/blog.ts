@@ -381,6 +381,90 @@ const allPosts: Post[] = [
       "what-is-a-placement-modifier",
     ],
   },
+  {
+    slug: "amazon-peak-fees-break-even-acos-q4",
+    title:
+      "Peak fees start on 15 October. Work out what they actually do to your break-even ACOS.",
+    excerpt:
+      "Amazon's holiday peak fulfilment fees run from 15 October 2026 to 14 January 2027, averaging $0.32 more per unit, with the 3.5% fuel and logistics surcharge applying on top. The change to your ad economics is smaller than most write-ups claim — because the surcharge has been in your fees since April — but it is real, and the first inventory deadline has already passed.",
+    date: "2026-09-02",
+    category: "Strategy",
+    readMinutes: 7,
+    sections: [
+      {
+        heading: "What changes on 15 October, in Amazon's words",
+        body: [
+          "Amazon's seller announcement, titled \"Holiday 2026: Same fees, same eligibility, earlier deadlines\", states that \"Holiday peak fulfillment fees will apply again from October 15, 2026, to January 14, 2027\" and that they \"will have the same per unit increase over non-peak rates as last year, averaging $0.32 per unit.\" The same post confirms that \"The 3.5% fuel and logistics-related surcharge will apply on top of holiday peak fulfillment fees.\"",
+          "The peak rates cover Fulfillment by Amazon, Remote Fulfillment with FBA, Multi-Channel Fulfillment and Buy with Prime. They apply to fulfilment during that window, not to when your stock arrived, so inventory you shipped in August is billed at peak rates for anything that ships out after 15 October.",
+          "That is the whole of the fee change. There is no new fee type, no restructure and no category-specific twist announced with it. Amazon's own framing — same fees, same eligibility — is accurate. What moved this year is the calendar, which is the part of the post most sellers skipped.",
+        ],
+      },
+      {
+        heading: "The number a lot of write-ups get wrong",
+        body: [
+          "Several summaries of this announcement add the two published averages together and describe the October change as roughly $0.49 per unit or more. That double-counts. The 3.5% fuel and logistics surcharge is not new in October — Amazon's own notice says it started on 17 April 2026 for FBA in the US and Canada, and that it is \"calculated on your fulfillment fees, not on the sale price of your items,\" averaging \"$0.17 per unit for US FBA.\" If you are selling today, that $0.17 is already inside the fee you are being charged.",
+          "So the amount that appears on 15 October is the peak increment plus the surcharge on that increment: $0.32 plus 3.5% of $0.32, or about $0.33 on an average US FBA unit. Amazon does not publish that combined figure, and we are not presenting it as one — it is arithmetic on the two averages Amazon does publish, shown so you can see where the number comes from rather than inherit someone else's.",
+          "This matters because the two versions lead to different decisions. A $0.49 shock argues for repricing. A $0.33 change on a mid-priced item argues for recalculating and then mostly carrying on. Getting it wrong in the alarming direction is how sellers talk themselves into a Q4 price rise they did not need, in the quarter where demand is least price-sensitive.",
+        ],
+      },
+      {
+        heading: "Recompute break-even ACOS before you touch a bid",
+        body: [
+          "Break-even ACOS is the point where an extra advertised sale stops making you money: your profit per unit before advertising, divided by your selling price. Every fee change moves it, and a target ACOS set in July is calibrated to a cost structure that stops existing in six weeks.",
+          "Work an example with round numbers, then replace them with yours. A product at $30, with a 15% referral fee of $4.50, landed cost of $7 and a current fulfilment fee of $6.10, leaves $12.40 before advertising — a break-even ACOS of about 41%. Push the fulfilment fee to $6.43 and the same product leaves $12.07, or about 40%. Roughly a point.",
+          "A point is not a crisis on that item, and saying otherwise would be dishonest. But the same $0.33 against a $12 product with a thin margin is a much larger share of what is left, and a flat per-unit increase always lands hardest on your cheapest items. The useful output of this exercise is not a single new account target — it is a short list of the SKUs where the fee change takes a real bite, which are the only ones worth acting on individually.",
+          "One caveat on the arithmetic itself: referral fees vary by category, and long-term storage, returns processing and removals sit outside this calculation. If your category or your return rate is unusual, build the number from your own fee report rather than from a worked example, including ours.",
+        ],
+      },
+      {
+        heading: "Where to get your real fee instead of an average",
+        body: [
+          "An average across every size tier in the catalogue tells you nothing reliable about one ASIN. Amazon's post says peak rates \"are now available in the Revenue Calculator, Profit Analytics dashboard, and Fee and Economics Preview Report\", which means you can read your actual October number today rather than estimating it.",
+          "The Fee and Economics Preview report is the efficient route if you have more than a handful of ASINs, because it gives you every SKU in one file and you can sort by the difference. The Revenue Calculator is better for checking a single product carefully, and the Profit Analytics dashboard is where to sanity-check that the picture matches what you are actually banking.",
+          "Do this before the rate changes rather than after. Reading your peak fee in November tells you what you are already paying; reading it now is the difference between a considered decision on a dozen SKUs and a reaction to a margin report that has already gone soft.",
+        ],
+      },
+      {
+        heading: "The deadlines arriving before the fee does",
+        body: [
+          "The same Amazon post lists inventory arrival deadlines, and the first set is for Prime Big Deal Days: 2 September for AWD shipments, 9 September for FBA shipments with minimal shipment splits, and 16 September for FBA with Amazon-optimized shipment splits. For Black Friday week and Cyber Monday the deadlines are 14 October for AWD, 21 October for minimal splits and 28 October for Amazon-optimized splits.",
+          "Note what those dates imply. The Black Friday deadlines for FBA both fall after 15 October, so stock shipped to hit them is being sold under peak rates regardless. The deadline calendar and the fee calendar are not the same calendar, and only one of them is negotiable.",
+          "Amazon's post also states that sellers using AWD with automatic FBA replenishment \"will keep paying the off-peak monthly storage rate through October 31, 2026\" — worth knowing if you are choosing where to hold Q4 stock.",
+          "One thing Amazon did not publish in that post is the Prime Big Deal Days event dates themselves. Trade outlets have named dates; we could not find them on an Amazon-hosted page, so we are not going to repeat them here. Ship to the deadline Amazon actually stated, which is the date that binds you either way.",
+        ],
+      },
+      {
+        heading: "What to do on Monday, and what not to do",
+        body: [
+          "Pull the fee preview, calculate the new break-even ACOS for your top twenty SKUs by ad spend, and set target ACOS per product rather than per account. Most accounts run one target across everything, which is exactly the setting that hides a fee change: the products that can still afford the spend subsidise the ones that no longer can, and the report at account level looks fine while individual items quietly stop working.",
+          "The thing we would not do is cut bids across the board in anticipation. Q4 click costs rise on their own as more advertisers enter the auction, and a fee change worth about a point of break-even is small next to what competition does to your CPC in November. Cutting bids ahead of the busiest weeks of the year to save a third of a dollar per unit is the kind of trade that reads as prudent in September and as lost revenue in January.",
+          "Instead, put a date in the calendar for the week of 20 October, when you will have real post-change data, and decide then with numbers rather than now with forecasts. Between now and then the only urgent items are the inventory deadlines, because those are the ones you cannot fix retrospectively.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Amazon Seller Central — Holiday 2026: Same fees, same eligibility, earlier deadlines (peak fee window, $0.32 average, surcharge stacking, inventory deadlines, AWD storage, fee tools)",
+        url: "https://sellercentral.amazon.com/seller-forums/discussions/t/3e31fbb7-04e0-4ed4-873e-f74b1052e2ff",
+      },
+      {
+        label:
+          "Amazon Seller Central — Fuel and logistics-related surcharge: FBA, MCF, and BWP in US and CA (3.5% from 17 April 2026, charged on fulfilment fees, $0.17 average per US FBA unit)",
+        url: "https://sellercentral.amazon.com/seller-forums/discussions/t/7cbc0233-ee5b-4359-978a-dee7cad5c6f4",
+      },
+      {
+        label:
+          "Supply Chain Dive — Amazon announces 2026 holiday fulfillment fees, advises early shipping (13 July 2026, corroborates window, average and surcharge)",
+        url: "https://www.supplychaindive.com/news/amazon-announces-2026-holiday-fulfillment-fees-advises-early-shipping/824962/",
+      },
+    ],
+    related: [
+      "how-to-calculate-break-even-acos",
+      "what-is-a-good-acos-on-amazon",
+      "how-to-lower-acos",
+    ],
+  },
 ];
 
 /** Newest first. The index page, the sitemap and the homepage teaser all rely
