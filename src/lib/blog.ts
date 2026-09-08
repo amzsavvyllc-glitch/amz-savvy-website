@@ -465,6 +465,120 @@ const allPosts: Post[] = [
       "how-to-lower-acos",
     ],
   },
+  {
+    slug: "amazon-service-provider-authorization-reset",
+    title:
+      "Amazon is making you re-approve everyone who touches your account. Read the roles before you click Confirm.",
+    excerpt:
+      "Amazon has replaced the old way of giving agencies, consultants and software access to Seller Central with a role-based authorisation that expires after 365 days, and sellers are receiving reauthorise prompts on a rolling basis through September 2026. The prompt looks like a formality and is not: whatever you approve becomes that provider's entire access, replacing anything they held before, so the one screen worth reading carefully is the role list.",
+    date: "2026-09-08",
+    category: "News",
+    readMinutes: 7,
+    sections: [
+      {
+        heading: "What Amazon changed",
+        body: [
+          "For years, giving an agency or a freelancer access to your Seller Central account meant adding them as a user and ticking boxes on a permissions grid. Amazon has been moving that off to a separate track. External providers are now meant to be added through the Authorized Partners route rather than as staff accounts — Amazon's own seller forum guide to user permissions puts it plainly: \"Always add external service providers as Authorized Partners, not Secondary Users.\"",
+          "Underneath that is a registration system providers have to pass first. Amazon's developer documentation states that \"If a service provider doesn't complete the Seller Central role approval process, sellers can't grant the service provider permissions in Seller Central\", and that until a provider is approved for a role, \"the role-based permissions appear greyed out\" on your side. Approval is not instant either: Amazon tells providers to \"Wait for approval (processing can take up to 10 business days).\"",
+          "The consequence for you is that the permission menu is no longer a free-form list. A provider can only ask for the roles Amazon has already approved them for, in the categories Amazon put them in. That is a genuine improvement in principle. It also means an agency you have worked with for three years may now be able to request less than it used to hold, or in a couple of cases something broader, and neither is announced anywhere except on the approval screen you are about to click through.",
+        ],
+      },
+      {
+        heading: "The 365-day clock is the part nobody mentions",
+        body: [
+          "Amazon's documentation on how sellers authorise providers is one sentence long on the point that matters most: \"The authorization is good for 365 days.\" The Solution Provider Portal FAQ says the same in its own words — \"Authorizations are time-bound (valid for 365 days) and renewable\" — and adds that you can revoke access at any time from your Manage Services page.",
+          "So this is not a one-off migration. It is an annual renewal that will land in your inbox every year from now on, on a different date for every provider, forever. The first cycle is the one arriving now; the second will arrive in about a year, when nobody remembers what any of it was for.",
+          "The FAQ is equally direct about what happens if a renewal is missed: \"You'll lose access to their Seller Central account until they wish to initiate a new account authorization.\" That is written from the provider's point of view, but read it from yours. If you ignore the prompt, the agency running your ads simply stops being able to open your account, and the first sign will be someone messaging you rather than an error in a report.",
+          "A separate 365-day clock applies to software rather than people. Amazon's guidance for application developers says \"the selling partner must reauthorize your public application every 365 days, or anytime you add a role to your application\", and that flow lives in a different place — Apps and Services, then Manage Your Apps. If you use a bid tool, a repricer or an analytics platform, it has its own expiry date that has nothing to do with your agency's.",
+        ],
+      },
+      {
+        heading: "What the authorisation screen actually does",
+        body: [
+          "Amazon describes the seller-side flow in two steps. You start either from a unique link the provider sends you or from their listing on the Service Provider Network, where there is an Authorize Now button. You then land on a review screen where, in Amazon's description, you check the approved roles, can adjust individual permissions, and can apply country or region filters before choosing Confirm.",
+          "Those two middle options are the whole point of the exercise and are the two most people skip. You are allowed to hand over less than the provider asked for, and you are allowed to scope access to specific marketplaces. An agency that runs your US ads has no business in your EU account, and a listings contractor does not need whatever is bundled next to listings in the same role group.",
+          "There is one practical wrinkle worth being honest about. Amazon's documentation refers to this surface by more than one name depending on which page you read — Manage Services in the Solution Provider Portal FAQ, the Authorized Partners tab in the seller-facing user permissions guidance, Manage Your Apps for software. Do not go hunting for the exact wording in this post. Open Settings, then User Permissions, and work with whatever your account actually shows you, because the labels are still moving.",
+        ],
+      },
+      {
+        heading: "It replaces what they already had, which is easy to miss",
+        body: [
+          "The detail that turns this from admin into something worth an hour is that the new authorisation is not additive. Trade coverage of the rollout — EcomCrew wrote it up on 3 September 2026 — reports that the new grant replaces all prior Seller Central access that provider held, including access they had as a secondary user on your account. Amazon's own FAQ points the same way more gently, saying providers currently working through secondary user permissions will get migration communications with \"no immediate impact on your accounts or service listings\" until they complete the transition.",
+          "We are flagging the source difference deliberately. The replacement behaviour is described clearly in trade press and only implied in Amazon's documentation, so treat it as very likely rather than quoted policy. Either way it points to the same action, because the safe assumption and the convenient assumption are the same one: what you approve on that screen is what they will have.",
+          "That is why the renewal is a better opportunity than it looks. Most seller accounts have accumulated access — the agency before this one, the photographer from 2023, the VA who left, the software you trialled for a month. A permissions list nobody has audited in two years is a real security exposure, and this is the first time Amazon has forced everyone to look at theirs at once.",
+        ],
+      },
+      {
+        heading: "Check the notice is real before you act on it",
+        body: [
+          "Reauthorisation emails are close to a perfect phishing template: urgent, plausible, from a do-not-reply address, and asking you to grant account access. Sellers have been unsure about them for years — there is a Seller Central forum thread where a seller posts an \"Action is required by you to renew your authorization\" notice and asks whether it is genuine, and another seller's first reply is that if you do not recognise the sender \"it's probably a scam to trick you into giving them access!\"",
+          "The rule is simple and costs nothing. Never authorise anything from a link in an email. Go to sellercentral.amazon.com yourself, sign in, and see whether the request is waiting for you inside the account. A real request will be there. A fake one will not.",
+          "It is also worth noticing that Amazon's own support has not been especially clear about this area. On a seller forum thread asking what the Authorized Partners tab is for and how it differs from users, the Amazon moderator's answer was to \"contact Seller Support directly\". If the official explanation is thin, expect confusion, and expect people to exploit it.",
+        ],
+      },
+      {
+        heading: "What to do on Monday",
+        body: [
+          "Open Settings, then User Permissions, and read the list of everyone who currently has access — both the user list and the partner or services list, because they are separate. Write down each name and what they do for you today, in the present tense. Anyone you cannot finish that sentence about gets removed now, before any renewal prompt arrives, because deciding in advance is easier than deciding under a deadline.",
+          "Then do the same for software. Apps and Services, then Manage Your Apps, and use Disable authorization on anything you no longer pay for. Tools you trialled and abandoned keep their data access until you take it away, and their expiry may be eleven months out.",
+          "When a reauthorisation request does arrive, spend the two minutes on the role screen rather than clicking Confirm. Cut the marketplaces the provider does not work in. Turn off any permission that does not match what they actually do — a PPC agency does not need to be able to change bank details, and if you cannot see how a role connects to the work, ask them why they are requesting it. A provider who cannot explain a permission in one sentence should not have it.",
+          "Finally, put the date in a calendar with a note saying which provider it covers. In 365 days this will happen again, with less warning and less context, and the version of you that gets that email will have no idea what it refers to. Ten seconds now saves an afternoon then.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Amazon SP-API documentation — Learn How Sellers Authorize Service Providers (unique link or Authorize Now on the Service Provider Network listing, review roles, adjust individual permissions, country/region filters, \"The authorization is good for 365 days\")",
+        url: "https://developer-docs.amazon/sp-api/docs/learn-how-sellers-authorize-service-providers",
+      },
+      {
+        label:
+          "Amazon SP-API documentation — Solution Provider Portal FAQ (authorisations time-bound at 365 days and renewable, revoke any time from Manage Services, secondary-user migration communications, loss of access when a reauthorisation is missed)",
+        url: "https://developer-docs.amazon/sp-api/docs/spp-faq",
+      },
+      {
+        label:
+          "Amazon SP-API documentation — Service Provider Registration and Role Approval Process (role approval is mandatory, permissions appear greyed out until approved, processing can take up to 10 business days)",
+        url: "https://developer-docs.amazon/sp-api/docs/service-provider-registration-and-role-approval-process",
+      },
+      {
+        label:
+          "Amazon SP-API documentation — Renew Authorizations (\"the selling partner must reauthorize your public application every 365 days, or anytime you add a role to your application\")",
+        url: "https://developer-docs.amazon/sp-api/docs/renew-authorizations",
+      },
+      {
+        label:
+          "Amazon SP-API documentation — Revoke Authorizations (Apps and Services, then Manage Your Apps, then Disable authorization)",
+        url: "https://developer-docs.amazon/sp-api/docs/revoke-authorizations",
+      },
+      {
+        label:
+          "Amazon Seller Central forums — User Permissions Guide for Amazon Sellers (\"Always add external service providers as Authorized Partners, not Secondary Users\")",
+        url: "https://sellercentral.amazon.com/seller-forums/discussions/t/c63f8fc4-c813-4ba2-a864-ff4eef117223",
+      },
+      {
+        label:
+          "Amazon Seller Central forums — seller question about the Authorized Partners tab, answered by an Amazon moderator with a referral to Seller Support",
+        url: "https://sellercentral.amazon.com/seller-forums/discussions/t/c57a914f-abdd-4492-a4b7-1c21aba14dc0",
+      },
+      {
+        label:
+          "Amazon Seller Central forums — sellers asking whether an authorisation-renewal notice is genuine or a scam (older thread, cited for the confusion pattern, not for current dates)",
+        url: "https://sellercentral.amazon.com/seller-forums/discussions/t/2a4374a195c441946e95f7fd40b74ccb",
+      },
+      {
+        label:
+          "EcomCrew — Amazon Is Resetting Every Agency's Access to Your Seller Central Account (3 September 2026; trade corroboration for rolling per-seller deadlines through September and for the new grant replacing prior secondary-user access)",
+        url: "https://www.ecomcrew.com/amazon-is-resetting-every-agencys-access-to-your-seller-central-account/",
+      },
+    ],
+    related: [
+      "how-to-choose-an-amazon-ppc-agency",
+      "do-i-need-an-amazon-agency",
+      "agency-vs-in-house-vs-ppc-software",
+    ],
+  },
 ];
 
 /** Newest first. The index page, the sitemap and the homepage teaser all rely
