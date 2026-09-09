@@ -30,12 +30,10 @@ export const metadata: Metadata = {
   },
 };
 
-// Icon name (from site-config) → component; and title → dedicated page where one exists.
+// Icon name (from site-config) → component. Which services have a dedicated
+// page is no longer decided here: it is `href` on the service itself, so this
+// page and the homepage cards can never disagree about where a service lives.
 const icons = { Search, Target, Rocket, TrendingUp } as const;
-const detailHref: Record<string, string> = {
-  "Amazon SEO": "/amazon-seo/",
-  "PPC Management": "/amazon-ppc-management/",
-};
 
 export default function ServicesPage() {
   const jsonLd = {
@@ -53,9 +51,7 @@ export default function ServicesPage() {
             name: s.title,
             description: s.tagline,
             provider: { "@id": `https://${site.domain}/#org` },
-            ...(detailHref[s.title]
-              ? { url: `https://${site.domain}${detailHref[s.title]}` }
-              : {}),
+            ...(s.href ? { url: `https://${site.domain}${s.href}` } : {}),
           },
         })),
       },
@@ -98,7 +94,7 @@ export default function ServicesPage() {
           <div className="grid gap-6 sm:grid-cols-2">
             {services.map((s) => {
               const Icon = icons[s.icon as keyof typeof icons] ?? Target;
-              const href = detailHref[s.title];
+              const href = s.href;
               return (
                 <div
                   key={s.title}

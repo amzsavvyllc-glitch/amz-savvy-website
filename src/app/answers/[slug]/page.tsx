@@ -268,6 +268,20 @@ export default async function AnswerPage({ params }: Props) {
               Get my free audit
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </CtaButton>
+            {/* Set on the handful of answers whose reader would genuinely want
+                the service page next — see `service` in answers.ts. */}
+            {a.service && (
+              <p className="mt-5 text-sm text-navy-500">
+                Or read how the ongoing work runs before you book:{" "}
+                <Link
+                  href={a.service.href}
+                  className="font-semibold text-brand-600 underline-offset-4 hover:underline"
+                >
+                  {a.service.label}
+                </Link>
+                .
+              </p>
+            )}
           </div>
 
           {related.length > 0 && (

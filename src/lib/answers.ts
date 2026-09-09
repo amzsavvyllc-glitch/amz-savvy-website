@@ -59,6 +59,22 @@ export type Answer = {
     };
   }[];
   related: string[];
+  /**
+   * Optional link to the service page this answer is the informational half of.
+   *
+   * The information layer and the commercial layer were a one-way street: the
+   * service pages link out to answers (`relatedAnswers` in services-content.ts)
+   * and nothing linked back. That left /amazon-ppc-management/ and /amazon-seo/
+   * reachable only from /services/ — a page Google had itself never crawled —
+   * and both were unknown to Google as a result.
+   *
+   * Set this ONLY where the reader of this specific answer would plausibly want
+   * the service page next: someone weighing up whether to hire, or reading the
+   * mechanism the service works on. It is not a footer, and it is not a slot to
+   * fill on every answer — an answer that ends with an unrelated sales link is
+   * worse than one that ends with the answer.
+   */
+  service?: { href: string; label: string };
 };
 
 const coreAnswers: Answer[] = [
@@ -577,6 +593,9 @@ const coreAnswers: Answer[] = [
       },
     ],
     related: ["how-to-rank-on-page-one", "what-is-a-good-conversion-rate-on-amazon", "acos-vs-tacos"],
+    // This answer explains the mechanism — indexing, then velocity — that the
+    // Amazon SEO engagement is the ongoing execution of.
+    service: { href: "/amazon-seo/", label: "Amazon SEO" },
   },
   {
     slug: "how-to-rank-on-page-one",
@@ -1058,6 +1077,11 @@ const coreAnswers: Answer[] = [
       },
     ],
     related: ["what-reports-for-ppc-audit", "how-long-does-amazon-ppc-take", "how-much-to-spend-on-amazon-ads"],
+    // A reader who has just worked out that the arithmetic favours an agency
+    // has nowhere to go but a booking form. "What specifically will be done
+    // each week" is the question this answer tells them to ask — and the PPC
+    // page is where it is answered.
+    service: { href: "/amazon-ppc-management/", label: "Amazon PPC management" },
   },
   {
     slug: "what-belongs-in-amazon-a-plus-content",

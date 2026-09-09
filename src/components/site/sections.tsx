@@ -3,6 +3,7 @@
  * HTML and never hydrate. The tabbed playbooks section that used to force a
  * client boundary on this whole file now lives in playbooks.tsx.
  */
+import Link from "next/link";
 import {
   ArrowRight,
   Quote,
@@ -75,6 +76,22 @@ export function Services() {
                     </li>
                   ))}
                 </ul>
+
+                {/* The way through to the service's own page, for the reader
+                    who has decided this is their lever and wants the detail
+                    rather than the booking form. Same link as the one on
+                    /services/, from the page far more people actually land on.
+                    Only two services have a page; the others render nothing
+                    rather than a link to somewhere generic. */}
+                {s.href && (
+                  <Link
+                    href={s.href}
+                    className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 underline-offset-4 hover:underline"
+                  >
+                    How we run {s.title}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                )}
               </div>
             );
           })}

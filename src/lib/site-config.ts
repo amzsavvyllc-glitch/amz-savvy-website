@@ -117,7 +117,31 @@ export const stats = [
   { value: 9, prefix: "", suffix: "", label: "Years on Amazon" },
 ] as const;
 
-export const services = [
+export type Service = {
+  icon: string;
+  title: string;
+  tagline: string;
+  points: readonly string[];
+  /**
+   * The service's own page, where one exists.
+   *
+   * This is the ONLY record of which service has a dedicated page, and both the
+   * homepage cards and /services/ read it — so a reader who is interested in a
+   * lever can reach the page about it from wherever they meet it.
+   *
+   * That mattered more than it looks. /amazon-ppc-management/ and /amazon-seo/
+   * were linked from /services/ and nowhere else, and /services/ had itself
+   * never been crawled, so the only route to either page ran through a page
+   * Google had not read. Both were "unknown to Google" as a result. A link on
+   * the homepage — the page Google crawls most often — is what ends that.
+   *
+   * Launches and Ranking have no page of their own yet; add the route, add the
+   * href here, and both surfaces pick it up.
+   */
+  href?: string;
+};
+
+export const services: readonly Service[] = [
   {
     icon: "Search",
     title: "Amazon SEO",
@@ -127,6 +151,7 @@ export const services = [
       "Listing copy, backend terms, A+ content",
       "Indexing and rank tracking",
     ],
+    href: "/amazon-seo/",
   },
   {
     icon: "Target",
@@ -137,6 +162,7 @@ export const services = [
       "Search-term harvesting & negation",
       "Bid strategy tuned to your margin",
     ],
+    href: "/amazon-ppc-management/",
   },
   {
     icon: "Rocket",
@@ -158,7 +184,7 @@ export const services = [
       "Monthly reporting you can actually read",
     ],
   },
-] as const;
+];
 
 export const process = [
   {
