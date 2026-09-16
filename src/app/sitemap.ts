@@ -33,7 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
    *   2. Never a date in the future.
    */
   const staticLastModified = {
-    "/": "2026-09-09", // created 2026-07-30
+    "/": "2026-09-16", // created 2026-07-30
     "/about/": "2026-09-02", // created 2026-08-24
     "/services/": "2026-09-02", // created 2026-09-01
     "/amazon-ppc-management/": "2026-09-02", // created 2026-09-01

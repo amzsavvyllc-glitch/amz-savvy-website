@@ -139,6 +139,13 @@ export type Service = {
    * href here, and both surfaces pick it up.
    */
   href?: string;
+  /**
+   * Link text for `href`, written as a sentence-case phrase ("How we run Amazon
+   * PPC management"). Kept separate from `title` because the card title is a
+   * heading, while this sits mid-sentence and should name the page the same way
+   * the answer pages do. Set it whenever `href` is set.
+   */
+  linkLabel?: string;
 };
 
 export const services: readonly Service[] = [
@@ -152,6 +159,7 @@ export const services: readonly Service[] = [
       "Indexing and rank tracking",
     ],
     href: "/amazon-seo/",
+    linkLabel: "How we run Amazon SEO",
   },
   {
     icon: "Target",
@@ -163,6 +171,7 @@ export const services: readonly Service[] = [
       "Bid strategy tuned to your margin",
     ],
     href: "/amazon-ppc-management/",
+    linkLabel: "How we run Amazon PPC management",
   },
   {
     icon: "Rocket",

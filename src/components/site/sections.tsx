@@ -83,12 +83,12 @@ export function Services() {
                     /services/, from the page far more people actually land on.
                     Only two services have a page; the others render nothing
                     rather than a link to somewhere generic. */}
-                {s.href && (
+                {s.href && s.linkLabel && (
                   <Link
                     href={s.href}
                     className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-brand-600 underline-offset-4 hover:underline"
                   >
-                    How we run {s.title}
+                    {s.linkLabel}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 )}

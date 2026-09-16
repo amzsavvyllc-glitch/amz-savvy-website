@@ -563,7 +563,7 @@ const coreAnswers: Answer[] = [
     metaDescription:
       "Relevance, then conversion history, then velocity. How Amazon's ranking really behaves, and the levers you actually control.",
     category: "SEO",
-    updated: "2026-08-15",
+    updated: "2026-09-16",
     image: {
       src: "/answers/how-amazon-ranking-works.png",
       alt: "Diagram of how Amazon search ranking works: relevance decides whether you can rank, through indexing; performance decides how high, through click-through rate, conversion rate and sales velocity.",
@@ -1052,7 +1052,7 @@ const coreAnswers: Answer[] = [
     metaDescription:
       "The arithmetic that decides it: at what ad spend a few points of ACOS exceed a retainer, and what to check before signing anything.",
     category: "Strategy",
-    updated: "2026-08-15",
+    updated: "2026-09-16",
     image: {
       src: "/answers/do-i-need-an-amazon-agency.png",
       alt: "Diagram comparing running Amazon PPC yourself at low spend against hiring an agency when spend is high enough that a few points of ACOS exceed the retainer.",
