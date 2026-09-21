@@ -465,6 +465,116 @@ const allPosts: Post[] = [
       "how-to-lower-acos",
     ],
   },
+  {
+    slug: "prime-big-deal-days-2026-ad-plan",
+    title:
+      "Prime Big Deal Days lands on 6 October. Your deal deadlines have gone — your ad plan has not.",
+    excerpt:
+      "Amazon confirmed on 14 September that Prime Big Deal Days runs 6–7 October 2026, 48 hours from 12:01 a.m. PDT across 22 countries. The deal submission window closed on 8 September and the last FBA inbound deadline was 16 September, so for most sellers this is now purely an advertising event — and the two budget numbers published on Amazon's own advertising site do not agree with each other.",
+    date: "2026-09-21",
+    category: "Strategy",
+    readMinutes: 7,
+    sections: [
+      {
+        heading: "What Amazon confirmed, and when",
+        body: [
+          "Amazon announced the event on 14 September. Its press release states that \"Starting October 6, Prime members can shop 48 hours of exclusive deals across more than 35 categories\", beginning at 12:01 a.m. PDT, and that \"New drops launch three times daily at midnight, 8 a.m., and 1 p.m. PDT\".",
+          "Amazon's own news post lists 22 participating countries — Australia, Austria, Belgium, Brazil, Canada, Colombia, France, Germany, Ireland, Italy, Japan, Luxembourg, Mexico, the Netherlands, Poland, Portugal, Singapore, Spain, Sweden, Turkey, the United States and the United Kingdom — with the caveat that \"Dates may vary per country.\" If you sell in more than one marketplace, check your own before you schedule anything to a US clock.",
+          "That is the whole announcement. There is no new ad format tied to it, no policy change and nothing to opt into. What you get is a date, roughly two weeks of notice, and a published schedule of when traffic will arrive in waves rather than evenly.",
+        ],
+      },
+      {
+        heading: "The deadlines that have already gone",
+        body: [
+          "Amazon's Holiday 2026 seller announcement gives the Prime Big Deal Days deal submission window as \"July 8 to September 8\". It closed almost two weeks before Amazon told shoppers the event existed, which is normal and still catches people out every year.",
+          "The inbound inventory deadlines have gone too. The same post lists 2 September for AWD shipments, 9 September for FBA with minimal splits, and 16 September for FBA with Amazon-optimized splits. Stock that is not in the network now is not reliably in the network for 6 October.",
+          "So if you have no deal submitted and no fresh inventory landing, there is no workaround and we are not going to invent one. What you still control is price, coupons, your listing, and your bids and budgets over a 48-hour traffic spike that will happen whether or not you are in the deal carousel. That is a smaller lever than a Lightning Deal, but it is a real one, and it is the only one left.",
+        ],
+      },
+      {
+        heading: "The deadline still open is the bigger one",
+        body: [
+          "The same Amazon post gives the Black Friday Week and Cyber Monday deal window as \"July 8 to October 20\", with inbound deadlines of 14 October for AWD, 21 October for FBA with minimal splits and 28 October for FBA with Amazon-optimized splits. Every one of those is still in front of you today.",
+          "Black Friday is the larger event for most catalogues, and the window is open right now. If you are going to spend an hour on Q4 this week, spending it on a Prime Big Deal Days you cannot enter is the wrong hour. Spend it on the deals you can still submit and the shipment you can still book.",
+          "One number to run before you set those deal prices: holiday peak fulfilment fees apply from 15 October 2026 to 14 January 2027 — an average of $0.32 more per unit, with the 3.5% fuel and logistics surcharge applying on top. A Black Friday deal price is being fulfilled at peak rates. A Prime Big Deal Days price on 6 October is not. They are different break-even calculations, nine days apart, and it is easy to copy last week's number into next month's promotion by accident.",
+        ],
+      },
+      {
+        heading: "The budget number: Amazon's own site says two different things",
+        body: [
+          "Amazon's Prime Day advertising guide tells advertisers to start scaling \"3–5 days ahead of Prime Day and go for 20–30% increments\", and warns that campaigns already limited by budget will miss peak traffic during the event itself.",
+          "On the same domain, in an expert-advice piece, Amazon publishes an outside agency recommending \"increasing daily budgets by three to five times normal spend, with similarly aggressive bid adjustments\". That is a 20–30% lift and a 300–500% lift sitting on one website, and the gap between them is most of a Q4 budget.",
+          "They are not reconcilable, so do not average them. Note which is which: the 20–30% figure is Amazon's own guidance, the 3–5x figure is attributed to an agency whose incentives are not yours. Neither knows your break-even ACOS, your stock cover or how much of your category's event traffic converts.",
+          "The number you should use comes from your own account. Look at which campaigns actually exhausted their budget during your last event window and how early in the day they did it. Those are the campaigns that need headroom. A campaign that has never hit its cap does not need a bigger budget on 6 October; it needs a bid decision, which is a different question.",
+        ],
+      },
+      {
+        heading: "Budget rules are the mechanism — and they are set in advance",
+        body: [
+          "The tool for this is budget rules, and Amazon documents two kinds. Schedule-based rules let you \"set budgets in advance for special events, such as Prime Day and Halloween, or during a date range of your choice\" — Amazon's worked example is increasing budget by 50% on Black Friday. Performance-based rules \"will increase your campaign budget when your campaign meets a certain performance threshold, such as return on ad spend (ROAS), click-through rate, or conversion rate\".",
+          "Amazon's Sponsored Products budget guidance makes the diagnostic explicit: \"If your campaign seems to always run out of budget at the same point, such as during the weekend, try to apply budget rules, setting your budget to increase during a specific time period.\" It also states that advertisers can use schedule-based rules ahead of special events \"to help reduce missed sales opportunities and stay in budget for longer\".",
+          "The practical point is the word \"advance\". A schedule-based rule is something you configure now, with a start and an end date, so that it lifts on 6 October and drops again on 8 October without you being awake. Setting it on the morning of the event is how a temporary increase quietly becomes your permanent daily budget for the rest of October.",
+          "If you use performance-based rules instead, give them a condition you would actually stand behind at normal traffic. Event-day ROAS is flattered by event-day conversion rates, so a rule that reads \"spend more when ROAS is strong\" will spend hardest exactly when the signal is least representative.",
+        ],
+      },
+      {
+        heading: "What we would do with two weeks left — and what we would not",
+        body: [
+          "Do this week: submit Black Friday and Cyber Monday deals before 20 October and book the shipment against the 14/21/28 October inbound dates. Then, for the campaigns you care about most, write down the daily budget each one currently exhausts and when, and build one schedule-based rule per campaign covering 6–7 October with an explicit end date.",
+          "Do the week of the event: check pacing after each of the three published drop times rather than once a day, because Amazon has told you traffic arrives in waves at midnight, 8 a.m. and 1 p.m. PDT and a budget set for a flat day will not behave like one. Keep the check to budget and out-of-stock risk. Two days is not enough data to be rewriting bids mid-event.",
+          "Do not: rebaseline your bids on 6–7 October performance, pause keywords on two days of event data, or let those two days sit inside the week-on-week comparison you use to judge everything else. Put a note in your reporting that the window is anomalous, and make your real October decisions in the week of 13 October, when you have normal traffic either side of the spike to compare against.",
+          "And the honest summary of the event itself: with no deal and no new inventory, this is a traffic spike you are buying into, not a promotion you are running. Buy into it deliberately, with a budget number you can defend from your own account rather than one you read on a website — including this one.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Amazon Press Center — Prime Big Deal Days is Back October 6-7 (14 September 2026; 48 hours, 12:01 a.m. PDT start, three daily drop times)",
+        url: "https://press.aboutamazon.com/2026/9/prime-big-deal-days-is-back-october-6-7-kicking-off-the-season-with-two-days-of-exclusive-savings-for-prime-members",
+      },
+      {
+        label:
+          "About Amazon — Prime Big Deal Days 2026 is set for October 6-7 (more than 35 categories, the 22-country list, \"Dates may vary per country\")",
+        url: "https://www.aboutamazon.com/news/retail/amazon-prime-big-deals-day-2026-when-october-6-7",
+      },
+      {
+        label:
+          "Amazon Seller Central — Holiday 2026: Same fees, same eligibility, earlier deadlines (deal windows 8 July–8 September and 8 July–20 October, inbound deadlines, peak fee window, $0.32 average, 3.5% surcharge)",
+        url: "https://sellercentral.amazon.com/seller-forums/discussions/t/3e31fbb7-04e0-4ed4-873e-f74b1052e2ff",
+      },
+      {
+        label:
+          "Amazon Ads — Prime Day: Advanced advertising strategies (Amazon's own guidance: scale 3–5 days ahead in 20–30% increments; avoid being limited by budget)",
+        url: "https://advertising.amazon.com/library/guides/prime-day-guide-advanced-strategies",
+      },
+      {
+        label:
+          "Amazon Ads — 5 advertising tips for holiday season success (the conflicting \"three to five times normal spend\" figure, attributed to Amerge, an outside agency)",
+        url: "https://advertising.amazon.com/library/expert-advice/five-amazon-ads-tips-from-amerge",
+      },
+      {
+        label:
+          "Amazon Ads — A complete guide to budget rules (schedule-based vs performance-based rules, the Black Friday +50% example)",
+        url: "https://advertising.amazon.com/library/guides/budget-rules",
+      },
+      {
+        label:
+          "Amazon Ads — Sponsored Products budget basics and best practices (the out-of-budget diagnostic and scheduling rules ahead of special events)",
+        url: "https://advertising.amazon.com/library/guides/sponsored-products-budget-best-practices",
+      },
+      {
+        label:
+          "PPC Land — Amazon sets Prime Big Deal Days for October 6-7 across 22 countries (14 September 2026; corroborates the 8 September deal close and 16 September FBA cutoff)",
+        url: "https://ppc.land/amazon-sets-prime-big-deal-days-for-october-6-7-across-22-countries/",
+      },
+    ],
+    related: [
+      "how-much-to-spend-on-amazon-ads",
+      "how-to-calculate-break-even-acos",
+      "why-did-my-acos-increase",
+    ],
+  },
 ];
 
 /** Newest first. The index page, the sitemap and the homepage teaser all rely
