@@ -1247,6 +1247,64 @@ const coreAnswers: Answer[] = [
     ],
     related: ["what-belongs-in-amazon-a-plus-content", "what-is-a-good-conversion-rate-on-amazon", "how-to-rank-on-page-one"],
   },
+  {
+    slug: "how-to-improve-amazon-conversion-rate",
+    question: "How do I improve conversion rate on an Amazon listing?",
+    short:
+      "Conversion rate improves fastest when you first establish which of two different problems you have: the listing is failing to persuade people who wanted the product, or it is being shown to people who wanted something else. Settle that before editing anything, because the second is a targeting problem and no amount of photography will fix it. Where the listing genuinely is the weak link, the levers are not equal — price relative to the alternatives visible on the same screen, the main image, review count and rating, and reliably owning the Buy Box in stock carry most of the weight, while bullets and A+ content matter mainly to the smaller group who scroll that far. Change one lever at a time, hold price and ad spend steady while you do, and read unit session percentage in the Business Report by ASIN over weeks rather than days.",
+    metaDescription:
+      "Separate a persuasion problem from a traffic problem first, then work the levers in order — and measure the change so you know which edit moved it.",
+    category: "SEO",
+    updated: "2026-09-21",
+    sections: [
+      {
+        heading: "First decide whether you have a persuasion problem or a traffic problem",
+        body: [
+          "Conversion rate is a ratio, and a seller looking at a low one usually assumes the numerator is at fault — that the images, the copy or the price failed to convince. Often the denominator is the real story. If the listing is being shown for searches that describe a slightly different product, the shoppers arriving are behaving correctly by leaving, and every hour spent on photography is spent on the wrong half of the equation.",
+          "There is a test that separates the two cheaply. Pull the search term report, or Search Query Performance if you have Brand Analytics, and read the terms actually delivering your clicks. Then compare how the listing converts on tight exact-match terms that describe the product precisely against how it converts overall. A listing that converts well on the phrases that exactly name what it is, and badly in aggregate, does not have a persuasion problem — it has an audience made of people shopping for something adjacent.",
+          "This failure mode is often self-inflicted. Chasing a high-volume phrase the product only half matches imports traffic that cannot convert, and that traffic then depresses the very signal Amazon uses to decide whether to keep showing the listing at all. The fix is targeting work — negatives, bid reductions, and in some cases removing an over-broad phrase from the copy — not a rewrite.",
+          "Both problems can be true at once, and when they are, do the targeting first anyway. It is faster, it is reversible within a day, and it cleans the measurement you will need in order to judge whether any later listing edit worked.",
+        ],
+      },
+      {
+        heading: "The levers are not equal, and most sellers start near the bottom of the list",
+        body: [
+          "Price relative to the visible competition does more work than anything else on the page. The comparison a shopper makes is not against a category average but against the three or four products sitting beside yours in the results grid at that moment. The requirement is not to be cheapest; it is that any gap is explicable from the thumbnail and the title. A premium the listing never justifies reads as a mistake, and no bullet point recovers it.",
+          "The main image is next, and it carries two jobs that are easy to confuse. It wins the click from search, and it sets the expectation the rest of the gallery either confirms or disappoints. An ambiguous silhouette or a product floating too small in the frame produces clicks from people who were not sure what they were clicking, which shows up later as a conversion problem that actually began in the results page.",
+          "Review count and star rating come third, with one detail sellers overlook: the most helpful critical review is displayed on the page, so a single well-written complaint can carry more weight than a dozen ratings. Availability sits alongside it — if you are not holding the Buy Box, the conversion you are measuring is largely somebody else's, and intermittent stock-outs inside a comparison period will move the rate on their own.",
+          "Bullets and A+ content come last in this ordering, which is not the same as saying they do not matter. They matter to the shopper who scrolls, and that is a smaller and later-stage group than most sellers assume. The ordering is really about cost and reversibility: a price test runs today and is undone today, an image swap takes days, and reviews take months and are only indirectly under your control. Work the fast reversible levers first so you learn something before committing to the slow ones.",
+        ],
+      },
+      {
+        heading: "Take the fix from your own returns, reviews and questions, not from a checklist",
+        body: [
+          "Generic optimisation advice produces generic listings. The specific doubt stopping your specific sale is already documented in three places you own: the return reasons report, the recurring themes in negative reviews, and the customer questions that get asked repeatedly. Each one names something the listing failed to settle, and the ranking writes itself — sort by how often it comes up.",
+          "Size and scale surprise is the item that appears most consistently across categories, and it is also the most fixable. A dimensions callout does not solve it, because a number asks the shopper to imagine a measurement and they will imagine it wrong. A photograph containing a hand, a countertop or a doorway answers the question before it is asked.",
+          "Work through the list and convert each recurring doubt into one specific asset: an image, a bullet that leads with the objection rather than burying it, an A+ module, or a plain answer posted to the question itself. Resist the urge to answer all of them at once in a single rewrite, for the measurement reasons in the last section.",
+          "This exercise also tells you when the listing is not the problem. A product whose conversion rate is stable but whose return rate is high is not failing to persuade anyone — it is persuading people successfully and then disappointing them, which is a product or expectation-setting issue that better copy would only make worse.",
+        ],
+      },
+      {
+        heading: "What looks like a conversion problem and is not",
+        body: [
+          "Check the metric before you diagnose the listing. The Business Report by ASIN offers more than one conversion column, and they count different things: one is based on units ordered and one on order items. A multi-unit promotion, a pack-size change or a coupon that encourages buying two can move a unit-based rate with no change whatsoever in how many shoppers decided to buy. Confirm which column you are reading, and read the same one every time.",
+          "Sessions have their own definition — deduplicated visits within a window rather than raw page views — and they are reported per child ASIN. That means a parent with many variations splits its sessions across them, and adding a slow variation to a family changes the per-child picture without anything going wrong. Compare like with like, and if you restructured a family, treat the period before the restructure as a different dataset rather than a baseline.",
+          "Seasonality catches sellers who compare against last month instead of the same weeks last year. Sample size catches almost everyone else: a few hundred sessions will swing several points week to week on nothing at all, and a newly published listing or a newly uploaded image is not served consistently in its first days. If the period you are judging is small, you are reading noise.",
+          "Finally, open the listing on a phone and go through it as a buyer would. Most Amazon traffic is mobile, the gallery and A+ modules render differently there, and text baked into an image at desktop scale can arrive unreadable. A listing that looks finished in Seller Central and broken on a handset will show up in the data as an unexplained conversion problem.",
+        ],
+      },
+      {
+        heading: "Change one thing and measure it so the answer is attributable",
+        body: [
+          "Write down the baseline before you touch anything: the conversion column you are using, its value, the sessions behind it, the dates, and the current price. Reverting is the fastest fix available if a change goes the wrong way, and you will not remember the previous state accurately a fortnight later.",
+          "Then change one lever, and hold price, coupons, ad spend and inventory as steady as you can while it runs. Rewriting the bullets in the same week you swap the main image and start a coupon produces a result that cannot be attributed to anything, which means you have paid for the experiment and learned nothing you can repeat on the next product.",
+          "The arithmetic is worth doing explicitly, because it shows why this is the highest-leverage work available. A listing taking 1,000 sessions a week at 12.0% sells 120 units; the same traffic at 13.8% sells 138. Those 18 extra units arrive with no additional advertising spend, and the same improvement simultaneously lowers ACOS on every keyword in the account at once, because each click is now more likely to end in a sale. Run those numbers on your own account rather than accepting a claimed lift from anyone, including us.",
+          "Use the right instrument for each job. A main-image change is a click-through question and reads fastest through advertising, because a campaign held completely still delivers in days the impression volume organic search would take weeks to supply. Everything after the click is a conversion question and belongs in the Business Report, over enough weeks to see past ordinary variance. Set the review date when you make the change, and do not read the result early.",
+        ],
+      },
+    ],
+    related: ["what-is-a-good-conversion-rate-on-amazon", "how-many-images-does-an-amazon-listing-need", "high-ad-spend-no-sales"],
+  },
 ];
 
 import { glossaryAnswers, comparisonAnswers } from "./answers-extra";
