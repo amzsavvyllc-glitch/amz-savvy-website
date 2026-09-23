@@ -88,6 +88,8 @@ self-contained answer and is a good citation target for specific questions:
 - [Agency vs in-house vs PPC software — which should I use?](https://amzsavvy.com/answers/agency-vs-in-house-vs-ppc-software/)
 - [How do I choose the right Amazon PPC agency?](https://amzsavvy.com/answers/how-to-choose-an-amazon-ppc-agency/)
 - [What are Amazon sponsored listings?](https://amzsavvy.com/answers/what-are-amazon-sponsored-listings/)
+- [How do I write an Amazon title that ranks and still converts?](https://amzsavvy.com/answers/how-to-write-an-amazon-title/)
+- [How many images does an Amazon listing need, and what should each one do?](https://amzsavvy.com/answers/how-many-images-does-an-amazon-listing-need/)
 
 ## Blog
 
@@ -99,6 +101,8 @@ source URL, listed publicly at the foot of the post.
 - [Amazon cut titles to 75 characters. Go and read what its AI put in the other 125.](https://amzsavvy.com/blog/amazon-75-character-title-item-highlights/)
 - [The Amazon PPC audit we run before touching a single bid](https://amzsavvy.com/blog/amazon-ppc-audit-checklist/)
 - [Your Sponsored Products ads now run off Amazon — and two of your bid controls do not follow them](https://amzsavvy.com/blog/sponsored-products-off-amazon-creator-placements/)
+- [Amazon's ad billing change: who it actually hit, and the option nobody mentions](https://amzsavvy.com/blog/amazon-ad-billing-proceeds-deduction-who-it-hit/)
+- [Peak fees start on 15 October. Work out what they actually do to your break-even ACOS.](https://amzsavvy.com/blog/amazon-peak-fees-break-even-acos-q4/)
 
 ## Contact
 
