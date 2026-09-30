@@ -1005,7 +1005,12 @@ const coreAnswers: Answer[] = [
         ],
       },
     ],
-    related: ["do-i-need-an-amazon-agency", "what-reports-for-ppc-audit", "how-much-to-spend-on-amazon-ads"],
+    related: [
+      "how-to-choose-an-amazon-ppc-agency",
+      "do-i-need-an-amazon-agency",
+      "what-reports-for-ppc-audit",
+      "how-much-to-spend-on-amazon-ads",
+    ],
   },
   {
     slug: "how-many-clicks-before-pausing-keyword",
@@ -1137,7 +1142,13 @@ const coreAnswers: Answer[] = [
         ],
       },
     ],
-    related: ["how-to-rank-on-page-one", "amazon-backend-search-terms", "what-is-a-good-conversion-rate-on-amazon"],
+    related: [
+      "how-many-images-does-an-amazon-listing-need",
+      "how-to-rank-on-page-one",
+      "amazon-backend-search-terms",
+      "what-is-a-good-conversion-rate-on-amazon",
+    ],
+    service: { href: "/amazon-seo/", label: "Amazon SEO and listing optimization" },
   },
   {
     slug: "how-to-write-an-amazon-title",

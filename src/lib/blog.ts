@@ -143,6 +143,7 @@ const allPosts: Post[] = [
       },
     ],
     related: [
+      "how-to-write-an-amazon-title",
       "how-to-check-keyword-indexing",
       "sudden-organic-rank-drop",
       "how-amazon-ranking-works",

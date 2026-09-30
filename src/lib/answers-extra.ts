@@ -174,7 +174,12 @@ export const glossaryAnswers: Answer[] = [
         ],
       },
     ],
-    related: ["acos-vs-tacos", "sponsored-products-brands-display", "brand-defense-amazon"],
+    related: [
+      "what-is-share-of-voice",
+      "acos-vs-tacos",
+      "sponsored-products-brands-display",
+      "brand-defense-amazon",
+    ],
   },
   {
     slug: "what-is-share-of-voice",
@@ -563,7 +568,12 @@ export const comparisonAnswers: Answer[] = [
         ],
       },
     ],
-    related: ["what-reports-for-ppc-audit", "how-to-find-wasted-search-terms", "what-is-impression-share"],
+    related: [
+      "search-term-vs-keyword",
+      "what-reports-for-ppc-audit",
+      "how-to-find-wasted-search-terms",
+      "what-is-impression-share",
+    ],
   },
   {
     slug: "amazon-seo-vs-ppc-for-ranking",
