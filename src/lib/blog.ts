@@ -479,7 +479,7 @@ const allPosts: Post[] = [
       "On 29 September 2026 Amazon renamed its advertising platform Amazon Ads Agent and reduced it to three campaign types: sponsored ads, Full-Funnel Campaigns and DVA+. Full-Funnel Campaigns is already live for every advertiser in the United States and hands planning, channel mix and ongoing optimisation to Amazon's AI, while DVA+ begins rolling out in late October. For a seller running their own account, the question is not whether to adopt this — it is how much of your fourth-quarter budget you are willing to stop steering while the quarter is running.",
     date: "2026-10-05",
     category: "News",
-    readMinutes: 8,
+    readMinutes: 9,
     sections: [
       {
         heading: "What Amazon actually announced",
