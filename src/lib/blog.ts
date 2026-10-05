@@ -229,7 +229,8 @@ const allPosts: Post[] = [
   },
   {
     slug: "amazon-ad-billing-proceeds-deduction-who-it-hit",
-    title: "Amazon's ad billing change: who it actually hit, and the option nobody mentions",
+    title:
+      "Amazon's ad billing change: who it actually hit, and the option nobody mentions",
     excerpt:
       "Amazon's switch from credit-card ad billing to deduction from retail proceeds took effect on 1 August 2026, and most of the coverage got the scope wrong. It applied to a subset of advertisers Amazon contacted directly, not to everyone — and there is a second option, Pay by Invoice on Net 30, that is arguably better than the credit card it replaced.",
     date: "2026-08-24",
@@ -246,15 +247,15 @@ const allPosts: Post[] = [
         heading: "What changed, in order",
         body: [
           "In early April 2026 a group of Amazon advertisers received an email saying that from 15 April, the cost of Sponsored Products, Sponsored Brands and Sponsored Display would be deducted from their retail proceeds before disbursement, rather than charged to a credit card. There was no public announcement. Sellers found out because it landed in their inbox, and then because other sellers posted screenshots of it.",
-          "The reaction was strong enough to be organised. Merchants in the private seller group Million Dollar Sellers coordinated a protest, with some calling for ads to be switched off on 15 April, the original implementation date. Co-founder Eugene Khayman's complaint was about accumulation rather than this change alone: Amazon had, he said, \"essentially rolled out three fees within a month.\"",
-          "On 14 April — a day after the original deadline had already taken effect for some accounts — Amazon deferred it. The wording was: \"Based on feedback we heard, we're deferring this change until August 1, 2026 to give this group of advertisers more time to prepare.\" That deadline has now passed.",
+          'The reaction was strong enough to be organised. Merchants in the private seller group Million Dollar Sellers coordinated a protest, with some calling for ads to be switched off on 15 April, the original implementation date. Co-founder Eugene Khayman\'s complaint was about accumulation rather than this change alone: Amazon had, he said, "essentially rolled out three fees within a month."',
+          'On 14 April — a day after the original deadline had already taken effect for some accounts — Amazon deferred it. The wording was: "Based on feedback we heard, we\'re deferring this change until August 1, 2026 to give this group of advertisers more time to prepare." That deadline has now passed.',
         ],
       },
       {
         heading: "The part most coverage got wrong",
         body: [
           "Read the trade write-ups and you would conclude that every Amazon advertiser was moved onto proceeds deduction on 1 August. That is not what Amazon said. The announcement stated the update applies only to the small group of advertisers who had been contacted directly — those still using a credit card as their primary payment method — and noted that the overwhelming majority of advertisers were already on account balance deduction and were unaffected.",
-          "Amazon's own wording, quoted in the coverage, was that it \"commonly review[s] advertiser payment methods as part of our normal course of business\", and that \"notified advertisers continue to have credit or debit cards as a backup payment method and also have the option to pay by invoice\". Two things follow from that sentence: you had to have been notified, and the card never went away entirely.",
+          'Amazon\'s own wording, quoted in the coverage, was that it "commonly review[s] advertiser payment methods as part of our normal course of business", and that "notified advertisers continue to have credit or debit cards as a backup payment method and also have the option to pay by invoice". Two things follow from that sentence: you had to have been notified, and the card never went away entirely.',
           "If you never received the email, nothing changed for you. If you are not sure, the payment settings in your advertising console will tell you in under a minute, and that is a better use of the next sixty seconds than reading another article about it.",
           "This distinction matters because the panic version of the story caused sellers who were never in scope to go looking for financing they did not need.",
         ],
@@ -286,19 +287,23 @@ const allPosts: Post[] = [
     ],
     sources: [
       {
-        label: "PPC Land — Amazon Ads delays advertiser payment overhaul to August after pushback",
+        label:
+          "PPC Land — Amazon Ads delays advertiser payment overhaul to August after pushback",
         url: "https://ppc.land/amazon-ads-delays-advertiser-payment-overhaul-to-august-after-pushback/",
       },
       {
-        label: "PPC Land — Amazon's payment change: ad costs to auto-deduct from seller proceeds April 15",
+        label:
+          "PPC Land — Amazon's payment change: ad costs to auto-deduct from seller proceeds April 15",
         url: "https://ppc.land/amazons-payment-grab-ad-costs-to-auto-deduct-from-seller-proceeds-april-15/",
       },
       {
-        label: "EcommerceBytes — Amazon delays change that would contribute to seller cashflow crunch",
+        label:
+          "EcommerceBytes — Amazon delays change that would contribute to seller cashflow crunch",
         url: "https://www.ecommercebytes.com/2026/04/16/amazon-delays-change-that-would-contribute-to-seller-cashflow-crunch/",
       },
       {
-        label: "Modern Retail — Amazon hits pause on controversial advertising payment change",
+        label:
+          "Modern Retail — Amazon hits pause on controversial advertising payment change",
         url: "https://www.modernretail.co/operations/amazon-hits-pause-on-controversial-change-to-its-advertising-payment-system-that-had-caused-a-seller-revolt/",
       },
     ],
@@ -327,7 +332,7 @@ const allPosts: Post[] = [
       {
         heading: "What Amazon's own page says",
         body: [
-          "Amazon's help article on off-Amazon advertising, updated on 27 August 2026, states that \"Your Sponsored Products campaigns extend beyond Amazon to premium sites, apps, conversational experiences, and Amazon creators (influencers and publishers)\", and that Amazon uses \"your existing targeting, bid, and budget settings to place your ads where they're most relevant\".",
+          'Amazon\'s help article on off-Amazon advertising, updated on 27 August 2026, states that "Your Sponsored Products campaigns extend beyond Amazon to premium sites, apps, conversational experiences, and Amazon creators (influencers and publishers)", and that Amazon uses "your existing targeting, bid, and budget settings to place your ads where they\'re most relevant".',
           "Availability, in Amazon's words, covers advertisers in Brazil, Canada, India, Mexico, the Middle East, North Africa, Türkiye and the United States. If you advertise only in a European marketplace, this does not currently apply to you.",
           "Several trade outlets report the rollout began on 10 August 2026 and that advertisers were enrolled without needing to act. We could not find that date on any Amazon-hosted page — the notice appears to have gone out as an in-console notification — so treat the date as trade reporting rather than an Amazon-confirmed fact. The mechanism itself is documented by Amazon; the start date is not.",
         ],
@@ -335,7 +340,7 @@ const allPosts: Post[] = [
       {
         heading: "The detail that actually changes how you bid",
         body: [
-          "Amazon states plainly that \"Bid adjustments for Top of Search and Product Pages don't apply to off-Amazon placements. However, dynamic bidding and other bidding strategies will apply for off-Amazon placements.\"",
+          'Amazon states plainly that "Bid adjustments for Top of Search and Product Pages don\'t apply to off-Amazon placements. However, dynamic bidding and other bidding strategies will apply for off-Amazon placements."',
           "That is the sentence to sit with. If your account leans on a large Top of Search modifier to win the placements you care about, that lever simply is not operating on this inventory — while your dynamic bidding rules still are. The result is a slice of spend being bid in a way you did not specifically design, inside campaigns whose settings you did design carefully.",
           "It does not make the placement bad. It makes it unmeasured until you go and look, which is a different problem and a fixable one.",
         ],
@@ -343,9 +348,9 @@ const allPosts: Post[] = [
       {
         heading: "Where your search terms come from when there is no search",
         body: [
-          "A social feed or an article has no query behind it, so Amazon supplies one. Per the same help page: \"When your ad appears in off-Amazon placements that have no search context (such as social sites), we will infer and provide a search term with customer context that best matches your advertised product. These keywords will qualify for negative targeting.\"",
+          'A social feed or an article has no query behind it, so Amazon supplies one. Per the same help page: "When your ad appears in off-Amazon placements that have no search context (such as social sites), we will infer and provide a search term with customer context that best matches your advertised product. These keywords will qualify for negative targeting."',
           "Two practical consequences. First, terms you did not choose will appear in your Search Term report, and they are inferred rather than typed by a shopper. Second — and this is the useful half — they can be negated like any other term, so the normal harvesting and negation discipline still works here.",
-          "Amazon also notes that \"Text ads may include AI generated content using your product and landing page\". If your listing copy is thin or off-message, that is now the raw material for an ad creative you did not write.",
+          'Amazon also notes that "Text ads may include AI generated content using your product and landing page". If your listing copy is thin or off-message, that is now the raw material for an ad creative you did not write.',
         ],
       },
       {
@@ -353,7 +358,7 @@ const allPosts: Post[] = [
         body: [
           "Pull the Sponsored Products Placement Report and look at the off-Amazon rows against your on-Amazon rows: spend, clicks, orders and ACOS, judged against your break-even rather than against a general benchmark. Advertising API users can read the same split through the Placement Classification metric. Until you have that comparison you are guessing, in either direction.",
           "Then review your Search Term report for terms you never targeted, and negate the ones that are clearly wrong for the product — the same rule you already apply on Amazon.",
-          "If you decide the inventory is not for you, the control is at campaign level under \"Choose where your ads appear\": \"Increase reach off Amazon\" is the default, and \"Limit reach to Amazon\" keeps ads on Amazon-owned properties only. Worth noting because several write-ups of this change name that second setting \"Limit off-Amazon spend\", which is not what Amazon's current page calls it.",
+          'If you decide the inventory is not for you, the control is at campaign level under "Choose where your ads appear": "Increase reach off Amazon" is the default, and "Limit reach to Amazon" keeps ads on Amazon-owned properties only. Worth noting because several write-ups of this change name that second setting "Limit off-Amazon spend", which is not what Amazon\'s current page calls it.',
         ],
       },
       {
@@ -395,7 +400,7 @@ const allPosts: Post[] = [
       {
         heading: "What changes on 15 October, in Amazon's words",
         body: [
-          "Amazon's seller announcement, titled \"Holiday 2026: Same fees, same eligibility, earlier deadlines\", states that \"Holiday peak fulfillment fees will apply again from October 15, 2026, to January 14, 2027\" and that they \"will have the same per unit increase over non-peak rates as last year, averaging $0.32 per unit.\" The same post confirms that \"The 3.5% fuel and logistics-related surcharge will apply on top of holiday peak fulfillment fees.\"",
+          'Amazon\'s seller announcement, titled "Holiday 2026: Same fees, same eligibility, earlier deadlines", states that "Holiday peak fulfillment fees will apply again from October 15, 2026, to January 14, 2027" and that they "will have the same per unit increase over non-peak rates as last year, averaging $0.32 per unit." The same post confirms that "The 3.5% fuel and logistics-related surcharge will apply on top of holiday peak fulfillment fees."',
           "The peak rates cover Fulfillment by Amazon, Remote Fulfillment with FBA, Multi-Channel Fulfillment and Buy with Prime. They apply to fulfilment during that window, not to when your stock arrived, so inventory you shipped in August is billed at peak rates for anything that ships out after 15 October.",
           "That is the whole of the fee change. There is no new fee type, no restructure and no category-specific twist announced with it. Amazon's own framing — same fees, same eligibility — is accurate. What moved this year is the calendar, which is the part of the post most sellers skipped.",
         ],
@@ -403,7 +408,7 @@ const allPosts: Post[] = [
       {
         heading: "The number a lot of write-ups get wrong",
         body: [
-          "Several summaries of this announcement add the two published averages together and describe the October change as roughly $0.49 per unit or more. That double-counts. The 3.5% fuel and logistics surcharge is not new in October — Amazon's own notice says it started on 17 April 2026 for FBA in the US and Canada, and that it is \"calculated on your fulfillment fees, not on the sale price of your items,\" averaging \"$0.17 per unit for US FBA.\" If you are selling today, that $0.17 is already inside the fee you are being charged.",
+          'Several summaries of this announcement add the two published averages together and describe the October change as roughly $0.49 per unit or more. That double-counts. The 3.5% fuel and logistics surcharge is not new in October — Amazon\'s own notice says it started on 17 April 2026 for FBA in the US and Canada, and that it is "calculated on your fulfillment fees, not on the sale price of your items," averaging "$0.17 per unit for US FBA." If you are selling today, that $0.17 is already inside the fee you are being charged.',
           "So the amount that appears on 15 October is the peak increment plus the surcharge on that increment: $0.32 plus 3.5% of $0.32, or about $0.33 on an average US FBA unit. Amazon does not publish that combined figure, and we are not presenting it as one — it is arithmetic on the two averages Amazon does publish, shown so you can see where the number comes from rather than inherit someone else's.",
           "This matters because the two versions lead to different decisions. A $0.49 shock argues for repricing. A $0.33 change on a mid-priced item argues for recalculating and then mostly carrying on. Getting it wrong in the alarming direction is how sellers talk themselves into a Q4 price rise they did not need, in the quarter where demand is least price-sensitive.",
         ],
@@ -420,7 +425,7 @@ const allPosts: Post[] = [
       {
         heading: "Where to get your real fee instead of an average",
         body: [
-          "An average across every size tier in the catalogue tells you nothing reliable about one ASIN. Amazon's post says peak rates \"are now available in the Revenue Calculator, Profit Analytics dashboard, and Fee and Economics Preview Report\", which means you can read your actual October number today rather than estimating it.",
+          'An average across every size tier in the catalogue tells you nothing reliable about one ASIN. Amazon\'s post says peak rates "are now available in the Revenue Calculator, Profit Analytics dashboard, and Fee and Economics Preview Report", which means you can read your actual October number today rather than estimating it.',
           "The Fee and Economics Preview report is the efficient route if you have more than a handful of ASINs, because it gives you every SKU in one file and you can sort by the difference. The Revenue Calculator is better for checking a single product carefully, and the Profit Analytics dashboard is where to sanity-check that the picture matches what you are actually banking.",
           "Do this before the rate changes rather than after. Reading your peak fee in November tells you what you are already paying; reading it now is the difference between a considered decision on a dozen SKUs and a reaction to a margin report that has already gone soft.",
         ],
@@ -430,7 +435,7 @@ const allPosts: Post[] = [
         body: [
           "The same Amazon post lists inventory arrival deadlines, and the first set is for Prime Big Deal Days: 2 September for AWD shipments, 9 September for FBA shipments with minimal shipment splits, and 16 September for FBA with Amazon-optimized shipment splits. For Black Friday week and Cyber Monday the deadlines are 14 October for AWD, 21 October for minimal splits and 28 October for Amazon-optimized splits.",
           "Note what those dates imply. The Black Friday deadlines for FBA both fall after 15 October, so stock shipped to hit them is being sold under peak rates regardless. The deadline calendar and the fee calendar are not the same calendar, and only one of them is negotiable.",
-          "Amazon's post also states that sellers using AWD with automatic FBA replenishment \"will keep paying the off-peak monthly storage rate through October 31, 2026\" — worth knowing if you are choosing where to hold Q4 stock.",
+          'Amazon\'s post also states that sellers using AWD with automatic FBA replenishment "will keep paying the off-peak monthly storage rate through October 31, 2026" — worth knowing if you are choosing where to hold Q4 stock.',
           "One thing Amazon did not publish in that post is the Prime Big Deal Days event dates themselves. Trade outlets have named dates; we could not find them on an Amazon-hosted page, so we are not going to repeat them here. Ship to the deadline Amazon actually stated, which is the date that binds you either way.",
         ],
       },
@@ -464,6 +469,105 @@ const allPosts: Post[] = [
       "how-to-calculate-break-even-acos",
       "what-is-a-good-acos-on-amazon",
       "how-to-lower-acos",
+    ],
+  },
+  {
+    slug: "amazon-ads-agent-three-campaign-types",
+    title:
+      "Amazon rebuilt its ad platform around three campaign types. One of them takes the steering wheel.",
+    excerpt:
+      "On 29 September 2026 Amazon renamed its advertising platform Amazon Ads Agent and reduced it to three campaign types: sponsored ads, Full-Funnel Campaigns and DVA+. Full-Funnel Campaigns is already live for every advertiser in the United States and hands planning, channel mix and ongoing optimisation to Amazon's AI, while DVA+ begins rolling out in late October. For a seller running their own account, the question is not whether to adopt this — it is how much of your fourth-quarter budget you are willing to stop steering while the quarter is running.",
+    date: "2026-10-05",
+    category: "News",
+    readMinutes: 8,
+    sections: [
+      {
+        heading: "What Amazon actually announced",
+        body: [
+          'On 29 September 2026, at its unBoxed conference in San Francisco, Amazon Ads published a post titled "Introducing Amazon Ads Agent, your AI-powered ad platform". The structural sentence in it is this one: "Amazon Ads Agent brings three campaign types—sponsored ads, Full-Funnel Campaigns, and Display, Video, and Audio—together in one simple, connected, AI-first ads platform." Display, Video, and Audio is the one Amazon shortens to DVA+.',
+          'This is the second half of a change that started a year ago. The same post notes that "Last year at unBoxed, Amazon Ads announced the unification of the demand-side platform and ads console into a single media buying experience." The 2026 announcement puts a name on that merged platform and collapses what used to be a long menu of campaign types down to three. Trade coverage of the event describes Amazon Ads Agent as replacing the former ads console and Amazon DSP experience with a single platform that includes a conversational chat layer.',
+          'Two availability facts matter more than the branding, and both are stated plainly by Amazon. "Full-Funnel Campaigns is now available to all advertisers in the United States." And "DVA+ will begin rolling out to advertisers beginning in late October." So one of the three is live for you today if you sell in the US, and the second arrives within weeks of this being published.',
+        ],
+      },
+      {
+        heading: "What Full-Funnel Campaigns asks you to hand over",
+        body: [
+          "The division of labour is not ambiguous. Amazon's own description: \"Advertisers provide their budget, products, and creative, and Amazon's AI handles the rest on their behalf—planning, executing, and continuously optimizing campaigns.\" A Full-Funnel campaign is designed to run from premium streaming TV and audio at the top, through display and online video on Amazon and the wider internet, down to sponsored ads at the point of purchase — all inside one campaign, one objective and one budget.",
+          "Read that against what you actually do every week in a manually run account. You choose the match types. You read the search term report and add the negatives. You decide that a keyword converting at 2% does not deserve a top-of-search bid adjustment. None of those levers exist inside a campaign where planning and channel mix are the AI's job. You are not tuning a campaign any more; you are setting an allowance and a goal.",
+          'What you get back is a single reporting view. Amazon says: "In reporting, advertisers have a unified view of performance across formats, with standard metrics like impressions, clicks, and sales alongside new-to-brand and long-term sales metrics, giving clear visibility into campaign performance." Useful, and genuinely hard to assemble yourself across four ad products. But notice the level it operates at. Nothing in the announcement describes search-term-level visibility or control inside a Full-Funnel campaign, and you should not assume a capability that has not been stated.',
+          "The important counterweight, also in Amazon's words: \"Throughout Amazon Ads Agent, advertisers have the option to use manual campaign building tools, let Amazon's AI optimize on their behalf, or employ a mix of both depending on campaign goals and advertiser needs.\" The manual path is not being taken away. Sponsored ads remains one of the three campaign types. This is an addition to the menu, not a forced migration — which is exactly why there is no reason to rush.",
+        ],
+      },
+      {
+        heading: "The results Amazon quoted are Amazon's results",
+        body: [
+          'Amazon\'s unBoxed round-up reports that beta testers of Full-Funnel Campaigns saw "67% higher long-term return on ad spend and 29% lower cost to acquire new-to-brand customers". The same post carries a named advertiser, Canine Naturals, saying that "41% of sales from Full-Funnel Campaigns were new to our brand".',
+          'Those are real published claims and we are quoting them accurately, but they are a vendor describing its own beta. No sample size, no category breakdown, no baseline definition and no methodology has been published alongside them, and "long-term return on ad spend" is a metric Amazon defines rather than one you can independently reconstruct from your own reports. Self-selected beta participants are also usually the advertisers with the budget and the creative assets to make an upper-funnel campaign work in the first place.',
+          "The practical rule: do not put those percentages into a plan. If you test Full-Funnel Campaigns, define success before you launch using numbers from your own account — your current blended TACOS, your current new-to-brand share, your actual contribution margin — and judge the test against those. A 67% uplift quoted by the platform selling you the campaign is a reason to be curious, not a forecast.",
+        ],
+      },
+      {
+        heading:
+          "DVA+ lands in late October, which is the worst fortnight of the year to restructure",
+        body: [
+          'DVA+ consolidates what are currently separate buys — Sponsored Display, Sponsored TV and programmatic display, video and audio — into one campaign type with one objective and one budget. Amazon\'s framing is that it "simplifies campaign creation and optimization for advertisers of all sizes" while keeping an advanced path: with "advanced settings", experienced programmatic buyers have full control. Event coverage describes the same thing as a simplified mode and an advanced mode sitting side by side.',
+          "The timing is the problem, not the product. A new campaign type appearing in your console in late October arrives in the middle of the highest-traffic, highest-CPC weeks of your year, when your historical data is least representative and a structural change is hardest to read. Any campaign you launch in that window has to learn on your most expensive traffic, and any dip you see afterwards will be impossible to attribute cleanly between the new structure, peak-season competition and your own inventory position.",
+          "So treat the rollout as information rather than an instruction. When DVA+ appears, open it, look at how your existing Sponsored Display and Sponsored TV activity is represented, screenshot or export your current structure and settings, and then leave it alone. Migrating display spend into a new unified campaign type is a January project. Peak is for running the thing you already understand.",
+        ],
+      },
+      {
+        heading: "The transparency question is the sensible one to ask",
+        body: [
+          "The trade press at the event put the uncomfortable question better than any vendor material would. Digiday's write-up frames the appeal as less operational complexity, and the accompanying question as how much visibility advertisers keep as Amazon's technology takes on more of the decisions. An Amazon executive quoted in that piece said: \"We are figuring out how to give them more transparency on the audience side.\" The same report notes Amazon did not commit to disclosing how individual winning auction prices are determined.",
+          "That is not a reason to refuse the product. Automated bidding has been the default in paid search for years and plenty of accounts are better for it. It is a reason to be precise about what you are buying: you are buying outcomes measured with Amazon's metrics, inside an auction whose pricing logic is not disclosed, optimised toward a goal you set once at the start. If that bargain is acceptable to you, the campaign type is a legitimate tool. If you cannot explain your results to yourself afterwards, you have no way to improve them.",
+          "The honest version of the trade-off is a labour question. Full-Funnel Campaigns removes a large amount of weekly work from your calendar. If the hours you currently spend on search term reports and bid adjustments are producing a better return than the AI would, automating them is a loss. If those hours are producing nothing — and in plenty of small accounts, poked-at-weekly manual campaigns genuinely do underperform — then handing them over is a gain. You can only know which by measuring the account you actually have.",
+        ],
+      },
+      {
+        heading:
+          "The agent layer is coming for your reporting as well as your bids",
+        body: [
+          'Three smaller announcements from the same event point in one direction. The conversational Amazon Ads Agent experience — asking questions of your account in plain language rather than building a report — is described as available in expanded closed beta. Amazon also announced an Amazon Ads MCP Server (Lite), which it says "simplifies how agents interact with Amazon Ads", starting with a small set of core tools that an AI agent uses to discover further capabilities as it needs them. Alongside it, an AMC Expert Tool turns a plain-language question into an Amazon Marketing Cloud SQL query.',
+          "Taken together, the direction is that the mechanical skills of running Amazon ads — pulling the report, writing the query, bulk-editing the bids — are being commoditised faster than the judgement around them. That is not a threat if you are the person with the judgement. It is a threat if your entire process is mechanical.",
+          "The practical consequence for a seller is to stop valuing your own time by the reports you can assemble and start valuing it by the decisions only you can make: what margin you will accept on a given ASIN, which products are worth defending, when a listing problem is being misdiagnosed as a bidding problem. An AI that can answer any question about your account is not much use if nobody is choosing the right question.",
+        ],
+      },
+      {
+        heading: "What to do this week",
+        body: [
+          "First, go and look. If you sell in the US, Full-Funnel Campaigns is live in your account today, and a campaign type you have never opened is worth twenty minutes of reading before someone recommends it to you in a webinar. Note what it asks for, what it will not let you set, and what its reporting actually shows.",
+          "Second, protect the quarter. Do not move money that is currently working out of campaigns you can steer and into an automated campaign type mid-peak. If you want to test Full-Funnel Campaigns now, fund it with incremental budget you are willing to lose for the sake of learning, not by cutting Sponsored Products spend that is already converting. Write down, before you launch, the new-to-brand share and blended TACOS you would need to see to call the test a success.",
+          "Third, prepare for late October without acting on it. Export your current Sponsored Display and Sponsored TV structure, bids and budgets now, so that when DVA+ appears you have a record of what the account looked like before. Diary the actual migration decision for January, when your data is representative again.",
+          "Fourth, keep doing the one job none of the three campaign types does for you. Every one of them sends traffic to a detail page you own. An AI that plans a perfect media mix into a listing with a weak main image, thin bullets and unanswered objections will simply buy you expensive proof that the listing is the problem. In a quarter where traffic is at its most expensive, conversion rate is still where the leverage is.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Amazon Ads — Introducing Amazon Ads Agent, your AI-powered ad platform (29 September 2026; source for the three campaign types, Full-Funnel US availability, the late-October DVA+ rollout, the manual/AI/mix wording, the advertiser-supplies-budget-products-creative split, DVA+ advanced settings and the reporting metrics)",
+        url: "https://advertising.amazon.com/library/news/amazon-ads-agent",
+      },
+      {
+        label:
+          "Amazon Ads — unBoxed 2026 news: explore the latest advertising announcements (source for the 67% and 29% beta figures, the Canine Naturals quote, the Ads Agent conversational expanded closed beta, Amazon Ads MCP Server (Lite) and the AMC Expert Tool)",
+        url: "https://advertising.amazon.com/library/news/unboxed-2026-news-announcements",
+      },
+      {
+        label:
+          "Digiday — At its flagship unBoxed conference, Amazon Ads collapses buying silos as AI takes a bigger role in media decisions (29 September 2026; source for the San Francisco venue, DVA+ simplified and advanced modes, the visibility question and the audience-transparency quote)",
+        url: "https://digiday.com/media-buying/at-its-flagship-unboxed-conference-amazon-ads-collapses-buying-silos-as-ai-takes-a-bigger-role-in-media-decisions/",
+      },
+      {
+        label:
+          "MediaPost — Amazon Reboots Ad Business, Emphasizes Agentic (29 September 2026; corroborates the announcement date and that Amazon Ads Agent replaces the former ads console and DSP experience)",
+        url: "https://www.mediapost.com/publications/article/418323/amazon-reboots-ad-business-emphasizes-agentic.html",
+      },
+    ],
+    related: [
+      "sponsored-products-brands-display",
+      "what-is-new-to-brand",
+      "how-much-to-spend-on-amazon-ads",
     ],
   },
 ];
