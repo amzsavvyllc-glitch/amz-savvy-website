@@ -1258,6 +1258,77 @@ const coreAnswers: Answer[] = [
     ],
     related: ["what-belongs-in-amazon-a-plus-content", "what-is-a-good-conversion-rate-on-amazon", "how-to-rank-on-page-one"],
   },
+  {
+    slug: "amazon-listing-optimization-what-to-fix-first",
+    question: "Amazon listing optimization: what should I fix first, and in what order?",
+    short:
+      "Work in the order of what is blocking money rather than the order of what is easy to edit. First clear anything that stops the listing being found or bought at all — a suppressed image or title, a keyword the listing is not indexed for, a lost Featured Offer, a variation family that splits reviews, a stockout — because no amount of copywriting outranks a listing Amazon is withholding. Next decide, from your own Business Report, whether the weak number is sessions or unit session percentage: a traffic problem is fixed by the main image, the title and indexing coverage, and a conversion problem is fixed by the gallery, the A+ content, price and the objections your reviews keep naming. Advertising comes last, because it multiplies whatever the page already does, including failing.",
+    metaDescription:
+      "Fix what blocks the listing first, then decide from your own data whether the problem is traffic or conversion. The order that stops wasted edits.",
+    category: "SEO",
+    updated: "2026-10-05",
+    sections: [
+      {
+        heading: "Clear the blockers before improving anything",
+        body: [
+          "A listing can be perfectly written and still earn nothing, because Amazon is withholding it. That class of problem has to be cleared first, since every improvement made underneath it is invisible. The checks are quick and most sellers have never run them in one sitting.",
+          "There are five. Is the listing suppressed or search-suppressed — the detail page still loads for anyone holding the link, which is why this goes unnoticed for weeks. Is it actually indexed for the phrases you believe you rank for, which you confirm by searching the exact phrase together with your ASIN rather than by trusting a keyword tool. Do you hold the Featured Offer, because if another seller does, your traffic is converting on their offer. Is the variation family correct, since a parent-child relationship built wrongly can split reviews across what shoppers see as one product, or strand a child nobody can reach. And has the listing been out of stock recently, which depresses both rank and the sales history every later comparison is measured against.",
+          "None of these is a copy problem and none is fixed by writing better bullets. Each one caps the listing at a ceiling you cannot edit your way past, so they are worth re-running as a short checklist whenever performance drops rather than only at the start of a project.",
+        ],
+      },
+      {
+        heading: "Then decide whether you have a traffic problem or a conversion problem",
+        body: [
+          "This is the single decision that determines whether the next month of work is useful, and most listing projects skip it. The two failures look identical from the sales line and need opposite fixes: a listing nobody sees and a listing everybody leaves both show flat revenue.",
+          "The separation is arithmetic you can do from the Business Report by ASIN, which gives sessions and unit session percentage. Revenue is roughly sessions multiplied by unit session percentage multiplied by price. Take two listings each earning about the same: one with 4,000 sessions a month converting at 5% returns 200 units; another with 800 sessions converting at 25% returns 200 units. Identical revenue, opposite diagnoses. The first does not need better photography — it converts well and nobody is arriving. The second does not need more keywords — everyone who arrives buys, and the ceiling is visibility.",
+          "Compare each number against your own category rather than an absolute. The honest benchmark is your other listings and your own history, because conversion rate varies enormously between categories and price points. Search Query Performance, where you have brand registry, splits the funnel further — impressions, clicks and purchases per query — which tells you whether a specific phrase is failing at the impression stage or losing the click after it is shown.",
+          "Write the diagnosis down before you start editing. It is the thing you will otherwise forget by week three, when the project has quietly drifted into rewriting whichever field was most annoying to look at.",
+        ],
+      },
+      {
+        heading: "The default order, and why it is that order",
+        body: [
+          "Where the diagnosis is genuinely unclear, or where a listing has never had a proper pass, this sequence puts the highest-leverage and least-reversible work first. The logic throughout is cost of being wrong: compliance failures are catastrophic and cheap to fix, and advertising is expensive and amplifies whatever it points at.",
+          "The main image comes before the title because it is the only asset competing outside your own listing, at thumbnail size, next to competitors, in both organic results and Sponsored Products placements. The title follows because it carries the words that make the listing eligible at all while also having to be readable at a glance. Indexing coverage comes next, because adding genuine phrases you were never eligible for creates traffic that no amount of polish on existing traffic can create.",
+          "Only then is the on-page conversion work worth doing: the gallery, the A+ content, the bullets and the structured attributes that populate filters shoppers narrow by. These change what happens to traffic you already have, which is why they sit behind the work that determines whether traffic exists.",
+          "Advertising is deliberately last. A campaign pointed at a listing with a weak main image buys clicks at full price to deliver them to the same leak, and the resulting ACOS gets blamed on bidding. Fixing the page first lowers the cost of every subsequent click, which is the quiet reason listing work usually returns more than bid work on a neglected listing.",
+        ],
+        table: {
+          caption: "Default working order when the diagnosis is unclear",
+          columns: ["Order", "What you change", "Number it moves", "Why it sits here"],
+          rows: [
+            ["1", "Suppression, indexing, Featured Offer, variations, stock", "Eligibility", "Caps everything below it and cannot be edited around"],
+            ["2", "Main image", "Click-through rate", "The only asset competing outside your listing, at thumbnail size"],
+            ["3", "Title", "Eligibility and click-through rate", "Decides both what you can appear for and whether the click happens"],
+            ["4", "Indexing coverage for missing phrases", "Impressions", "Creates traffic that polishing existing traffic cannot"],
+            ["5", "Gallery, A+ content, bullets, attributes", "Unit session percentage", "Changes what happens to traffic you already have"],
+            ["6", "Price, coupons, review volume", "Unit session percentage", "Real levers, but they change the economics as well as the rate"],
+            ["7", "Advertising", "Volume", "Multiplies whatever the page already does, including failing"],
+          ],
+        },
+      },
+      {
+        heading: "One change at a time, and a written revert plan",
+        body: [
+          "The constraint that makes all of this work is that each change is made alone and given time. Rewriting the title, swapping the main image and launching a coupon in the same week produces a number you cannot attribute, which means you have paid for the experiment and learned nothing transferable to the next product.",
+          "Time matters as much as isolation. Amazon does not serve a new image consistently from the first hour, a recrawl after a text edit is not instant, and a few hundred sessions is a small enough sample to swing on its own. Set the review date when you make the change and do not read the result early — reading it on day two and reverting is how sellers churn through four versions of a listing and end up back at the first.",
+          "Record the previous value verbatim before every edit, with the date. For a title that means the exact string; for an image it means keeping the file. This is not bookkeeping for its own sake: if impressions fall after an edit, reverting is the fastest available fix, and you will not reconstruct the old copy from memory. Where more than one listing needs the same change, run it on one first and keep the others as an unedited comparison, which is the closest thing to a control that a single seller account offers.",
+          "Measure the right number for the change. A main-image swap is read as click-through rate, fastest through a campaign held completely still — same keywords, bids, budget and placements — because ads deliver in days the impressions organic search would take weeks to supply. A gallery or A+ change is read as unit session percentage in the Business Report. Judging an image change by conversion, or a bullet rewrite by traffic, reliably produces the wrong decision.",
+        ],
+      },
+      {
+        heading: "When you can only make one change this month",
+        body: [
+          "Most sellers are not resourced for a seven-step programme, and the honest answer is that one change chosen from evidence beats five chosen from a template. The evidence is already in the account and costs nothing to read.",
+          "Three sources name the real problem. Stated return reasons say what the listing promised and the product did not. Recurring negative reviews name the doubt the page failed to settle before purchase. Repeated customer questions mark information a shopper could not find, which is a page failure regardless of how good the answer in the thread is. Count how often each theme appears and work the most frequent one, because frequency is the closest proxy you have for how many silent non-buyers shared the same doubt.",
+          "That usually points at something specific rather than a general polish: a scale reference where size surprise dominates returns, a compatibility frame where questions cluster on fit, a clearer in-the-box image where reviews complain about missing parts. These are cheap, and they are aimed.",
+          "If there is genuinely no signal to read — a new listing with no reviews, returns or questions — then run the blocker checklist and fix the main image, in that order, and wait for data rather than guessing. A listing with no history has no diagnosis available, and inventing one is how a month gets spent on the wrong field.",
+        ],
+      },
+    ],
+    related: ["how-to-write-an-amazon-title", "how-many-images-does-an-amazon-listing-need", "how-amazon-ranking-works"],
+    service: { href: "/amazon-seo/", label: "Amazon SEO and listing optimization" },
+  },
 ];
 
 import { glossaryAnswers, comparisonAnswers } from "./answers-extra";
